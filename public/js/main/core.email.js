@@ -80,13 +80,13 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDDQG6UNGhn0TvT8u-veAMsg92xelsIvtM",
-    authDomain: "darkwe-sbs.firebaseapp.com",
-    projectId: "darkwe-sbs",
-    storageBucket: "darkwe-sbs.firebasestorage.app",
-    messagingSenderId: "41268759379",
-    appId: "1:41268759379:web:ec28e37126a05492f76fa6",
-    measurementId: "G-1EJ1L4HRL6"
+    apiKey: "AIzaSyDpvhbXGWQOSVblJfROY8tDESr5PH1-9ko",
+    authDomain: "darkweb-i.firebaseapp.com",
+    projectId: "darkweb-i",
+    storageBucket: "darkweb-i.firebasestorage.app",
+    messagingSenderId: "594047672437",
+    appId: "1:594047672437:web:2b8c097e282bdc93df183c",
+    measurementId: "G-GM3GTGE7D3"
 }; firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
@@ -98,7 +98,7 @@ function emailShow() {
 
     var userThi = userTh.split('?')[0];
     if(window.location.href.includes('https://')) {
-        var userThis = userThi.replace('https://darkwebs.netlify.app/email#', '');
+        var userThis = userThi.replace('https://darkweb.ink/email#', '');
     } else {
         var userThis = userThi.replace('http://127.0.0.1:5501/public/email.html#', '');
     }

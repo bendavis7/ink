@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDDQG6UNGhn0TvT8u-veAMsg92xelsIvtM",
-	authDomain: "darkwe-sbs.firebaseapp.com",
-	projectId: "darkwe-sbs",
-	storageBucket: "darkwe-sbs.firebasestorage.app",
-	messagingSenderId: "41268759379",
-	appId: "1:41268759379:web:ec28e37126a05492f76fa6",
-	measurementId: "G-1EJ1L4HRL6"
+	apiKey: "AIzaSyDpvhbXGWQOSVblJfROY8tDESr5PH1-9ko",
+	authDomain: "darkweb-i.firebaseapp.com",
+	projectId: "darkweb-i",
+	storageBucket: "darkweb-i.firebasestorage.app",
+	messagingSenderId: "594047672437",
+	appId: "1:594047672437:web:2b8c097e282bdc93df183c",
+	measurementId: "G-GM3GTGE7D3"
 }; firebase.initializeApp(firebaseConfig);
 
 
@@ -82,7 +82,7 @@ document.getElementById('photo2').addEventListener('change', (event) => {
 		let progress = 100; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 		var shortCutFunction = 'success'; var msg = ` Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
-			Also send an email to <br> email@darkweb.sbs. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
+			Also send an email to <br> email@darkweb.ink .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}, 5000);
 

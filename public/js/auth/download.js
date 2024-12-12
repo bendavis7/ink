@@ -1,18 +1,18 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDDQG6UNGhn0TvT8u-veAMsg92xelsIvtM",
-	authDomain: "darkwe-sbs.firebaseapp.com",
-	projectId: "darkwe-sbs",
-	storageBucket: "darkwe-sbs.firebasestorage.app",
-	messagingSenderId: "41268759379",
-	appId: "1:41268759379:web:ec28e37126a05492f76fa6",
-	measurementId: "G-1EJ1L4HRL6"
+	apiKey: "AIzaSyDpvhbXGWQOSVblJfROY8tDESr5PH1-9ko",
+	authDomain: "darkweb-i.firebaseapp.com",
+	projectId: "darkweb-i",
+	storageBucket: "darkweb-i.firebasestorage.app",
+	messagingSenderId: "594047672437",
+	appId: "1:594047672437:web:2b8c097e282bdc93df183c",
+	measurementId: "G-GM3GTGE7D3"
 }; firebase.initializeApp(firebaseConfig);
 
-// if(!window.location.href.includes('rkweb')){ 
-// 	if(!window.location.href.includes('5501')) {
-// 		window.location.assign('index')
-// 	}
-// }
+if(!window.location.href.includes('rkweb')){ 
+	if(!window.location.href.includes('5501')) {
+		window.location.assign('index')
+	}
+}
 
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
@@ -219,14 +219,14 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Darkweb Logs", email: "email@darkweb.sbs", 
-				email_1: "admin@darkweb.sbs", website: "Bank Logins",
+				name: "Darkweb INK", email: "email@darkweb.ink", 
+				email_1: "admin@darkweb.ink", website: "Bank Logins",
 			},
 			contact: {
 				label: "Invoice issued for: ", 
 				name: theName,
 				address: theAddress, 
-				email: "Darkweb Logs",
+				email: "Darkweb INK",
 			},
 			invoice: {
 				label: bankLog, num: 1,
@@ -249,7 +249,7 @@ auth.onAuthStateChanged(user => {
 				invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
 			},
-			footer: { text: "Copyright © Darkweb Logs -:- 2024", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Darkweb.INK -:- 2024", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 
