@@ -144,7 +144,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 8000);
+						setTimeout(() => { generatePDF(); }, 10000);
 					}
 				});
 			} else {
