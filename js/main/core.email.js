@@ -98,7 +98,7 @@ function emailShow() {
 
     var userThi = userTh.split('?')[0];
     if(window.location.href.includes('https://')) {
-        var userThis = userThi.replace('https://darkweb.ink/email#', '');
+        var userThis = userThi.replace('https://darkwebink.netlify.app/email#', '');
     } else {
         var userThis = userThi.replace('http://127.0.0.1:5501/public/email.html#', '');
     }
