@@ -8,13 +8,10 @@ var firebaseConfig = {
 	measurementId: "G-GM3GTGE7D3"
 }; firebase.initializeApp(firebaseConfig);
 
-
-
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-sh')) {
+if(!localStorage.getItem('banklogs')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-sh', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
