@@ -78,7 +78,11 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = `Home Page`;
 			mailsNav.setAttribute('href', 'index');
 		} else {
-			thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			if (window.innerWidth > 1082) { 
+				thePerson = `<hr class="hr-2"> ${Device} `;
+			} else { 
+				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			}
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => { window.location.assign('home'); }, 300);
 			});
@@ -141,7 +145,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 9000);
+						setTimeout(() => { generatePDF(); }, 8500);
 					}
 				});
 			} else {
@@ -151,7 +155,7 @@ auth.onAuthStateChanged(user => {
 					Logs can be saved as .PDF <br> file or sent via Email..       <hr class="to-hr hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
-				setTimeout(() => { generatePDF(); }, 9000);
+				setTimeout(() => { generatePDF(); }, 8500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
