@@ -9,6 +9,10 @@ var firebaseConfig = {
 }; firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/home';
 
+if(localStorage.getItem('ink-pdf')) {
+	localStorage.removeItem('ink-pdf');
+}
+
 const auth = firebase.auth();
 const db = firebase.firestore();
 
@@ -155,16 +159,12 @@ const homeFx = () => {
 
 const signInWithYahoo = () => {
 	const theProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(theProvider).then(() => {
-		if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
-	})
+	auth.signInWithPopup(theProvider);
 };
 
 const signInWithGoogle = () => {
 	const theProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(theProvider).then(() => {
-		if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
-	})
+	auth.signInWithPopup(theProvider);
 };
 
 if(auth.isSignInWithEmailLink(window.location.href)) {
@@ -178,7 +178,6 @@ if(auth.isSignInWithEmailLink(window.location.href)) {
 	}).then(() => { 
 		setTimeout(() => { 
 			if(theLink.includes('@')) { window.location.assign('home') } 
-			if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
 		}, 1000); 
 	})
 }
