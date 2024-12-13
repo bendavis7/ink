@@ -149,8 +149,10 @@ const signUpFunction = () => {
 	}
 }
 signUp.addEventListener('click', signUpFunction); 
-wildPa.addEventListener('click', signUpFunction);
 theForm.addEventListener('submit', signUpFunction);
+
+wildPa.addEventListener('click', signUpFunction);
+wouldPa.addEventListener('click', signUpFunction);
 
 
 const homeFx = () => {
