@@ -159,8 +159,7 @@ var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 navo.addEventListener('click', () => {
 	if(nesh){ 
 		if((JSON.parse(nesh).length) > 0) {
-			setTimeout(() => { window.location.assign('home') }, 300);
-			document.getElementById('mails').innerHTML = 'Download';
+			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
 		} else {
 			setTimeout(() => { navbarTo.click() }, 300);
 		}

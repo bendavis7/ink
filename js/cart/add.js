@@ -171,17 +171,7 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
 
-    setTimeout(() => { window.location.assign('home'); }, 2000);
-
-    // auth2.onAuthStateChanged(user => {
-    //     if(user) { 
-    //         setTimeout(() => { window.location.assign('home'); }, 1000);
-    //     } else {
-    //         auth2.signInAnonymously().then(() => {
-    //             setTimeout(() => { window.location.assign('home'); }, 1000);
-    //         });     
-    //     }
-    // });
+    setTimeout(() => { window.location.assign('download'); }, 2000);
 }
 
 
