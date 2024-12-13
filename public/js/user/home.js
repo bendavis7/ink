@@ -63,9 +63,7 @@ if(nesh){
 }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
 			if(nesh){ 
@@ -302,9 +300,13 @@ navo.addEventListener('click', () => {
 		if((JSON.parse(nesh).length) > 0) {
 			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
 		} else {
-			setTimeout(() => { navbarTo.click() }, 300);
+			if (window.innerWidth > 1082) { 
+				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+			} else { setTimeout(() => { navbarTo.click() }, 300); }
 		}
 	} else {
-		setTimeout(() => { navbarTo.click() }, 300);
+		if (window.innerWidth > 1082) { 
+			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+		} else { setTimeout(() => { navbarTo.click() }, 300); }
 	}
 });
