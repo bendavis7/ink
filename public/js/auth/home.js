@@ -59,7 +59,9 @@ if(nesh){
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
 			if(nesh){ 
@@ -76,7 +78,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
+				if(nesh) { if((JSON.parse(nesh).length) > 0) {
+					return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
+				}}
 			} else { 
 				return db.collection('users').doc(theGuy).update({ wishID: itemz }) 
 			}
