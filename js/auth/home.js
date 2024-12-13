@@ -151,12 +151,16 @@ const homeFx = () => {
 
 const signInWithYahoo = () => {
 	const theProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(theProvider);
+	auth.signInWithPopup(theProvider).then(() => {
+		if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
+	})
 };
 
 const signInWithGoogle = () => {
 	const theProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(theProvider);
+	auth.signInWithPopup(theProvider).then(() => {
+		if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
+	})
 };
 
 if(auth.isSignInWithEmailLink(window.location.href)) {
@@ -170,7 +174,8 @@ if(auth.isSignInWithEmailLink(window.location.href)) {
 	}).then(() => { 
 		setTimeout(() => { 
 			if(theLink.includes('@')) { window.location.assign('home') } 
-		}, 300); 
+			if(localStorage.getItem('ink-pdf')) {localStorage.removeItem('ink-pdf');}
+		}, 1000); 
 	})
 }
 
