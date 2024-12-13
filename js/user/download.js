@@ -250,27 +250,20 @@ auth.onAuthStateChanged(user => {
 				invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
 			},
-			footer: { text: "Copyright © Darkweb.INK -:- 2024", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Darkweb INK -:- 2024", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 
+
 	navo.addEventListener('click', () => {
-		if(nesh){ 
-			if((JSON.parse(nesh).length) > 0) {
-				if(user.email) {
-					setTimeout(() => { window.location.assign('index') }, 300);
-				} else {
-					setTimeout(() => { window.location.assign('home') }, 300);
-				}
-			} else {
-				if (window.innerWidth > 1082) { 
-					setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-				} else { setTimeout(() => { navbarTo.click() }, 300); }
-			}
+		if(user.email) {
+			setTimeout(() => { 
+				window.location.assign('index');
+			}, 300);
 		} else {
-			if (window.innerWidth > 1082) { 
-				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-			} else { setTimeout(() => { navbarTo.click() }, 300); }
+			setTimeout(() => { 
+				window.location.assign('home');
+			}, 300);
 		}
 	});
 });
