@@ -44,11 +44,9 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if(nesh){ 
-	if((JSON.parse(nesh).length) > 0) {
-    	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
-	}
-}
+if(nesh) { if((JSON.parse(nesh).length) > 0) {
+	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
+}}
 
 if(platform.manufacturer !== null) { 
 	var Device = `${platform.manufacturer} ${platform.product}`
@@ -80,7 +78,11 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = `Home Page`;
 			mailsNav.setAttribute('href', 'index');
 		} else {
-			thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			if (window.innerWidth > 1082) { 
+				thePerson = `<hr class="hr-2"> ${Device} `;
+			} else { 
+				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			}
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => { window.location.assign('home'); }, 300);
 			});
@@ -137,13 +139,13 @@ auth.onAuthStateChanged(user => {
 							Verify your email inbox,  <br> Check the spam - folder.  <hr class="to-hr hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} else { 
-						var shortCutFunction = 'success';
+						var shortCutFunction = 'success';  
 						var msg = `
 							${toastbtci} BTC not detected, <br> <hr class="hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 10000);
+						setTimeout(() => { generatePDF(); }, 8500);
 					}
 				});
 			} else {
@@ -153,7 +155,7 @@ auth.onAuthStateChanged(user => {
 					Logs can be saved as .PDF <br> file or sent via Email..       <hr class="to-hr hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
-				setTimeout(() => { generatePDF(); }, 10000);
+				setTimeout(() => { generatePDF(); }, 8500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -252,7 +254,6 @@ auth.onAuthStateChanged(user => {
 		};
 	}
 
-
 	navo.addEventListener('click', () => {
 		if(nesh){ 
 			if((JSON.parse(nesh).length) > 0) {
@@ -262,10 +263,14 @@ auth.onAuthStateChanged(user => {
 					setTimeout(() => { window.location.assign('home') }, 300);
 				}
 			} else {
-				setTimeout(() => { navbarTo.click() }, 300);
+				if (window.innerWidth > 1082) { 
+					setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+				} else { setTimeout(() => { navbarTo.click() }, 300); }
 			}
 		} else {
-			setTimeout(() => { navbarTo.click() }, 300);
+			if (window.innerWidth > 1082) { 
+				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+			} else { setTimeout(() => { navbarTo.click() }, 300); }
 		}
 	});
 });

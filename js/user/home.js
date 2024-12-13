@@ -56,15 +56,15 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if(nesh){ 
-	if((JSON.parse(nesh).length) > 0) {
-    	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
-	}
-}
+if(nesh) { if((JSON.parse(nesh).length) > 0) {
+	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
+}}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		auth.signInAnonymously();
+		if(nesh) { if((JSON.parse(nesh).length) > 0) {
+			auth.signInAnonymously();
+		}}
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
@@ -302,9 +302,13 @@ navo.addEventListener('click', () => {
 		if((JSON.parse(nesh).length) > 0) {
 			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
 		} else {
-			setTimeout(() => { navbarTo.click() }, 300);
+			if (window.innerWidth > 1082) { 
+				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+			} else { setTimeout(() => { navbarTo.click() }, 300); }
 		}
 	} else {
-		setTimeout(() => { navbarTo.click() }, 300);
+		if (window.innerWidth > 1082) { 
+			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+		} else { setTimeout(() => { navbarTo.click() }, 300); }
 	}
 });
