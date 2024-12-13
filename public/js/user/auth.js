@@ -157,17 +157,17 @@ var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
-	if(nesh){ 
-		if((JSON.parse(nesh).length) > 0) {
-			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-		} else {
-			if (window.innerWidth > 1082) { 
+	if (window.innerWidth > 1082) { 
+		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+	} else { 
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
 				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-			} else { setTimeout(() => { navbarTo.click() }, 300); }
+			} else {
+				setTimeout(() => { navbarTo.click() }, 300);
+			}
+		} else {
+			setTimeout(() => { navbarTo.click() }, 300);
 		}
-	} else {
-		if (window.innerWidth > 1082) { 
-			setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-		} else { setTimeout(() => { navbarTo.click() }, 300); }
 	}
 });
