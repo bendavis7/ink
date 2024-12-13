@@ -63,7 +63,11 @@ if(nesh){
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		if(nesh) { if((JSON.parse(nesh).length) > 0) {
+			auth.signInAnonymously();
+		}}
+	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
 			if(nesh){ 
