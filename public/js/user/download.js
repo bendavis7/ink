@@ -54,7 +54,6 @@ if(platform.manufacturer !== null) {
 	var Device = `${platform.manufacturer} ${platform.product}`
 } else { 
 	var Device =`${platform.os}`;
-	if(Device.includes('Windows')){ Device = 'Windows ID' } 
 }
 
 auth.onAuthStateChanged(user => {

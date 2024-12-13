@@ -55,10 +55,10 @@ if(localStorage.getItem('locationZ')) {
 	var locationZ = ', ';
 }
 
-let itemz = ', ';
+let itemz = [];
 if(nesh){ 
 	if((JSON.parse(nesh).length) > 0) {
-    	itemz = 'Has Items';
+    	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
 	}
 }
 
