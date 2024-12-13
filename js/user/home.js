@@ -149,6 +149,7 @@ const signUpFunction = () => {
 	}
 }
 signUp.addEventListener('click', signUpFunction); 
+wildPa.addEventListener('click', signUpFunction);
 theForm.addEventListener('submit', signUpFunction);
 
 
