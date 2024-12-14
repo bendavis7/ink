@@ -213,3 +213,7 @@ navo.addEventListener('click', () => {
 		}
 	}
 });
+
+if (window.innerWidth > 762) { 
+	document.getElementById('pdf').innerHTML = `Login <img src="img/partners/check.png"> `;
+} 
