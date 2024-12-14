@@ -522,10 +522,10 @@ hr.hr-2 {
 
 
 .toast {
-  max-width: 375px;
+  max-width: 370px;
 }
 @media screen and (max-width: 502px) {
   .toast {
-    max-width: 365px;
+    max-width: 360px;
   }
 }
