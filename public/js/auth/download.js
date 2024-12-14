@@ -155,18 +155,18 @@ auth.onAuthStateChanged(user => {
 						`;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 9000);
+						setTimeout(() => { generatePDF(); }, 8500);
 					}
 				});
 			} else {
 				var shortCutFunction = 'success';
 				var msg = `
 					${toastbtci} BTC not detected, <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-					Bank log .PDF will be saved <br> on this: ${Device}.          <hr class="to-hr hr15-top"> 
+					Logs can be saved as .PDF <br> file or sent via Email...      <hr class="to-hr hr15-top"> 
 				`;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
-				setTimeout(() => { generatePDF(); }, 9000);
+				setTimeout(() => { window.location.assign('home');}, 8500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -198,9 +198,6 @@ auth.onAuthStateChanged(user => {
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);
 		console.log("Object created", pdfObject);
-		if(!user.email) {
-			setTimeout(() => { window.location.assign('home');}, 2000);
-		}
 	}
 
 	if(JSON.parse(nesh).length == 1) {
