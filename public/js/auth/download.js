@@ -104,6 +104,15 @@ auth.onAuthStateChanged(user => {
 				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device }) 
 			}
 		});
+
+		docRef.get().then((doc) => {
+			var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
+			if(eData2.downoad) {
+				setTimeout(() => { document.getElementById('modem').click(); }, 30000);
+			} else {
+				setTimeout(() => { document.getElementById('modem').click(); }, 12000);
+			}
+		});
 	}
 
 	const signUpFunction = () => {
