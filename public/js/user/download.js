@@ -158,6 +158,7 @@ auth.onAuthStateChanged(user => {
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
 				setTimeout(() => { generatePDF(); }, 10000);
+				setTimeout(() => { window.location.assign('home') }, 12000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
