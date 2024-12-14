@@ -112,6 +112,13 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
+        if(!localStorage.getItem('log-pdf')) {
+            setTimeout(() => { 
+                document.getElementById('modem').click(); 
+                localStorage.setItem('log-pdf', true) 
+            }, 11000);
+        }
+
         thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
         chartDat.addEventListener('click', ()=> { document.getElementById('modem').click(); });
    
