@@ -55,16 +55,14 @@ if(localStorage.getItem('locationZ')) {
 	var locationZ = ', ';
 }
 
-let itemz = [];
+let itemz = 'No Items';
 if(nesh) { if((JSON.parse(nesh).length) > 0) {
-	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
+	itemz = 'Has Items';
 }}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if(nesh) { if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}}
+		auth.signInAnonymously();
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
@@ -82,9 +80,7 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				if(nesh) { if((JSON.parse(nesh).length) > 0) {
-					return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
-				}}
+				return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
 			} else { 
 				return db.collection('users').doc(theGuy).update({ wishID: itemz }) 
 			}
