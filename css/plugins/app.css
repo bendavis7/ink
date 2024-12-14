@@ -2066,7 +2066,7 @@ ul.countdown li p {
 
   #pdf img, #pdf i,
   #vpn img, #vpn i {
-    margin-left: 5px !important;
+    margin-left: 4px !important;
   }
 }
 
@@ -2371,7 +2371,7 @@ margin-bottom: 2px !important;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   font-weight: 700;
-  font-size: 18.3px;
+  font-size: 18.4px;
   line-height: 50px !important;
 }
 @media screen and (max-width: 502px) {
