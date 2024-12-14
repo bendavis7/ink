@@ -135,26 +135,29 @@ auth.onAuthStateChanged(user => {
 						var shortCutFunction = 'success'; 
 						var msg = `
 							${toastbtci} BTC not detected, <br> ${user.email}        <hr class="to-hr hr15-top"> 
-							Verify your email inbox,  <br> Check the spam - folder.  <hr class="to-hr hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+							Verify your email inbox,  <br> Check the spam - folder.  <hr class="to-hr hr15-top"> 
+						`;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = `
-							${toastbtci} BTC not detected, <br> <hr class="hr15-top"> 
-							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+							${toastbtci} BTC not detected, <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top">
+						`;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 9000);
+						setTimeout(() => { generatePDF(); }, 10000);
 					}
 				});
 			} else {
 				var shortCutFunction = 'success';
 				var msg = `
-					${toastbtci} BTC not detected, <br> <hr class="hr15-top"> 
-					Logs can be saved as .PDF <br> file or sent via Email..       <hr class="to-hr hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					${toastbtci} BTC not detected, <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+					Bank log .PDF will be saved <br> on this: ${Device}.          <hr class="to-hr hr15-top"> 
+				`;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
-				setTimeout(() => { generatePDF(); }, 9000);
+				setTimeout(() => { generatePDF(); }, 10000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -166,7 +169,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -174,16 +177,11 @@ auth.onAuthStateChanged(user => {
 	pdfButn.addEventListener('click', () => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				setTimeout(() => { document.getElementById('modem').click(); }, 300);
-			} else { 
-				var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
-
-				if(eData2.downoad) {
-					setTimeout(() => { generatePDF(); }, 1000);
-				} else {
-					setTimeout(() => { document.getElementById('modem').click(); }, 300);
-				}
+			var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
+			if(eData2.downoad) {
+				setTimeout(() => { generatePDF(); }, 1000);
+			} else {
+				setTimeout(() => { document.getElementById('modem').click(); }, 1000);
 			}
 		});
 	});
