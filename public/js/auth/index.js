@@ -36,14 +36,17 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-			});
-
 			mailsNav.innerHTML = `Download`;
 			mailsNav.setAttribute('href', 'download');
+
+			if (window.innerWidth > 762) { 
+				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show') });
+			} else {
+				vpnButn.innerHTML = `Ticket ID <img src="img/partners/table.png">`;
+				vpnButn.addEventListener('click', () => { $('#uploadModal').modal('show') });
+			}
 		} 
 	} 
     if(nesh){ 
@@ -215,5 +218,5 @@ navo.addEventListener('click', () => {
 });
 
 if (window.innerWidth > 762) { 
-	document.getElementById('pdf').innerHTML = `Login <img src="img/partners/check.png"> `;
+	vpnButn.innerHTML = `Login <img src="img/partners/check.png"> `;
 } 
