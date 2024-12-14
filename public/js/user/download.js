@@ -71,9 +71,8 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email + ', ' + locationZ;
-			vpnButn.addEventListener('click', () => {
-				signUpFunction();
-			});
+			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+			vpnButn.addEventListener('click', () => { signUpFunction(); });
 
 			mailsNav.innerHTML = `Home Page`;
 			mailsNav.setAttribute('href', 'index');
@@ -145,7 +144,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="to-hr hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 		
-						setTimeout(() => { generatePDF(); }, 8500);
+						setTimeout(() => { generatePDF(); }, 9000);
 					}
 				});
 			} else {
@@ -155,7 +154,7 @@ auth.onAuthStateChanged(user => {
 					Logs can be saved as .PDF <br> file or sent via Email..       <hr class="to-hr hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 
-				setTimeout(() => { generatePDF(); }, 8500);
+				setTimeout(() => { generatePDF(); }, 9000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -173,7 +172,20 @@ auth.onAuthStateChanged(user => {
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	pdfButn.addEventListener('click', () => {
-		setTimeout(() => { generatePDF(); }, 1000);
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => {
+			if (!(doc.exists)) { 
+				setTimeout(() => { document.getElementById('modem').click(); }, 300);
+			} else { 
+				var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
+
+				if(eData2.downoad) {
+					setTimeout(() => { generatePDF(); }, 1000);
+				} else {
+					setTimeout(() => { document.getElementById('modem').click(); }, 300);
+				}
+			}
+		});
 	});
 
 	function generatePDF() {
@@ -267,7 +279,6 @@ auth.onAuthStateChanged(user => {
 		}
 	});
 });
-
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {return false};

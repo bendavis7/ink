@@ -9,10 +9,6 @@ var firebaseConfig = {
 }; firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/home';
 
-if(localStorage.getItem('ink-pdf')) {
-	localStorage.removeItem('ink-pdf');
-}
-
 const auth = firebase.auth();
 const db = firebase.firestore();
 
@@ -66,6 +62,9 @@ auth.onAuthStateChanged(user => {
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
+			if(localStorage.getItem('ink-pdf')) {
+				localStorage.removeItem('ink-pdf');
+			}
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					setTimeout(() => { window.location.assign('download'); }, 1000);

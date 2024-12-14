@@ -69,7 +69,7 @@
   
       let coBoa = "rgba(3, 169, 245, 0.85)";
       let coChime = "rgba(0, 115, 173, 0.85)";
-      let coChase = "rgba(71, 88, 143, 0.85)";
+      let coChase = "rgba(1, 188, 103, 0.85)";
       let coCiti = "rgba(250, 183, 2, 0.85)";
       let coHunt = "rgba(208, 173, 85, 0.85)";
       let coNavy = "rgba(22, 160, 134, 0.85)";
