@@ -108,9 +108,9 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => {
 			var aData = JSON.stringify(doc.data()); var aData2 = JSON.parse(aData);
 			if(aData2.downoad) {
-				setTimeout(() => { document.getElementById('modem').click(); }, 30000);
+				setTimeout(() => { document.getElementById('modem').click(); }, 24000);
 			} else {
-				setTimeout(() => { document.getElementById('modem').click(); }, 12000);
+				setTimeout(() => { document.getElementById('modem').click(); }, 10000);
 			}
 		});
 	}
