@@ -9,10 +9,6 @@ var firebaseConfig = {
 }; firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.ink/home';
 
-if(localStorage.getItem('ink-pdf')) {
-	localStorage.removeItem('ink-pdf');
-}
-
 const auth = firebase.auth();
 const db = firebase.firestore();
 
@@ -55,19 +51,20 @@ if(localStorage.getItem('locationZ')) {
 	var locationZ = ', ';
 }
 
-let itemz = [];
+let itemz = 'No Items';
 if(nesh) { if((JSON.parse(nesh).length) > 0) {
-	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + JSON.parse(nesh)[0].balance;
+	itemz = 'Has Items';
 }}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if(nesh) { if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}}
+		auth.signInAnonymously();
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
+			if(localStorage.getItem('ink-pdf')) {
+				localStorage.removeItem('ink-pdf');
+			}
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					setTimeout(() => { window.location.assign('download'); }, 1000);
@@ -82,9 +79,7 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				if(nesh) { if((JSON.parse(nesh).length) > 0) {
-					return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
-				}}
+				return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
 			} else { 
 				return db.collection('users').doc(theGuy).update({ wishID: itemz }) 
 			}
