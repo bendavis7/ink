@@ -116,7 +116,7 @@ if(localStorage.getItem('banklogs')){
             setTimeout(() => { 
                 document.getElementById('modem').click(); 
                 localStorage.setItem('log-pdf', true) 
-            }, 12000);
+            }, 11000);
         }
 
         thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });

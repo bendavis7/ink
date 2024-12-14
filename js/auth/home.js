@@ -52,21 +52,22 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = 'No Items';
-if(nesh) { if((JSON.parse(nesh).length) > 0) {
-	itemz = 'Has Items';
-}}
+if(nesh) { 
+	if((JSON.parse(nesh).length) > 0) {
+		itemz = 'Has Items';
+	}
+}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if(nesh) { if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}}
+		if(nesh) { 
+			if((JSON.parse(nesh).length) > 0) {
+				auth.signInAnonymously();
+			}
+		}
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
-			if(localStorage.getItem('log-pdf')) {
-				localStorage.removeItem('log-pdf');
-			}
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					setTimeout(() => { window.location.assign('download'); }, 1000);
