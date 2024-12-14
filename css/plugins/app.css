@@ -2372,7 +2372,7 @@ margin-bottom: 2px !important;
   word-wrap: break-word;
   font-weight: 700;
   font-size: 18.5px;
-  line-height: 47px !important;
+  line-height: 50px !important;
 }
 @media screen and (max-width: 502px) {
   .toast-message {
