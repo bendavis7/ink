@@ -303,8 +303,12 @@ var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
-		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+		$('#profileModal').modal('show');
 	} else { 
-		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				$('#profileModal').modal('show');
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
 	}
 });
