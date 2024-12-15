@@ -2055,7 +2055,7 @@ ul.countdown li p {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     font-size: 30px !important;
-    letter-spacing: 1.8px !important;
+    letter-spacing: 1.5px !important;
     padding: 15px !important;
     margin: 30px auto 45px !important;
   }
@@ -2066,7 +2066,7 @@ ul.countdown li p {
 
   #pdf img, #pdf i,
   #vpn img, #vpn i {
-    margin-left: 4px !important;
+    margin-left: 5px !important;
   }
 }
 
@@ -2074,7 +2074,7 @@ ul.countdown li p {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     font-size: 29px !important;
-    letter-spacing: 1.8px !important;
+    letter-spacing: 1.45px !important;
     padding: 14.5px !important;
     margin: 30px auto 45px !important;
   }
@@ -2085,7 +2085,7 @@ ul.countdown li p {
 
   #pdf img, #pdf i,
   #vpn img, #vpn i {
-    margin-left: 3px !important;
+    margin-left: 4.5px !important;
   }
 }
 
