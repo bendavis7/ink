@@ -2054,9 +2054,9 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 30px !important;
+    font-size: 29px !important;
     letter-spacing: 1.7px !important;
-    padding: 15px !important;
+    padding: 14.5px !important;
     margin: 30px auto 45px !important;
   }
   .butn#modem {
@@ -2070,12 +2070,12 @@ ul.countdown li p {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 407px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 29px !important;
-    letter-spacing: 1.65px !important;
-    padding: 14.5px !important;
+    font-size: 28px !important;
+    letter-spacing: 1.6px !important;
+    padding: 14px !important;
     margin: 30px auto 45px !important;
   }
   .butn#modem {
@@ -2325,7 +2325,7 @@ margin-bottom: 2px !important;
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900");
 .toast {
-  max-width: 365px;
+  max-width: 360px;
   overflow: hidden;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.85);
@@ -2341,12 +2341,14 @@ margin-bottom: 2px !important;
 }
 @media screen and (max-width: 502px) {
   .toast {
-    max-width: 360px;
+    max-width: 357px;
     font-size: 17px;
     margin-top: 15px !important;
     margin-right: 15px !important;
   }
 }
+
+
 .toast hr {
   border-width: 2px !important;
 }

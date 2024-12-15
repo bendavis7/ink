@@ -134,7 +134,7 @@ auth.onAuthStateChanged(user => {
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; 
 						var msg = `
-							${toastbtci} BTC not detected, <br> ${user.email}        <hr class="to-hr hr15-top"> 
+							${toastbtci} BTC not detected <br> ${user.email}        <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.  <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					
@@ -142,7 +142,7 @@ auth.onAuthStateChanged(user => {
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = `
-							${toastbtci} BTC not detected, <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 						
@@ -152,11 +152,11 @@ auth.onAuthStateChanged(user => {
 			} else {
 				var shortCutFunction = 'success';
 				var msg = `
-					${toastbtci} BTC not detected, <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-					Bank logs can be sent as a  <br> .PDF file or via Email ..      <hr class="hr15-top"> `;
+					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+					Bank logs can be sent as   <br> .PDF file or via EMAIL.      <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				
-				setTimeout(() => { window.location.assign('home');}, 8000);
+				setTimeout(() => { window.location.assign('home');}, 7500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -168,7 +168,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);

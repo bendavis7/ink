@@ -64,7 +64,7 @@ auth.onAuthStateChanged(user => {
 
 if (window.innerWidth > 762) { 
 	pdfButn.innerHTML = `Login- <img src="img/partners/check.png"> `;
-	vpnButn.innerHTML = `Tickets <img src="img/partners/table.png"> `;
+	vpnButn.innerHTML = `Ticket, <img src="img/partners/table.png"> `;
 } 
 
 document.getElementById('photo2').addEventListener('change', (event) => {
