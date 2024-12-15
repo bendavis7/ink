@@ -22,7 +22,7 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var vpnButn = document.getElementById('vpn');
+var pdfButn = document.getElementById('pdf');
 const mailsNav = document.getElementById('mails');
 
 auth.onAuthStateChanged(user => {
@@ -37,17 +37,17 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
+			pdfButn.removeAttribute('href');
+			pdfButn.addEventListener('click', () => { 
 				setTimeout(() => { $('#profileModal').modal('show') }, 300);
 			});
 			mailsNav.innerHTML = `Download`;
 			mailsNav.setAttribute('href', 'download');
 
 			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+				pdfButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			} else {
-				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
+				pdfButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
 			}
 		} 
 	} 
@@ -222,5 +222,5 @@ navo.addEventListener('click', () => {
 });
 
 if (window.innerWidth > 762) { 
-	vpnButn.innerHTML = `Login <img src="img/partners/check.png"> `;
+	pdfButn.innerHTML = `Login <img src="img/partners/check.png"> `;
 } 
