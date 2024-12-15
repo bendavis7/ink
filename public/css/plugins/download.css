@@ -513,19 +513,3 @@ hr.hr-2 {
 }
 
 
-
-
-
-
-
-
-
-
-.toast {
-  max-width: 375px;
-}
-@media screen and (max-width: 502px) {
-  .toast {
-    max-width: 365px;
-  }
-}
