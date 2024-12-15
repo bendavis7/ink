@@ -160,14 +160,6 @@ navo.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
 		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
 	} else { 
-		if(nesh){ 
-			if((JSON.parse(nesh).length) > 0) {
-				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-			} else {
-				setTimeout(() => { navbarTo.click() }, 300);
-			}
-		} else {
-			setTimeout(() => { navbarTo.click() }, 300);
-		}
+		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
 	}
 });
