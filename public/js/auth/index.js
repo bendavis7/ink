@@ -38,15 +38,16 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				setTimeout(() => { $('#profileModal').modal('show') }, 300);
+			});
 			mailsNav.innerHTML = `Download`;
 			mailsNav.setAttribute('href', 'download');
 
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
-				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show') });
 			} else {
-				vpnButn.innerHTML = `Ticket ID <img src="img/partners/table.png">`;
-				vpnButn.addEventListener('click', () => { $('#uploadModal').modal('show') });
+				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
 			}
 		} 
 	} 
@@ -62,34 +63,36 @@ auth.onAuthStateChanged(user => {
 
 
 document.getElementById('photo2').addEventListener('change', (event) => {
-	let progress = 20;  const progressBar_2 = document.getElementById("upload-pic");
+	let progress = 17;  const progressBar_2 = document.getElementById("upload-pic");
 	setTimeout(() => {
 		progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 	}, 1000);
 	setTimeout(() => {
-		let progress = 40; progressBar_2.style.width = progress + '%'; 
+		let progress = 35; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 	}, 2000);
 	setTimeout(() => {
-		let progress = 60; progressBar_2.style.width = progress + '%'; 
+		let progress = 51; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 	}, 3000);
 	setTimeout(() => {
-		let progress = 80; progressBar_2.style.width = progress + '%'; 
+		let progress = 68; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 	}, 4000);
+	setTimeout(() => {
+		let progress = 85; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 5000);
 	setTimeout(() => {
 		let progress = 100; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 		var shortCutFunction = 'success'; var msg = ` Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
 			Also send an email to <br> email@darkweb.ink .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-	}, 5000);
+	}, 6000);
 
-	setTimeout(() => { 
-		$('#uploadModal').modal('hide'); 
-	}, 7000);
+	setTimeout(() => { $('#uploadModal').modal('hide');}, 7000);
 });
 
 
