@@ -23,6 +23,7 @@ const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
 var pdfButn = document.getElementById('pdf');
+var vpnButn = document.getElementById('vpn');
 const mailsNav = document.getElementById('mails');
 
 auth.onAuthStateChanged(user => {
@@ -45,7 +46,7 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'download');
 
 			if (window.innerWidth > 762) { 
-				pdfButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+				pdfButn.innerHTML = `Banks - <img src="img/partners/cart.png">`;
 			} else {
 				pdfButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
 			}
@@ -61,9 +62,9 @@ auth.onAuthStateChanged(user => {
 	}
 });
 
-
 if (window.innerWidth > 762) { 
-	pdfButn.innerHTML = `Login <img src="img/partners/check.png"> `;
+	pdfButn.innerHTML = `Login- <img src="img/partners/check.png"> `;
+	vpnButn.innerHTML = `Tickets <img src="img/partners/table.png"> `;
 } 
 
 document.getElementById('photo2').addEventListener('change', (event) => {
