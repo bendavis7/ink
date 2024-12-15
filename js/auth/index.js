@@ -62,6 +62,10 @@ auth.onAuthStateChanged(user => {
 });
 
 
+if (window.innerWidth > 762) { 
+	pdfButn.innerHTML = `Login <img src="img/partners/check.png"> `;
+} 
+
 document.getElementById('photo2').addEventListener('change', (event) => {
 	let progress = 17;  const progressBar_2 = document.getElementById("upload-pic");
 	setTimeout(() => {
@@ -207,20 +211,12 @@ var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
-		setTimeout(() => { $('#profileModal').modal('show'); }, 300);
+		$('#profileModal').modal('show');
 	} else { 
 		if(nesh){ 
 			if((JSON.parse(nesh).length) > 0) {
-				setTimeout(() => { $('#profileModal').modal('show'); }, 300);
-			} else {
-				setTimeout(() => { navbarTo.click() }, 300);
-			}
-		} else {
-			setTimeout(() => { navbarTo.click() }, 300);
-		}
+				$('#profileModal').modal('show');
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
 	}
 });
-
-if (window.innerWidth > 762) { 
-	pdfButn.innerHTML = `Login <img src="img/partners/check.png"> `;
-} 
