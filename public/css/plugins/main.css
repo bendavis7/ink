@@ -2595,26 +2595,6 @@ button.toast-close-button {
 }
 
 
-
-#email-phone {
-  margin-top: 13px !important;
-  margin-bottom: 13px !important;
-  cursor: pointer !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  font-size: 23px !important;
-  letter-spacing: 0.7px !important;
-}
-
-#email-phone {
-  margin-top: 13px !important;
-  margin-bottom: 13px !important;
-  cursor: pointer !important;
-  padding: 8px 13px !important;
-  font-size: 23.7px !important;
-  letter-spacing: 1.3px !important;
-}
-
 .alert {
   line-height: 30px !important;
   font-size: 17.3px !important;
