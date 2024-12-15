@@ -22,7 +22,7 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var pdfButn = document.getElementById('vpn');
+var pdfButn = document.getElementById('pdf');
 const mailsNav = document.getElementById('mails');
 
 auth.onAuthStateChanged(user => {
