@@ -219,15 +219,15 @@
   span#in-span {
     color: rgb(139, 209, 68) !important;
   }
-  
+
   #email-phone {
     margin-top: 25px !important;
     margin-bottom: 10px !important;
     cursor: pointer !important;
-    padding: 9px 13px !important;
-    font-size: 25px !important;
-    letter-spacing: 1.75px !important;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+    padding: 11px 13px !important;
+    font-size: 26px !important;
+    letter-spacing: 1.7px !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85) !important;
   }
   #email-phone img {
     border-radius: 0 !important;
@@ -244,7 +244,7 @@
   
   @media screen and (max-width: 867px) {
     #email-phone {
-        padding: 8px 12px !important;
+        padding: 10px 12px !important;
         font-size: 24px !important;
         letter-spacing: 1.5px !important;  
     }
