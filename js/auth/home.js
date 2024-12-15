@@ -59,13 +59,7 @@ if(nesh) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		if(nesh) { 
-			if((JSON.parse(nesh).length) > 0) {
-				auth.signInAnonymously();
-			}
-		}
-	} else {
+	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
 			if(localStorage.getItem('log-pdf')) {

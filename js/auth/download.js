@@ -156,7 +156,7 @@ auth.onAuthStateChanged(user => {
 					Bank logs can be sent as a  <br> .PDF file or via Email ..      <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				
-				setTimeout(() => { window.location.assign('home');}, 9000);
+				setTimeout(() => { window.location.assign('home');}, 8000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
