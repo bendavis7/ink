@@ -62,9 +62,6 @@ auth.onAuthStateChanged(user => {
 	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
-			if(localStorage.getItem('ink-pdf')) {
-				localStorage.removeItem('ink-pdf');
-			}
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					setTimeout(() => { window.location.assign('download'); }, 1000);
