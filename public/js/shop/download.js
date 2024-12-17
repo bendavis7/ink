@@ -112,10 +112,10 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
-        if(!localStorage.getItem('log-pdf')) {
+        if(!localStorage.getItem('ink-pdf')) {
             setTimeout(() => { 
                 document.getElementById('modem').click(); 
-                localStorage.setItem('log-pdf', true) 
+                localStorage.setItem('ink-pdf', true) 
             }, 10000);
         }
 

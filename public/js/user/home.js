@@ -62,8 +62,8 @@ auth.onAuthStateChanged(user => {
 	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
-			if(localStorage.getItem('log-pdf')) {
-				localStorage.removeItem('log-pdf');
+			if(localStorage.getItem('ink-pdf')) {
+				localStorage.removeItem('ink-pdf');
 			}
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
