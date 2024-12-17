@@ -10,9 +10,9 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-ink')) {
+if(!localStorage.getItem('darkweb.ink')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-ink', true);
+	localStorage.setItem('darkweb.ink', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
@@ -22,8 +22,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var pdfButn = document.getElementById('pdf');
-var vpnButn = document.getElementById('vpn');
+var pdfButn = document.getElementById('vpn');
+var vpnButn = document.getElementById('pdf');
 const mailsNav = document.getElementById('mails');
 
 if (window.innerWidth > 762) { 
