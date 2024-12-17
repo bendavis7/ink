@@ -78,10 +78,10 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = `Home Page`;
 			mailsNav.setAttribute('href', 'index');
 		} else {
-			if (window.innerWidth > 1082) { 
-				thePerson = `<hr class="hr-2"> ${Device} `;
-			} else { 
+			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			} else { 
+				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => { window.location.assign('home'); }, 300);
