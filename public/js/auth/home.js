@@ -51,15 +51,22 @@ if(localStorage.getItem('locationZ')) {
 	var locationZ = ', ';
 }
 
-let itemz = 'No Items';
-if(nesh) { 
-	if((JSON.parse(nesh).length) > 0) {
-		itemz = 'Has Items';
-	}
+let itemz = [];
+if(nesh) { if((JSON.parse(nesh).length) > 0) {
+	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
+	(JSON.parse(nesh)[0].balance).replace('Balance', '');
+}}
+
+if(platform.manufacturer !== null) { 
+	var Device = `${platform.manufacturer} ${platform.product}`
+} else { 
+	var Device =`${platform.os}`;
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 		if(user.email) {
 			if(nesh){ 
@@ -76,9 +83,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ wishID: itemz }) 
+				if(nesh) { 
+					if((JSON.parse(nesh).length) > 0) {
+						return db.collection('users').doc(theGuy).set({ wishID: itemz, device: Device });
+					}
+				}
 			} else { 
-				return db.collection('users').doc(theGuy).update({ wishID: itemz }) 
+				return db.collection('users').doc(theGuy).update({ wishID: itemz, device: Device });
 			}
 		});
 	} 

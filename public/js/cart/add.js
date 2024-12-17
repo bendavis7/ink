@@ -5,7 +5,7 @@ let logz = [];
 var table1 = jQuery('#example1').DataTable();
 var showingToast = document.getElementById('showtoasts');
 
-const auth2 = firebase.auth();
+var auth2 = firebase.auth();
 
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -59,12 +59,19 @@ var joe = localStorage.getItem('banklogs')
 
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0){
-        setTimeout(() => { window.location.assign('download') }, 300);
+        auth2.onAuthStateChanged(user => {
+            if(user) { 
+                if(user.email) {
+                    window.location.assign('download');
+                } else { window.location.assign('home'); }
+            } else { window.location.assign('home'); }
+        });
     } else { 
-        var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add some logs to cart. <hr class="to-hr hr15-bot">`; 
+        var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
 }
+
 
 $('#exampleModal').on('show.bs.modal', function (event) {
     "use strict";
@@ -171,7 +178,7 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
     
-    setTimeout(() => { window.location.assign('download'); }, 2000);
+    setTimeout(() => { window.location.assign('home'); }, 2000);
 }
 
 
