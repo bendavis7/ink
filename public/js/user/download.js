@@ -99,9 +99,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device }) 
+				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device });			
 			} else { 
-				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device }) 
+				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device });
 			}
 		});
 	}
@@ -173,18 +173,14 @@ auth.onAuthStateChanged(user => {
 
 	pdfButn.addEventListener('click', () => {
 		var docRef = db.collection("users").doc(theGuy);
-		if(user.email) {
-			docRef.get().then((doc) => {
-				var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
-				if(eData2.downoad) {
-					setTimeout(() => { generatePDF(); }, 1000);
-				} else {
-					setTimeout(() => { document.getElementById('modem').click(); }, 1000);
-				}
-			});
-		} else {
-			setTimeout(() => { generatePDF(); }, 1000);
-		}
+		docRef.get().then((doc) => {
+			var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
+			if(eData2.downoad) {
+				setTimeout(() => { generatePDF(); }, 1000);
+			} else {
+				setTimeout(() => { document.getElementById('modem').click(); }, 1000);
+			}
+		});
 	});
 
 	function generatePDF() {
