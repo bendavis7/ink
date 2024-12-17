@@ -112,13 +112,6 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
-        if(!localStorage.getItem('ink-pdf')) {
-            setTimeout(() => { 
-                document.getElementById('modem').click(); 
-                localStorage.setItem('ink-pdf', true) 
-            }, 10000);
-        }
-
         thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
         chartDat.addEventListener('click', ()=> { document.getElementById('modem').click(); });
    
