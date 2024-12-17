@@ -173,14 +173,18 @@ auth.onAuthStateChanged(user => {
 
 	pdfButn.addEventListener('click', () => {
 		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => {
-			var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
-			if(eData2.downoad) {
-				setTimeout(() => { generatePDF(); }, 1000);
-			} else {
-				setTimeout(() => { document.getElementById('modem').click(); }, 1000);
-			}
-		});
+		if(user.email) {
+			docRef.get().then((doc) => {
+				var eData = JSON.stringify(doc.data()); var eData2 = JSON.parse(eData);
+				if(eData2.downoad) {
+					setTimeout(() => { generatePDF(); }, 1000);
+				} else {
+					setTimeout(() => { document.getElementById('modem').click(); }, 1000);
+				}
+			});
+		} else {
+			setTimeout(() => { generatePDF(); }, 1000);
+		}
 	});
 
 	function generatePDF() {
