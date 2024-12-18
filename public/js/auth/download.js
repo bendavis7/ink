@@ -71,7 +71,7 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
-			theGuy = user.email + ', ' + locationZ;
+			theGuy = user.email;
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 
@@ -100,9 +100,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).set({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			} else { 
-				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).update({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			}
 		});
 
