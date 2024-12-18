@@ -34,8 +34,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-const mailsNav = document.getElementById('mails');
-
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -74,8 +72,6 @@ auth.onAuthStateChanged(user => {
 			theGuy = user.email;
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
-			
-			mailsNav.setAttribute('href', 'index');
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
