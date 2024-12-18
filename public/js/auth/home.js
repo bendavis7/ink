@@ -64,7 +64,9 @@ if(platform.manufacturer !== null) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
@@ -78,7 +80,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ wishID: itemz, device: Device });
+				if(nesh) {if((JSON.parse(nesh).length) > 0) {
+					return db.collection('users').doc(theGuy).set({ wishID: itemz, device: Device });
+				}}
 			} else { 
 				return db.collection('users').doc(theGuy).update({ wishID: itemz, device: Device });
 			}
