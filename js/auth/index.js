@@ -46,7 +46,6 @@ auth.onAuthStateChanged(user => {
 			vpnButn.addEventListener('click', () => { 
 				setTimeout(() => { $('#profileModal').modal('show') }, 300);
 			});
-			mailsNav.innerHTML = `Download`;
 			mailsNav.setAttribute('href', 'download');
 
 			if (window.innerWidth > 762) { 
