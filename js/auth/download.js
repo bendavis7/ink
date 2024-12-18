@@ -71,17 +71,17 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
-			theGuy = user.email + ', ' + locationZ;
+			theGuy = user.email;
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 
 			mailsNav.innerHTML = `Home Page`;
 			mailsNav.setAttribute('href', 'index');
 		} else {
-			if (window.innerWidth > 1082) { 
-				thePerson = `<hr class="hr-2"> ${Device} `;
-			} else { 
+			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+			} else { 
+				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => { window.location.assign('home'); }, 300);
@@ -100,9 +100,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device });			
+				return db.collection('users').doc(theGuy).set({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			} else { 
-				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).update({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			}
 		});
 
@@ -146,25 +150,21 @@ auth.onAuthStateChanged(user => {
 						var msg = `
 							${toastbtci} BTC not detected <br> ${user.email}        <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.  <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = `
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					}
 				});
-
-				setTimeout(() => { generatePDF(); }, 10000);
 			} else {
 				var shortCutFunction = 'success';
 				var msg = `
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 					Bank logs can be sent as   <br> .PDF file or via EMAIL.      <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-				
-				setTimeout(() => { window.location.assign('home');}, 8500);
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -176,7 +176,9 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+
+			setTimeout(() => { generatePDF(); }, 10000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
