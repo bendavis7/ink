@@ -52,7 +52,7 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if(nesh) { if((JSON.parse(nesh).length) > 0) {
+if(nesh) {if((JSON.parse(nesh).length) > 0) {
 	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
 	(JSON.parse(nesh)[0].balance).replace('Balance', '');
 }}
@@ -64,20 +64,14 @@ if(platform.manufacturer !== null) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
-					setTimeout(() => { window.location.assign('download'); }, 1000);
-				} else {
-					setTimeout(() => { window.location.assign('chime'); }, 1000);
-				}
-			} else {
-				setTimeout(() => { window.location.assign('chime'); }, 1000);
-			}
-		}
+					window.location.assign('download');
+				} else { window.location.assign('chime'); }
+			} else { window.location.assign('chime'); }
+		} 
 
 		var theGuy = locationZ + ', ' + user.uid;
 
