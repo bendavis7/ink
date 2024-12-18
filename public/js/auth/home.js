@@ -127,7 +127,7 @@ wouldPa.addEventListener('click', signUpFunction);
 
 const homeFx = () => {
 	event.preventDefault(); 
-	setTimeout(() => { window.location.assign('download'); }, 300);
+	setTimeout(() => { window.location.assign('download'); }, 1000);
 }
 
 const signInWithYahoo = () => {
