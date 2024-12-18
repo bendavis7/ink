@@ -21,8 +21,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var pdfButn = document.getElementById('pdf');
-var vpnButn = document.getElementById('vpn');
+var pdfButn = document.getElementById('vpn');
+var vpnButn = document.getElementById('pdf');
 const mailsNav = document.getElementById('mails');
 
 if (window.innerWidth > 762) { 
