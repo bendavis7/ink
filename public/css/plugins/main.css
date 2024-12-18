@@ -1313,8 +1313,8 @@ td {
 }
 @media (min-width: 1092px) {
   .attr-nav > ul > li.dropdown ul.dropdown-menu {
-      left: -175%;
-      width: 265%;
+      left: -180%;
+      width: 270%;
   }
   .attr-nav {
       margin-right: 0 !important;
@@ -1331,7 +1331,7 @@ td {
       word-spacing: 4.2px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+      padding: 30px 15px !important;
   }
 }
 @media (max-width: 1092px) {
@@ -1343,9 +1343,8 @@ td {
       margin-right: 60px !important;
   }
   .thegold {
-      padding-top: 10px !important;
-      padding-bottom: 10px !important;
-      letter-spacing: 0.92px !important;
+    padding: 24px 12px !important;
+      letter-spacing: 1px !important;
   }
 }
 @media (max-width: 892px) {
@@ -1368,7 +1367,7 @@ td {
       letter-spacing: 1.5px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+      padding: 28px 14px !important;
   }
 }
 @media (max-width: 792px) {
@@ -1398,7 +1397,7 @@ td {
       word-spacing: 4.2px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+    padding: 26px 13px !important;
   }
 }
 @media (max-width: 390px) {
@@ -1417,7 +1416,7 @@ td {
       letter-spacing: 1px !important;
   }
   .thegold {
-      padding: 27px 9px !important;
+    padding: 25px 12.5px !important;
   }
 }
 
