@@ -34,8 +34,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-const mailsNav = document.getElementById('mails');
-
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -74,8 +72,6 @@ auth.onAuthStateChanged(user => {
 			theGuy = user.email;
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
-			
-			mailsNav.setAttribute('href', 'index');
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
@@ -149,13 +145,13 @@ auth.onAuthStateChanged(user => {
 						var msg = `
 							${toastbtci} BTC not detected <br> ${user.email}        <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.  <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = `
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					}
 				});
 			} else {
@@ -163,7 +159,7 @@ auth.onAuthStateChanged(user => {
 				var msg = `
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 					Bank logs can be sent as   <br> .PDF file or via EMAIL.      <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -175,7 +171,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
 			setTimeout(() => { generatePDF(); }, 10000);
 		});

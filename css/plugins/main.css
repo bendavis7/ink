@@ -1293,7 +1293,7 @@ td {
   box-shadow: 0 0 0 2px rgb(255 , 255, 255, 0.85) !important;
 }
 .thegold a.gold {
-  letter-spacing: 2.3px !important;
+  letter-spacing: 2.5px !important;
 }
 .gold {
   color: #121d33;
@@ -1313,8 +1313,8 @@ td {
 }
 @media (min-width: 1092px) {
   .attr-nav > ul > li.dropdown ul.dropdown-menu {
-      left: -175%;
-      width: 265%;
+      left: -180%;
+      width: 270%;
   }
   .attr-nav {
       margin-right: 0 !important;
@@ -1331,7 +1331,7 @@ td {
       word-spacing: 4.2px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+      padding: 30px 15px !important;
   }
 }
 @media (max-width: 1092px) {
@@ -1343,9 +1343,8 @@ td {
       margin-right: 60px !important;
   }
   .thegold {
-      padding-top: 10px !important;
-      padding-bottom: 10px !important;
-      letter-spacing: 0.92px !important;
+    padding: 24px 12px !important;
+      letter-spacing: 1px !important;
   }
 }
 @media (max-width: 892px) {
@@ -1368,7 +1367,7 @@ td {
       letter-spacing: 1.5px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+      padding: 28px 14px !important;
   }
 }
 @media (max-width: 792px) {
@@ -1398,7 +1397,7 @@ td {
       word-spacing: 4.2px !important;
   }
   .thegold {
-      padding: 30px 10px !important;
+    padding: 26px 13px !important;
   }
 }
 @media (max-width: 390px) {
@@ -1417,7 +1416,7 @@ td {
       letter-spacing: 1px !important;
   }
   .thegold {
-      padding: 27px 9px !important;
+    padding: 25px 12.5px !important;
   }
 }
 
@@ -2054,25 +2053,6 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 30px !important;
-    letter-spacing: 1.7px !important;
-    padding: 15px !important;
-    margin: 30px auto 45px !important;
-  }
-  .butn#modem {
-    font-size: 20px !important;
-    padding: 10px 10px !important;
-  }
-
-  #pdf img, #pdf i,
-  #vpn img, #vpn i {
-    margin-left: 5px !important;
-  }
-}
-
-@media screen and (max-width: 407px) {
-  .vpn-section .butn#pdf,
-  .vpn-section .butn#vpn {
     font-size: 28px !important;
     letter-spacing: 1.6px !important;
     padding: 14px !important;
@@ -2085,7 +2065,7 @@ ul.countdown li p {
 
   #pdf img, #pdf i,
   #vpn img, #vpn i {
-    margin-left: 4.5px !important;
+    margin-left: 6px !important;
   }
 }
 

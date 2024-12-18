@@ -45,7 +45,9 @@ document.getElementById('would').innerHTML = `
 `;
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
@@ -125,7 +127,7 @@ wouldPa.addEventListener('click', signUpFunction);
 
 const homeFx = () => {
 	event.preventDefault(); 
-	setTimeout(() => { window.location.assign('download'); }, 300);
+	setTimeout(() => { window.location.assign('download'); }, 1000);
 }
 
 const signInWithYahoo = () => {
