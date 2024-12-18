@@ -134,7 +134,7 @@ let wood10 = document.getElementById('wood10'); let wood010 = document.getElemen
 let btc = 46;
 
 if (document.getElementById('boa01')) {
-    (boa1.innerHTML = "$5,371"),
+    (boa1.innerHTML = "$5,367"),
     (boa2.innerHTML = "$5,910"),
     (boa3.innerHTML = "$6,856"),
     (boa4.innerHTML = "$7,520"),
