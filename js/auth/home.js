@@ -10,6 +10,7 @@ var firebaseConfig = {
 var theWebsite = 'https://www.darkweb.ink/home';
 
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
@@ -36,13 +37,31 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 
 emailShow();
 
-document.getElementById('would').innerHTML = `
+wouldPa.innerHTML = `
 	<div class="modal-body no-bord"> Chime Bank Logs </div> 
 	<div class="modal-body no-bord"> Chase Bank Logs </div> 
 	<div class="modal-body no-bord"> Wells Fargo Logs </div> 
 	<div class="modal-body no-bord"> Huntington Logs </div> 
 	<div class="modal-body no-bord"> Citi Bank Logs </div> 
 `;
+
+if(localStorage.getItem('locationZ')) {
+	var locationZ = localStorage.getItem('locationZ');
+} else { 
+	var locationZ = ', ';
+}
+
+let itemz = [];
+if(nesh) { if((JSON.parse(nesh).length) > 0) {
+	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
+	(JSON.parse(nesh)[0].balance).replace('Balance', '');
+}}
+
+if(platform.manufacturer !== null) { 
+	var Device = `${platform.manufacturer} ${platform.product}`
+} else { 
+	var Device =`${platform.os}`;
+}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
@@ -59,6 +78,17 @@ auth.onAuthStateChanged(user => {
 				setTimeout(() => { window.location.assign('chime'); }, 1000);
 			}
 		}
+
+		var theGuy = locationZ + ', ' + user.uid;
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => {
+			if (!(doc.exists)) { 
+				return db.collection('users').doc(theGuy).set({ wishID: itemz, device: Device });
+			} else { 
+				return db.collection('users').doc(theGuy).update({ wishID: itemz, device: Device });
+			}
+		});
 	} 
 });
 
