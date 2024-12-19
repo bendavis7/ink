@@ -42,10 +42,10 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if((JSON.parse(nesh).length) > 0) {
+if(nesh) { if((JSON.parse(nesh).length) > 0) {
 	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
 	(JSON.parse(nesh)[0].balance).replace('Balance', '');
-}
+}}
 
 if(platform.manufacturer !== null) { 
 	var Device = `${platform.manufacturer} ${platform.product}`
@@ -83,10 +83,12 @@ auth.onAuthStateChanged(user => {
 			});
 		}
 
-		if((JSON.parse(nesh).length) > 0) {
-			items = JSON.parse(nesh);
-			for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				items = JSON.parse(nesh);
+				for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
+				}
 			}
 		}
 

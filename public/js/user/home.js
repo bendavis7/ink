@@ -12,10 +12,6 @@ var theWebsite = 'https://www.darkweb.ink/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-if(!localStorage.getItem('banklogs')) {
-	localStorage.setItem('banklogs',[]);
-}
-
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
@@ -56,10 +52,10 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if((JSON.parse(nesh).length) > 0) {
+if(nesh) {if((JSON.parse(nesh).length) > 0) {
 	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
 	(JSON.parse(nesh)[0].balance).replace('Balance', '');
-}
+}}
 
 if(platform.manufacturer !== null) { 
 	var Device = `${platform.manufacturer} ${platform.product}`
@@ -69,16 +65,18 @@ if(platform.manufacturer !== null) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
+		if(nesh) {
+			if((JSON.parse(nesh).length) > 0) {
+				auth.signInAnonymously();
+			}
 		}
 	} else {
 		if(user.email) {
-			if((JSON.parse(nesh).length) > 0) {
-				window.location.assign('download');
-			} else { 
-				window.location.assign('chime'); 
-			}
+			if(nesh){ 
+				if((JSON.parse(nesh).length) > 0) {
+					window.location.assign('download');
+				} else { window.location.assign('chime'); }
+			} else { window.location.assign('chime'); }
 		} 
 
 		var theGuy = locationZ + ', ' + user.uid;
@@ -181,6 +179,8 @@ if(auth.isSignInWithEmailLink(window.location.href)) {
 		setTimeout(() => { if(theLink.includes('@')) { window.location.assign('home') } }, 1000); 
 	})
 }
+
+
 
 
 
@@ -299,10 +299,10 @@ navo.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
 		$('#profileModal').modal('show');
 	} else { 
-		if((JSON.parse(nesh).length) > 0) {
-			$('#profileModal').modal('show');
-		} else {  
-			navbarTo.click(); 
-		}
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				$('#profileModal').modal('show');
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
 	}
 });
