@@ -64,7 +64,11 @@ if(platform.manufacturer !== null) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		if(nesh) {if((JSON.parse(nesh).length) > 0) {
+			auth.signInAnonymously();
+		}}
+	} else {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
@@ -173,8 +177,6 @@ if(auth.isSignInWithEmailLink(window.location.href)) {
 		setTimeout(() => { if(theLink.includes('@')) { window.location.assign('home') } }, 1000); 
 	})
 }
-
-
 
 
 
