@@ -101,14 +101,14 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		// setTimeout(() => {
-		// 	docRef.get().then((doc) => {
-		// 		var eData = JSON.parse(JSON.stringify(doc.data()));
-		// 		if(!eData.download) {
-		// 			document.getElementById('modem').click();
-		// 		}
-		// 	});
-		// }, 10000);
+		setTimeout(() => {
+			docRef.get().then((doc) => {
+				var eData = JSON.parse(JSON.stringify(doc.data()));
+				if(!eData.download) {
+					document.getElementById('modem').click();
+				}
+			});
+		}, 10000);
 	}
 
 	const signUpFunction = () => {
@@ -159,7 +159,7 @@ auth.onAuthStateChanged(user => {
 					Bank logs can be sent as   <br> .PDF file or via EMAIL.      <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			
-				setTimeout(() => { generatePDF(); }, 8000);
+				setTimeout(() => { window.location.assign('home'); }, 8000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -171,17 +171,13 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	pdfButn.addEventListener('click', () => {
-		if(user.email) {
-			setTimeout(() => { generatePDF(); }, 8000);
-		} else {
-			window.location.assign('home');	
-		}
+		setTimeout(() => { generatePDF(); }, 2000);
 	});
 
 	function generatePDF() {
