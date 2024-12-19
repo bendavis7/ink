@@ -171,7 +171,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 8500);
+			setTimeout(() => { generatePDF(); }, 10000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
