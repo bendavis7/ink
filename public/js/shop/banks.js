@@ -134,7 +134,7 @@ let wood10 = document.getElementById('wood10'); let wood010 = document.getElemen
 let btc = 40;
 
 if (document.getElementById('boa01')) {
-    (boa1.innerHTML = "$2,145"),
+    (boa1.innerHTML = "$2,147"),
     (boa2.innerHTML = "$3,318"),
     (boa3.innerHTML = "$3,915"),
     (boa4.innerHTML = "$4,367"),
@@ -352,8 +352,8 @@ if (document.getElementById('boa01')) {
     (truist010.innerHTML=`Buy $${(truist10.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (truist011.innerHTML=`Buy $${(truist11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('wells01')) {
-    (wells1.innerHTML = "$2,207"),
-    (wells2.innerHTML = "$3,254"),
+    (wells1.innerHTML = "$2,197"),
+    (wells2.innerHTML = "$3,264"),
     (wells3.innerHTML = "$3,728"),
     (wells4.innerHTML = "$4,039"),
     (wells5.innerHTML = "$4,405"),
