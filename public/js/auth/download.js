@@ -71,6 +71,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 
@@ -78,9 +79,6 @@ auth.onAuthStateChanged(user => {
 			} else { 
 				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => { window.location.assign('home'); }, 300);
-			});
 		}
 
 		if(nesh){ 
