@@ -161,7 +161,7 @@ auth.onAuthStateChanged(user => {
 				var docRef = db.collection("users").doc(theGuy);
 				docRef.get().then((doc) => {
 					var eData = JSON.parse(JSON.stringify(doc.data()));
-					if(eData.download) {
+					if(eData.wishID == 'Has Items') {
 						var shortCutFunction = 'success';
 						var msg = `
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
