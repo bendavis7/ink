@@ -93,9 +93,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).set({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			} else { 
-				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).update({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			}
 		});
 
@@ -140,8 +144,6 @@ auth.onAuthStateChanged(user => {
 							${toastbtci} BTC not detected <br> ${user.email}        <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.  <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-					
-						
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = `
