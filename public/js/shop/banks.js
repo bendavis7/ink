@@ -134,7 +134,7 @@ let wood10 = document.getElementById('wood10'); let wood010 = document.getElemen
 let btc = 40;
 
 if (document.getElementById('boa01')) {
-    (boa1.innerHTML = "$3,407"),
+    (boa1.innerHTML = "$3,045"),
     (boa2.innerHTML = "$4,318"),
     (boa3.innerHTML = "$4,915"),
     (boa4.innerHTML = "$5,367"),
@@ -160,7 +160,7 @@ if (document.getElementById('boa01')) {
     (boa011.innerHTML=`Buy $${(boa11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (boa012.innerHTML=`Buy $${(boa12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chase01')) {
-    (chase1.innerHTML = "$3,495"),
+    (chase1.innerHTML = "$3,419"),
     (chase2.innerHTML = "$4,068"),
     (chase3.innerHTML = "$4,517"),
     (chase4.innerHTML = "$5,381"),
@@ -186,7 +186,7 @@ if (document.getElementById('boa01')) {
     (chase011.innerHTML=`Buy $${(chase11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (chase012.innerHTML=`Buy $${(chase12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chime01')) {
-    (chime1.innerHTML = "$3,548"),
+    (chime1.innerHTML = "$3,407"),
     (chime2.innerHTML = "$4,230"),
     (chime3.innerHTML = "$4,754"),
     (chime4.innerHTML = "$5,480"),
@@ -352,10 +352,10 @@ if (document.getElementById('boa01')) {
     (truist010.innerHTML=`Buy $${(truist10.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (truist011.innerHTML=`Buy $${(truist11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('wells01')) {
-    (wells1.innerHTML = "$3,701"),
-    (wells2.innerHTML = "$4,304"),
-    (wells3.innerHTML = "$4,759"),
-    (wells4.innerHTML = "$5,027"),
+    (wells1.innerHTML = "$3,201"),
+    (wells2.innerHTML = "$4,354"),
+    (wells3.innerHTML = "$4,728"),
+    (wells4.innerHTML = "$5,039"),
     (wells5.innerHTML = "$5,405"),
     (wells6.innerHTML = "$6,368"),
     (wells7.innerHTML = "$6,730"),
