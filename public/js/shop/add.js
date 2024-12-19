@@ -92,7 +92,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  40)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -119,7 +119,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  40)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -170,7 +170,7 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
     
-    setTimeout(() => { window.location.assign('home'); }, 2000);
+    setTimeout(() => { window.location.assign('download'); }, 2000);
 }
 
 
