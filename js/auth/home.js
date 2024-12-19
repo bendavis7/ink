@@ -287,25 +287,33 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 
-var navo = document.getElementsByClassName('navbar-header')[0];
-var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 var clientTo = document.getElementById('clients');
 
-clientTo.addEventListener('click', openThis);
-navo.addEventListener('click', openThis);
+var navo = document.getElementsByClassName('navbar-header')[0];
+var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
-function openThis() {
+navo.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
 		$('#profileModal').modal('show');
 	} else { 
 		if(nesh){ 
 			if((JSON.parse(nesh).length) > 0) {
 				$('#profileModal').modal('show');
-			} else {  
-				navbarTo.click(); clientTo.click();
-			}
-		} else {  
-			navbarTo.click(); clientTo.click();
-		}
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
 	}
-}
+});
+
+
+clientTo.addEventListener('click', () => {
+	if (window.innerWidth > 1082) { 
+		$('#profileModal').modal('show');
+	} else { 
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				$('#profileModal').modal('show');
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
+	}
+});
+
