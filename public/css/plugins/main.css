@@ -483,8 +483,11 @@ select {
   border-radius: 0;
   width: 45px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.97) !important;
   transition: all 0.7s ease 0s;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  background: rgba(255, 255, 255, 0.97) !important;
 }
 .owl-nav i,
 .owl-nav span {
@@ -3027,13 +3030,16 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 
 #services-carousel button.owl-prev,
 #services-carousel button.owl-next {
-  background: white !important;
   border-radius: 5px !important;
   margin-top: 0px !important;
   margin-bottom: 30px !important;
 
   width: 70px !important;
   height: 70px !important;
+}
+
+#services-carousel button.owl-prev {
+  background: white !important;
 }
 
 #services-carousel button.owl-prev {
