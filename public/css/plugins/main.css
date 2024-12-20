@@ -3053,14 +3053,14 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   margin-bottom: 0px !important;
 }
 #services-carousel i {
-  font-size: 35px !important;
+  font-size: 37px !important;
 }
 
 @media screen and (max-width: 570px) {
   #services-carousel button.owl-prev,
   #services-carousel button.owl-next {  
-    width: 60px !important;
-    height: 60px !important;
+    width: 65px !important;
+    height: 65px !important;
   }
 
   #services-carousel button.owl-prev {
