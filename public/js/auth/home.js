@@ -48,7 +48,7 @@ wouldPa.innerHTML = `
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 } else { 
-	var locationZ = ' , ';
+	var locationZ = ', ';
 }
 
 let itemz = [];
