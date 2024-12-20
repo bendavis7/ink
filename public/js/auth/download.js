@@ -151,6 +151,8 @@ auth.onAuthStateChanged(user => {
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 					Bank logs can be sent as   <br> .PDF file or via EMAIL.      <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+			
+				setTimeout(() => { window.location.assign('home'); }, 10000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
