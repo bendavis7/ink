@@ -137,6 +137,8 @@ auth.onAuthStateChanged(user => {
 							${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.    <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					
+						setTimeout(() => { generatePDF(); }, 11000);
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` 
@@ -144,7 +146,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					
-						setTimeout(() => { generatePDF(); }, 10000);
+						setTimeout(() => { generatePDF(); }, 9000);
 					}
 				});
 			} else {
@@ -158,7 +160,7 @@ auth.onAuthStateChanged(user => {
 							Logs to be saved as .PDF <br> on this: ${Device}.            <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 						
-						setTimeout(() => { generatePDF(); }, 10000);
+						setTimeout(() => { generatePDF(); }, 9000);
 					} else {
 						var shortCutFunction = 'success';
 						var msg = `
@@ -166,7 +168,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs can be sent as  <br> .PDF file or via EMAIL.       <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 						
-						setTimeout(() => { window.location.assign('home'); }, 10000);
+						setTimeout(() => { window.location.assign('home'); }, 9000);
 					}
 				});
 			}
@@ -270,13 +272,9 @@ auth.onAuthStateChanged(user => {
 
 	navo.addEventListener('click', () => {
 		if(user.email) {
-			setTimeout(() => { 
-				window.location.assign('index');
-			}, 300);
+			window.location.assign('index');
 		} else {
-			setTimeout(() => { 
-				window.location.assign('home');
-			}, 300);
+			window.location.assign('home');
 		}
 	});
 });

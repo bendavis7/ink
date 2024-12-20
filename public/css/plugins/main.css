@@ -1400,7 +1400,7 @@ td {
       word-spacing: 4.2px !important;
   }
   .thegold {
-    padding: 26px 13px !important;
+    padding: 28px 14px !important;
   }
 }
 @media (max-width: 390px) {
@@ -1419,7 +1419,7 @@ td {
       letter-spacing: 1px !important;
   }
   .thegold {
-    padding: 25px 12.5px !important;
+    padding: 26px 13px !important;
   }
 }
 
