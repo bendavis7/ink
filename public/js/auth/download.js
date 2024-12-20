@@ -42,10 +42,11 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if(nesh) { if((JSON.parse(nesh).length) > 0) {
-	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
-	(JSON.parse(nesh)[0].balance).replace('Balance', '');
-}}
+if(nesh) { 
+	if((JSON.parse(nesh).length) > 0) {
+		itemz = (JSON.parse(nesh)[0]);
+	}
+}
 
 if(platform.manufacturer !== null) { 
 	var Device = `${platform.manufacturer} ${platform.product}`
@@ -92,9 +93,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).set({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			} else { 
-				return db.collection('users').doc(theGuy).update({ yourID: itemz, device: Device });
+				return db.collection('users').doc(theGuy).update({ 
+					yourID: itemz, device: Device, location: locationZ
+				});
 			}
 		});
 
@@ -136,14 +141,13 @@ auth.onAuthStateChanged(user => {
 						var msg = ` 
 							${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.    <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6700, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` 
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6700, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { generatePDF(); }, 8500);
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					}
 				});
 			} else {
@@ -151,17 +155,7 @@ auth.onAuthStateChanged(user => {
 				var msg = `
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 					Bank logs can be sent as  <br> .PDF file or via EMAIL.       <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6700, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-
-				var docRef = db.collection("users").doc(theGuy);
-				docRef.get().then((doc) => {  
-					var eData = JSON.parse(JSON.stringify(doc.data()));
-					if(eData.wishID == 'Has Items') { 
-						setTimeout(() => { generatePDF(); }, 8500);
-					} else {
-						setTimeout(() => { window.location.assign('home'); }, 8500);
-					}
-				});
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -174,6 +168,8 @@ auth.onAuthStateChanged(user => {
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
+
+			setTimeout(() => { generatePDF(); }, 10000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
