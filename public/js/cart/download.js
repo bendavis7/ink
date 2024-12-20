@@ -240,7 +240,6 @@ function updateCartTotal() {
 
         if (window.innerWidth > 762) { 
             document.getElementById('flex-one').style.display = 'flex'; 
-            document.getElementById('pdf').innerHTML = `.PDFs <img src="img/partners/pdf.png"> `;
         } 
 
         if (window.innerWidth > 1082) { 
