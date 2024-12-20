@@ -52,18 +52,24 @@ if(localStorage.getItem('locationZ')) {
 }
 
 let itemz = [];
-if(nesh) { if((JSON.parse(nesh).length) > 0) {
-	itemz = 'Has Items';
-}}
+if(nesh) { 
+	if((JSON.parse(nesh).length) > 0) {
+		itemz = (JSON.parse(nesh)[0]);
+	}
+}
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					window.location.assign('download');
-				} else { window.location.assign('chime'); }
-			} else { window.location.assign('chime'); }
+				} else { 
+					window.location.assign('chime'); 
+				}
+			} 
 		} 
 
 		var theGuy = locationZ + ', ' + user.uid;
