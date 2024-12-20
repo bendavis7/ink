@@ -10,9 +10,8 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-log')) {
+if(!localStorage.getItem('banklogs')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-log', true)
 }
 
 var nesh = localStorage.getItem('banklogs');

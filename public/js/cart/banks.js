@@ -131,7 +131,7 @@ let wood8 =  document.getElementById('wood8');  let wood08 =  document.getElemen
 let wood9 =  document.getElementById('wood9');  let wood09 =  document.getElementById('wood09');
 let wood10 = document.getElementById('wood10'); let wood010 = document.getElementById('wood010');
 
-let btc = 40;
+let btc = 46;
 
 if (document.getElementById('boa01')) {
     (boa1.innerHTML = "$3,045"),
@@ -186,7 +186,7 @@ if (document.getElementById('boa01')) {
     (chase011.innerHTML=`Buy $${(chase11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (chase012.innerHTML=`Buy $${(chase12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chime01')) {
-    (chime1.innerHTML = "$3,407"),
+    (chime1.innerHTML = "$3,409"),
     (chime2.innerHTML = "$4,230"),
     (chime3.innerHTML = "$4,754"),
     (chime4.innerHTML = "$5,480"),
