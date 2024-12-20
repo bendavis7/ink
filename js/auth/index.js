@@ -21,8 +21,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var pdfButn = document.getElementById('vpn');
-var vpnButn = document.getElementById('pdf');
+var pdfButn = document.getElementById('pdf');
+var vpnButn = document.getElementById('vpn');
 const mailsNav = document.getElementById('mails');
 
 if (window.innerWidth > 762) { 
@@ -53,7 +53,7 @@ auth.onAuthStateChanged(user => {
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks - <img src="img/partners/cart.png">`;
 			} else {
-				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			}
 		} 
 	} 
