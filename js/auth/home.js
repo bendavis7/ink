@@ -72,9 +72,7 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				if(nesh) { if((JSON.parse(nesh).length) > 0) {
-					return db.collection('users').doc(theGuy).set({ wishID: itemz });
-				}}
+				return db.collection('users').doc(theGuy).set({ wishID: itemz });
 			} else { 
 				return db.collection('users').doc(theGuy).update({ wishID: itemz });
 			}
