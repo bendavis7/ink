@@ -487,9 +487,9 @@ hr.hr-2 {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 28px !important;
+    font-size: 29px !important;
     letter-spacing: 1px !important;
-    padding: 14px !important;
+    padding: 14.5px !important;
     margin: 15px auto 30px !important;
   }
 }
@@ -497,12 +497,17 @@ hr.hr-2 {
 @media screen and (max-width: 407px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 27px !important;
+    font-size: 28px !important;
     letter-spacing: 1px !important;
-    padding: 13.5px !important;
+    padding: 14px !important;
     margin: 10px auto 25px !important;
   }
 }
+.vpn-section .butn#pdf {
+  letter-spacing: 2px !important;
+
+}
+
 
 .vpn-section.grids {
   display: grid !important;
