@@ -1381,8 +1381,8 @@ td {
 }
 @media (max-width: 526px) {
   .attr-nav > ul > li.dropdown ul.dropdown-menu {
-      left: -105%;
-      width: 255%;
+      left: -110%;
+      width: 260%;
   }
 
   .thegold img {
@@ -1402,8 +1402,8 @@ td {
 }
 @media (max-width: 390px) {
   .attr-nav > ul > li.dropdown ul.dropdown-menu {
-      left: -107%;
-      width: 252%;
+      left: -105%;
+      width: 255%;
   }
   .thegold img {
       height: 51px !important;
@@ -2321,7 +2321,7 @@ margin-bottom: 2px !important;
 }
 @media screen and (max-width: 502px) {
   .toast {
-    max-width: 355px;
+    max-width: 352px;
     font-size: 17px;
     margin-top: 15px !important;
     margin-right: 15px !important;
