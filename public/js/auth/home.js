@@ -277,11 +277,25 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.rotate(pos); ctx2.lineTo(0, -length); ctx2.stroke(); ctx2.rotate(-pos);
 }
 
-
+var clientID = document.getElementById('clients');
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
+	if (window.innerWidth > 1082) { 
+		$('#profileModal').modal('show');
+	} else { 
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				$('#profileModal').modal('show');
+			} else {  navbarTo.click(); }
+		} else {  navbarTo.click(); }
+	}
+});
+
+
+
+clientID.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
 		$('#profileModal').modal('show');
 	} else { 
