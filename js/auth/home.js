@@ -58,9 +58,7 @@ if(nesh) { if((JSON.parse(nesh).length) > 0) {
 }}
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
@@ -96,7 +94,7 @@ function emailShow() {
 			signUp.removeEventListener('click', signUpFunction); 
 			signUp.addEventListener('click', homeFx); 
 			theForm.removeEventListener('submit', signUpFunction);
-			signUp.innerHTML = `Download <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
+			signUp.innerHTML = `Checkout <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
 		}
 	});
 }
