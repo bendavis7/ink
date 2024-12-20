@@ -138,7 +138,7 @@ auth.onAuthStateChanged(user => {
 							Verify your email inbox,  <br> Check the spam - folder.    <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					
-						setTimeout(() => { generatePDF(); }, 11000);
+						
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` 
