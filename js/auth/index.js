@@ -51,13 +51,7 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'download');
 
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
-		} else {
-			if(nesh){ 
-				if((JSON.parse(nesh).length) > 0) {
-					vpnButn.innerHTML = ` Login <i class="fas fa-angle-down"></i> `;
-				}
-			}
-		}
+		} 
 	} 
 
 
