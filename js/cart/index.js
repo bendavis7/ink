@@ -88,11 +88,13 @@ var joe = localStorage.getItem('banklogs')
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0) {
         auth2.onAuthStateChanged(user => {
-            if(user.email) { 
-                window.location.assign('download'); 
-            } else { 
-                window.location.assign('home'); 
-            }
+            if(user) {
+                if(user.email) { 
+                    window.location.assign('download'); 
+                } else { 
+                    window.location.assign('home'); 
+                }
+            } else { window.location.assign('home'); }
         });
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
