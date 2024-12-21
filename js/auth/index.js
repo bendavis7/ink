@@ -44,19 +44,23 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
-				setTimeout(() => { $('#profileModal').modal('show') }, 300);
+				$('#profileModal').modal('show')
 			});
 
 			mailsNav.innerHTML = 'Checkout';
 			mailsNav.setAttribute('href', 'download');
 
-			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks- <img src="img/partners/cart.png">`;
-			} else {
-				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
+		} else {
+			if(nesh){ 
+				if((JSON.parse(nesh).length) > 0) {
+					vpnButn.innerHTML = ` Login <i class="fas fa-angle-down"></i> `;
+				}
 			}
-		} 
+		}
 	} 
+
+
     if(nesh){ 
 		if((JSON.parse(nesh).length) > 0) {
 			items = JSON.parse(nesh);
