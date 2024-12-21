@@ -79,7 +79,6 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = (theaddress).substring(0, 11);
 			mailsNav.setAttribute('href', 'index');
 			vpnButn.removeAttribute('href');
-			vpnButn.innerHTML = `Email <img src="img/partners/tele.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 
@@ -109,9 +108,7 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-
-		(function($) {
-			"use strict";
+		(function($) { "use strict";
 			var $window = $(window);
 			$window.on('scroll', function() {
 				var scroll = $window.scrollTop();
@@ -126,9 +123,7 @@ auth.onAuthStateChanged(user => {
 					}, 5000);
 				}
 			});
-		})(jQuery);
-		
-		
+		})(jQuery);	
 	}
 
 	const signUpFunction = () => {
@@ -158,35 +153,28 @@ auth.onAuthStateChanged(user => {
 					if (!(doc.exists)) { 
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; 
-						var msg = ` ${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
-								Verify your email inbox,  <br> Check the spam - folder.  	   <hr class="hr15-top"> `;
+						var msg = ` 
+							${toastbtci} BTC not detected <br> ${user.email}            <hr class="to-hr hr15-top"> 
+							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
 						var shortCutFunction = 'success';  
-						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-								Bank logs will be sent to <br> ${user.email}.               	 <hr class="hr15-top"> `;
+						var msg = ` 
+							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						
 						setTimeout(() => { generatePDF(); }, 7500);
 					}
 				});
 			} else {
-				var docRef = db.collection("users").doc(theGuy);
-				docRef.get().then((doc) => {
-					var eData = JSON.parse(JSON.stringify(doc.data()));
-					if(!eData.loginID) { 
-						var shortCutFunction = 'success';  
-						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-								Bank logs can be sent as <br> .PDF file or via EMAIL.            <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { window.location.assign('home'); }, 7500);
-					} else {
-						var shortCutFunction = 'success';  
-						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-								Banklog .PDF to be saved <br> on this: ${Device}                 <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { generatePDF(); }, 7500);
-					}
-				});
+				var shortCutFunction = 'success';  
+				var msg = ` 
+					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
+					Bank logs can be sent as <br> a .PDF file or via EMAIL.             <hr class="hr15-top"> `;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				
+				setTimeout(() => { window.location.assign('home'); }, 7500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
