@@ -36,8 +36,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-const monezBtn = document.getElementById('monez');
-
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -189,7 +187,7 @@ auth.onAuthStateChanged(user => {
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
-	monezBtn.addEventListener('click', signUpFunction);
+	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	pdfButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 2000);
