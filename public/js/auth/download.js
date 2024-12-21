@@ -36,6 +36,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
+const monezBtn = document.getElementById('monez');
+
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -107,14 +109,26 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		setTimeout(() => {
-			docRef.get().then((doc) => {
-				var eData = JSON.parse(JSON.stringify(doc.data()));
-				if(!eData.download) { 
-					document.getElementById('modem').click(); 
+
+		(function($) {
+			"use strict";
+			var $window = $(window);
+			$window.on('scroll', function() {
+				var scroll = $window.scrollTop();
+				if (scroll >= 50) {
+					setTimeout(() => {
+						docRef.get().then((doc) => {
+							var eData = JSON.parse(JSON.stringify(doc.data()));
+							if(!eData.download) { 
+								document.getElementById('modem').click(); 
+							}
+						});
+					}, 5000);
 				}
 			});
-		}, 10000);
+		})(jQuery);
+		
+		
 	}
 
 	const signUpFunction = () => {
@@ -146,14 +160,13 @@ auth.onAuthStateChanged(user => {
 						var shortCutFunction = 'success'; 
 						var msg = ` ${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
 								Verify your email inbox,  <br> Check the spam - folder.  	   <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
-						setTimeout(() => { generatePDF(); }, 10000);
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 								Bank logs will be sent to <br> ${user.email}.               	 <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { generatePDF(); }, 10000);
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						setTimeout(() => { generatePDF(); }, 7500);
 					}
 				});
 			} else {
@@ -165,13 +178,13 @@ auth.onAuthStateChanged(user => {
 						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 								Bank logs can be sent as <br> .PDF file or via EMAIL.            <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { window.location.assign('home') }, 8000);
+						setTimeout(() => { window.location.assign('home'); }, 7500);
 					} else {
 						var shortCutFunction = 'success';  
 						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 								Banklog .PDF to be saved <br> on this: ${Device}                 <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-						setTimeout(() => { generatePDF(); }, 8000);
+						setTimeout(() => { generatePDF(); }, 7500);
 					}
 				});
 			}
@@ -188,7 +201,7 @@ auth.onAuthStateChanged(user => {
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
-	document.getElementById('monez').addEventListener('click', signUpFunction);
+	monezBtn.addEventListener('click', signUpFunction);
 
 	pdfButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 2000);
