@@ -38,7 +38,7 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 
-			mailsNav.innerHTML = 'Home page';
+			mailsNav.innerHTML = (theaddress).substring(0, 11);
 			mailsNav.setAttribute('href', 'index');
 		} 
 	} 
