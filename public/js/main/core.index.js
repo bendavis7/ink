@@ -115,7 +115,7 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
                
         $('#chartx').owlCarousel({
-            loop: false, nav: false, dots: false,
+            loop: false, nav: false, dots: true,
             smartSpeed: 3000, autoplay: true,
             autoplayTimeout: 15000, responsiveClass: true,
             autoplayHoverPause: false, stagePadding: 0,
