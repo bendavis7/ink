@@ -36,8 +36,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-const monezBtn = document.getElementById('monez');
-
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -157,6 +155,8 @@ auth.onAuthStateChanged(user => {
 							${toastbtci} BTC not detected <br> ${user.email}            <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+					
+						setTimeout(() => { generatePDF(); }, 8500);
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` 
@@ -189,7 +189,7 @@ auth.onAuthStateChanged(user => {
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
-	monezBtn.addEventListener('click', signUpFunction);
+	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	pdfButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 2000);
