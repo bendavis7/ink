@@ -47,7 +47,7 @@ auth.onAuthStateChanged(user => {
 				$('#profileModal').modal('show')
 			});
 
-			mailsNav.innerHTML = 'Checkout';
+			mailsNav.innerHTML = (theaddress).substring(0, 11);
 			mailsNav.setAttribute('href', 'download');
 
 			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;

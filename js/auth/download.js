@@ -27,6 +27,8 @@ var nesh = localStorage.getItem('banklogs');
 var vpnButn = document.getElementById('vpn');
 var pdfButn = document.getElementById('pdf');
 
+const mailsNav = document.getElementById('mails');
+
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
@@ -71,6 +73,9 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
+
+			mailsNav.innerHTML = (theaddress).substring(0, 11);
+			mailsNav.setAttribute('href', 'index');
 			vpnButn.removeAttribute('href');
 			vpnButn.innerHTML = `Email <img src="img/partners/tele.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
