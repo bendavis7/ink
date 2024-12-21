@@ -63,7 +63,7 @@ auth.onAuthStateChanged(user => {
 			logoHolder.classList.add('logo-50');
 		}
 
-		var theGuy = locationZ + ', ' + user.uid;
+		var theGuy = user.uid;
 	
 		if(user.email) {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
@@ -72,6 +72,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			vpnButn.removeAttribute('href');
+			vpnButn.innerHTML = `Email <img src="img/partners/tele.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 
@@ -81,12 +82,10 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
-		if(nesh){ 
-			if((JSON.parse(nesh).length) > 0) {
-				items = JSON.parse(nesh);
-				for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
-				}
+		if((JSON.parse(nesh).length) > 0) {
+			items = JSON.parse(nesh);
+			for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
 			}
 		}
 
@@ -106,7 +105,9 @@ auth.onAuthStateChanged(user => {
 		setTimeout(() => {
 			docRef.get().then((doc) => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
-				if(!eData.download) { document.getElementById('modem').click(); }
+				if(!eData.download) { 
+					document.getElementById('modem').click(); 
+				}
 			});
 		}, 10000);
 	}
@@ -138,29 +139,35 @@ auth.onAuthStateChanged(user => {
 					if (!(doc.exists)) { 
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; 
-						var msg = ` 
-							${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
-							Verify your email inbox,  <br> Check the spam - folder.    <hr class="hr15-top"> `;
+						var msg = ` ${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
+								Verify your email inbox,  <br> Check the spam - folder.  	   <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
 						var shortCutFunction = 'success';  
-						var msg = ` 
-							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
+						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+								Bank logs will be sent to <br> ${user.email}.               	 <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-					
 						setTimeout(() => { generatePDF(); }, 10000);
 					}
 				});
 			} else {
-				var shortCutFunction = 'success';
-				var msg = `
-					${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-					Bank logs can be sent as  <br> .PDF file or via EMAIL.       <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-			
-				setTimeout(() => { generatePDF(); }, 8000);
-				setTimeout(() => { window.location.assign('home'); }, 10000);
+				var docRef = db.collection("users").doc(theGuy);
+				docRef.get().then((doc) => {
+					var eData = JSON.parse(JSON.stringify(doc.data()));
+					if(!eData.loginID) { 
+						var shortCutFunction = 'success';  
+						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+								Bank logs will be sent to <br> ${user.email}.                	 <hr class="hr15-top"> `;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						setTimeout(() => { window.location.assign('home') }, 8000);
+					} else {
+						var shortCutFunction = 'success';  
+						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+								Bank logs will be sent to <br> ${user.email}.                	 <hr class="hr15-top"> `;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+						setTimeout(() => { generatePDF(); }, 8000);
+					}
+				});
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
