@@ -147,6 +147,7 @@ auth.onAuthStateChanged(user => {
 						var msg = ` ${toastbtci} BTC not detected <br> ${user.email}           <hr class="to-hr hr15-top"> 
 								Verify your email inbox,  <br> Check the spam - folder.  	   <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+						setTimeout(() => { generatePDF(); }, 10000);
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` ${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
