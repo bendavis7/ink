@@ -84,8 +84,8 @@ showingToast.addEventListener('click', showThis);
 var joe = localStorage.getItem('banklogs')
 
 function showThis() {
-    if(joe && (JSON.parse(joe).length) > 0){
-        window.location.assign('download');
+    if(joe && (JSON.parse(joe).length) > 0) {
+        window.location.assign('home');
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
