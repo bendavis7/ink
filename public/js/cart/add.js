@@ -180,11 +180,9 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
 
-    auth2.signInAnonymously().then(() => {
-        setTimeout(() => { 
-            window.location.assign('download'); 
-        }, 1000);
-    });
+    setTimeout(() => { 
+        window.location.assign('download'); 
+    }, 2000);
 }
 
 
