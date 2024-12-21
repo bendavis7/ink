@@ -54,7 +54,7 @@ if(localStorage.getItem('locationZ')) {
 let itemz = [];
 if(nesh) { 
 	if((JSON.parse(nesh).length) > 0) {
-		itemz = (JSON.parse(nesh)[0]);
+		itemz = 'Has Items';
 	}
 }
 
