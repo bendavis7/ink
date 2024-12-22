@@ -26,8 +26,8 @@ var vpnButn = document.getElementById('vpn');
 const mailsNav = document.getElementById('mails');
 
 if (window.innerWidth > 762) { 
-	vpnButn.innerHTML = `Login- <img src="img/partners/check.png"> `;
-	pdfButn.innerHTML = `Ticket, <img src="img/partners/table.png"> `;
+	vpnButn.innerHTML = `Login. <img src="img/partners/check.png"> `;
+	pdfButn.innerHTML = `Ticket <img src="img/partners/table.png"> `;
 } 
 
 auth.onAuthStateChanged(user => {
@@ -45,7 +45,7 @@ auth.onAuthStateChanged(user => {
 			
 			vpnButn.removeAttribute('href');
 			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks- <img src="img/partners/cart.png">`;
+				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
 			} else {
 				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
 			}
