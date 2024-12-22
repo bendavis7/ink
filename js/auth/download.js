@@ -73,10 +73,12 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-
-			mailsNav.innerHTML = (theaddress).substring(0, 11);
+			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
+
 			vpnButn.removeAttribute('href');
+			vpnButn.innerHTML = ` 
+				Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 

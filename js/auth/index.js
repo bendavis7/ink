@@ -43,14 +43,14 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			vpnButn.removeAttribute('href');
+			vpnButn.innerHTML = ` 
+				Banks <img src="img/partners/cart.png">`;
 			vpnButn.addEventListener('click', () => { 
 				$('#profileModal').modal('show')
 			});
 
-			mailsNav.innerHTML = (theaddress).substring(0, 11);
+			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'download');
-
-			vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 		} 
 	} 
 
@@ -204,6 +204,7 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.beginPath(); ctx2.lineWidth = width; ctx2.lineCap = "round"; ctx2.moveTo(0, 0);
 	ctx2.rotate(pos); ctx2.lineTo(0, -length); ctx2.stroke(); ctx2.rotate(-pos);
 }
+
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];

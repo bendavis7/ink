@@ -38,7 +38,7 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 
-			mailsNav.innerHTML = (theaddress).substring(0, 11);
+			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
 		} 
 	} 
@@ -152,9 +152,9 @@ function drawHand2(ctx2, pos, length, width) {
 }
 
 
-
 var navo = document.getElementsByClassName('navbar-header')[0];
 
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
+

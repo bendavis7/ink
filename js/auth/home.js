@@ -10,7 +10,6 @@ var firebaseConfig = {
 var theWebsite = 'https://www.darkweb.ink/home';
 
 const auth = firebase.auth();
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
@@ -56,17 +55,6 @@ auth.onAuthStateChanged(user => {
 				}
 			} 
 		} 
-
-		var theGuy = user.uid;
-
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ loginID: true });
-			} else { 
-				return db.collection('users').doc(theGuy).update({ loginID: true });
-			}
-		});
 	} 
 });
 
@@ -268,23 +256,15 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.rotate(pos); ctx2.lineTo(0, -length); ctx2.stroke(); ctx2.rotate(-pos);
 }
 
+
+
 var clientID = document.getElementById('clients');
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
-	if (window.innerWidth > 1082) { 
-		$('#profileModal').modal('show');
-	} else { 
-		if(nesh){ 
-			if((JSON.parse(nesh).length) > 0) {
-				$('#profileModal').modal('show');
-			} else {  navbarTo.click(); }
-		} else {  navbarTo.click(); }
-	}
+	$('#profileModal').modal('show');
 });
-
-
 
 clientID.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
@@ -293,7 +273,9 @@ clientID.addEventListener('click', () => {
 		if(nesh){ 
 			if((JSON.parse(nesh).length) > 0) {
 				$('#profileModal').modal('show');
-			} else {  navbarTo.click(); }
-		} else {  navbarTo.click(); }
+			} else {  
+				navbarTo.click(); 
+			}
+		}
 	}
 });

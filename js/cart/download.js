@@ -4,7 +4,6 @@ const auth2 = firebase.auth();
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
-var flexOne = document.getElementById('flex-one');
 
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -112,8 +111,7 @@ if(localStorage.getItem('banklogs')){
         }
 
         thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
-        // flexOne.addEventListener('click', ()=> { document.getElementById('modem').click(); });
-   
+
         document.getElementById('the-logs').addEventListener('click', ()=> { document.getElementById('modem').click(); });
         document.getElementById('modem').addEventListener('click', () => { setTimeout(() => { monezB.click(); }, 2000); });
     } else {
