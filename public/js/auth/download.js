@@ -77,8 +77,11 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'index');
 
 			vpnButn.removeAttribute('href');
-			vpnButn.innerHTML = ` 
-				Banks <img src="img/partners/cart.png">`;
+			if (window.innerWidth > 762) { 
+				vpnButn.innerHTML = `Banks- <img src="img/partners/cart.png">`;
+			} else {
+				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
+			}
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 
@@ -115,7 +118,7 @@ auth.onAuthStateChanged(user => {
 					document.getElementById('modem').click(); 
 				}
 			});
-		}, 15000);
+		}, 12000);
 	}
 
 	const signUpFunction = () => {
@@ -176,7 +179,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 8000);
+			setTimeout(() => { generatePDF(); }, 8500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
