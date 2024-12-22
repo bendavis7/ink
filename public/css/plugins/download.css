@@ -476,20 +476,11 @@ hr.hr-2 {
 .vpn-section .butn#pdf,
 .vpn-section .butn#vpn {
   margin: 60px auto !important;
-  cursor: pointer;
-  font-size: 36px !important;
-  padding: 18px !important;
-  letter-spacing: 2.4px !important;
-  border: 2.4px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 2.4px rgba(255, 255, 255, 0.7) !important;
 }
 
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 29px !important;
-    letter-spacing: 1px !important;
-    padding: 14.5px !important;
     margin: 15px auto 30px !important;
   }
 }
@@ -497,15 +488,8 @@ hr.hr-2 {
 @media screen and (max-width: 407px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 28px !important;
-    letter-spacing: 1px !important;
-    padding: 14px !important;
     margin: 10px auto 25px !important;
   }
-}
-.vpn-section .butn#pdf {
-  letter-spacing: 2px !important;
-
 }
 
 

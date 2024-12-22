@@ -246,7 +246,7 @@ blink {
 #showtoasts,
 #copy-text,
 .money {
-  background: rgb(216, 242, 245) !important;
+  background: rgb(182 230 236) !important;
   box-shadow: 0 0 0 1px rgb(164, 224, 232);
   color: rgb(27, 56, 77) !important;
 }
@@ -302,7 +302,7 @@ span#uidy {
   border: 2.2px solid rgba(73, 192, 208, 0.7);
 }
 #services-carousel button.owl-next,
-#pdf,
+#vpn,
 #mails,
 #email-phone {
   background: rgb(177 228 235) !important;

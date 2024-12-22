@@ -82,17 +82,25 @@ if(localStorage.getItem('banklogs')){
     document.getElementById('cartlength').style.display = 'none';
 }
 
+
 showingToast.addEventListener('click', showThis);   
 var joe = localStorage.getItem('banklogs')
 
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0) {
-        window.location.assign('download'); 
+        auth2.onAuthStateChanged(user => {
+            if(user) {
+                if(user.email) {
+                    window.location.assign('download'); 
+                } else { window.location.assign('home'); }
+            } else { window.location.assign('home'); }
+        });
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
 }
+
 
 document.getElementById('balance1').innerHTML = '$5,630';
 document.getElementById('balance2').innerHTML = '$5,574';
@@ -123,7 +131,7 @@ for(j=0; j< jobs.length; j++) {
     var theJob = jobs[j];
     var thePrize = theJob.parentElement.children[1].children[2].innerText;
     
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 46).toFixed(0)).toLocaleString();
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 40).toFixed(0)).toLocaleString();
     theJob.innerHTML = '$'+ thePr;
 }
 
@@ -180,17 +188,12 @@ function updateCartTotal() {
 
     document.getElementById('thetot').innerHTML = `Total:  <span>$${total.toLocaleString()}</span>`;
     document.getElementById('theno1').innerHTML =  'Cart Total: $' + total.toLocaleString();
-
-
     
     if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
         const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-        const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
         const bankImg = (JSON.parse(localStorage.getItem('banklogs'))[0].image);
-
         theLogo.src = `${bankImg}`;
-        document.getElementById('jinaHolder2').innerHTML = `${bankBal} Account`;
-        document.getElementById('jinaHolder').value = `${bankLog.split('[')[0]}`;
+        document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');

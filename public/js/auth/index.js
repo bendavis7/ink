@@ -10,9 +10,8 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-vx')) {
+if(!localStorage.getItem('banklogs')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-vx', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
@@ -91,7 +90,8 @@ document.getElementById('photo2').addEventListener('change', (event) => {
 	setTimeout(() => {
 		let progress = 100; progressBar_2.style.width = progress + '%'; 
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
-		var shortCutFunction = 'success'; var msg = ` Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
+		var shortCutFunction = 'success'; var msg = ` 
+			Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
 			Also send an email to <br> email@darkweb.ink .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}, 6000);
@@ -207,16 +207,8 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];
-var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
-	if (window.innerWidth > 1082) { 
-		$('#profileModal').modal('show');
-	} else { 
-		if(nesh){ 
-			if((JSON.parse(nesh).length) > 0) {
-				$('#profileModal').modal('show');
-			} else {  navbarTo.click(); }
-		} else {  navbarTo.click(); }
-	}
+	$('#profileModal').modal('show');
 });
+

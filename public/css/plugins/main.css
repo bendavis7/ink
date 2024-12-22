@@ -770,7 +770,7 @@ select {
 .pricing-list h2 {
   font-weight: 700;
   letter-spacing: 1px;
-  font-size: 37px;
+  font-size: 36px;
   float: left;
   margin: 0;
   padding: 0;
@@ -815,9 +815,9 @@ select {
   .pricing-list {
       margin: 5px -4px;
   }
-  .pricing-list-price h2,
-  .pricing-list-price h2.text-white {
-      font-size: 34px;
+  .pricing-list h2,
+  .pricing-list h2.text-white {
+      font-size: 32px;
   }
   .pricing-list ul li {
       font-size: 17px;
@@ -833,7 +833,7 @@ select {
 @media (max-width: 400px) {
   .pricing-list h2,
   .pricing-list h2.text-white {
-      font-size: 32px;
+      font-size: 31px;
   }
   .pricing-list ul li {
       font-size: 16px;
@@ -848,25 +848,19 @@ select {
 }
 
 .borderp {
-  margin-top: 3px !important;
-  margin-right: 3px !important;
-  width: 48px !important;
+  margin-top: 1.5px !important;
+  margin-right: 1.5px !important;
+  width: 47px !important;
   float: right;
 }
 @media screen and (max-width: 567px) {
   .borderp {
-      width: 47px !important;
-
-      margin-top: 1.5px !important;
-      margin-right: 1.5px !important;
+      width: 46px !important;
   }
 }
 @media screen and (max-width: 400px) {
   .borderp {
-    width: 46px !important;
-
-    margin-top: 1px !important;
-    margin-right: 1px !important;
+    width: 45px !important;
   }
 }
 .pricing-list ul li:after {
@@ -2056,9 +2050,9 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 28.4px !important;
+    font-size: 29px !important;
     letter-spacing: 1.7px !important;
-    padding: 14.2px !important;
+    padding: 14.5px !important;
     margin: 30px auto 45px !important;
   }
   .butn#modem {

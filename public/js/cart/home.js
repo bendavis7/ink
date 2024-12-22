@@ -126,7 +126,6 @@ function updateCartTotal() {
     document.getElementById('thetot').innerHTML = `Total:  <span>$${total.toLocaleString()}</span>`;
     document.getElementById('theno1').innerHTML =  'Cart Total: $' + total.toLocaleString();
 
-
     if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
         const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
         const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
@@ -138,8 +137,7 @@ function updateCartTotal() {
         const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
 
         theLogo.src = `${bankImg}`;
-        document.getElementById('jinaHolder2').innerHTML = `${bankBal} Account`;
-        document.getElementById('jinaHolder').value = `${bankLog.split('[')[0]}`;
+        document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
