@@ -106,22 +106,18 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		(function($) { "use strict";
-			var $window = $(window);
-			$window.on('scroll', function() {
-				var scroll = $window.scrollTop();
-				if (scroll >= 50) {
-					setTimeout(() => {
-						docRef.get().then((doc) => {
-							var eData = JSON.parse(JSON.stringify(doc.data()));
-							if(!eData.download) { 
-								document.getElementById('modem').click(); 
-							}
-						});
-					}, 5000);
-				}
-			});
-		})(jQuery);	
+		window.onscroll = function() {myFunction()};
+
+		function myFunction() {
+			setTimeout(() => {
+				docRef.get().then((doc) => {
+					var eData = JSON.parse(JSON.stringify(doc.data()));
+					if(!eData.download) { 
+						document.getElementById('modem').click(); 
+					}
+				});
+			}, 6000);
+		}
 	}
 
 	const signUpFunction = () => {
@@ -156,7 +152,7 @@ auth.onAuthStateChanged(user => {
 							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					
-						setTimeout(() => { generatePDF(); }, 8500);
+						setTimeout(() => { generatePDF(); }, 8000);
 					} else { 
 						var shortCutFunction = 'success';  
 						var msg = ` 
@@ -164,7 +160,7 @@ auth.onAuthStateChanged(user => {
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 						
-						setTimeout(() => { generatePDF(); }, 7500);
+						setTimeout(() => { generatePDF(); }, 8000);
 					}
 				});
 			} else {
@@ -174,7 +170,7 @@ auth.onAuthStateChanged(user => {
 					Bank logs can be sent as <br> a .PDF file or via EMAIL.             <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				
-				setTimeout(() => { window.location.assign('home'); }, 7500);
+				setTimeout(() => { window.location.assign('home'); }, 8000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
