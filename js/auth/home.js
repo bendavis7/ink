@@ -53,7 +53,9 @@ auth.onAuthStateChanged(user => {
 				} else { 
 					window.location.assign('chime'); 
 				}
-			} 
+			} else {
+				window.location.assign('huntington'); 
+			}
 		} 
 	} 
 });
@@ -273,9 +275,9 @@ clientID.addEventListener('click', () => {
 		if(nesh){ 
 			if((JSON.parse(nesh).length) > 0) {
 				$('#profileModal').modal('show');
-			} else {  
-				navbarTo.click(); 
-			}
+			} else {  navbarTo.click(); }
+		} else {
+			navbarTo.click(); 
 		}
 	}
 });
