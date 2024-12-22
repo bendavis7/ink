@@ -10,7 +10,6 @@ var firebaseConfig = {
 var theWebsite = 'https://www.darkweb.ink/home';
 
 const auth = firebase.auth();
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
@@ -56,17 +55,6 @@ auth.onAuthStateChanged(user => {
 				}
 			} 
 		} 
-
-		var theGuy = user.uid;
-
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ loginID: true });
-			} else { 
-				return db.collection('users').doc(theGuy).update({ loginID: true });
-			}
-		});
 	} 
 });
 
