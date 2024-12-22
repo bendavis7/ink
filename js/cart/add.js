@@ -3,8 +3,6 @@ let items = [];
 var table1 = jQuery('#example1').DataTable();
 var showingToast = document.getElementById('showtoasts');
 
-var theLogo = document.getElementById('logo');
-
 var auth2 = firebase.auth();
 
 if(localStorage.getItem('banklogs')){
@@ -59,7 +57,13 @@ var joe = localStorage.getItem('banklogs')
 
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0) {
-        window.location.assign('download'); 
+        auth2.onAuthStateChanged(user => {
+            if(user) {
+                if(user.email) {
+                    window.location.assign('download'); 
+                } else { window.location.assign('home'); }
+            } else { window.location.assign('home'); }
+        });
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
@@ -94,7 +98,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  40)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -121,7 +125,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  40)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -356,20 +360,6 @@ function updateCartTotal() {
             } 
         });
     }
-
-    if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
-        const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-        const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
-        const bankImg = (JSON.parse(localStorage.getItem('banklogs'))[0].image);
-
-        theLogo.src = `${bankImg}`;
-        document.getElementById('jinaHolder2').innerHTML = `${bankBal} Account`;
-        document.getElementById('jinaHolder').value = `${bankLog.split('[')[0]}`;
-
-        if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
-            theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
-        }
-    } 
 
     var id = setInterval(frame, 1000);
     if(!localStorage.getItem('timeSet')) {
