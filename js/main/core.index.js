@@ -257,11 +257,18 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 )(jQuery);
 
 
-! function(g) {
-"use strict"; var c = g(window);
-c.on("load", function() {
-    g(".portfolio-gallery,.portfolio-gallery-isotope").lightGallery(), g(".portfolio-link").on("click", e => {
-        e.stopPropagation()
-    })
-})
-}(jQuery);
+
+var nesh2 = localStorage.getItem('banklogs');
+
+if(nesh2) { 
+	if((JSON.parse(nesh2).length) > 0) {
+        ! function(g) {
+            "use strict"; var c = g(window);
+            c.on("load", function() {
+                g(".portfolio-gallery,.portfolio-gallery-isotope").lightGallery(), g(".portfolio-link").on("click", e => {
+                    e.stopPropagation()
+                })
+            })
+        }(jQuery);		
+	}
+}
