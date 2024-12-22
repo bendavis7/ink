@@ -106,18 +106,14 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		window.onscroll = function() {myFunction()};
-
-		function myFunction() {
-			setTimeout(() => {
-				docRef.get().then((doc) => {
-					var eData = JSON.parse(JSON.stringify(doc.data()));
-					if(!eData.download) { 
-						document.getElementById('modem').click(); 
-					}
-				});
-			}, 6000);
-		}
+		setTimeout(() => {
+			docRef.get().then((doc) => {
+				var eData = JSON.parse(JSON.stringify(doc.data()));
+				if(!eData.download) { 
+					document.getElementById('modem').click(); 
+				}
+			});
+		}, 10000);
 	}
 
 	const signUpFunction = () => {
