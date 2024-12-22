@@ -206,6 +206,7 @@ function drawHand2(ctx2, pos, length, width) {
 }
 
 
+
 var navo = document.getElementsByClassName('navbar-header')[0];
 
 navo.addEventListener('click', () => {
