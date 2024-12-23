@@ -237,8 +237,8 @@ function updateCartTotal() {
 
         if (window.innerWidth > 762) { 
             document.getElementById('flex-one').style.display = 'flex'; 
-            document.getElementById('pdf').innerHTML = `
-                .PDFs <img src="img/partners/pdf.png">
+            document.getElementById('vpn').innerHTML = `
+                Email <img src="img/partners/check.png">
             `;
         } 
 
