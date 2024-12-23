@@ -153,6 +153,8 @@ auth.onAuthStateChanged(user => {
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					
+						setTimeout(() => { generatePDF(); }, 7500);
 					}
 				});
 			} else {
@@ -162,7 +164,7 @@ auth.onAuthStateChanged(user => {
 					Bank logs can be sent as <br> a .PDF file or via EMAIL.             <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			
-				setTimeout(() => { window.location.assign('home'); }, 9000);
+				setTimeout(() => { window.location.assign('home'); }, 7500);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -175,8 +177,6 @@ auth.onAuthStateChanged(user => {
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
-
-			setTimeout(() => { generatePDF(); }, 7500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
