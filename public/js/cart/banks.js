@@ -352,7 +352,7 @@ if (document.getElementById('boa01')) {
     (truist010.innerHTML=`Buy $${(truist10.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (truist011.innerHTML=`Buy $${(truist11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('wells01')) {
-    (wells1.innerHTML = "$3,201"),
+    (wells1.innerHTML = "$3,207"),
     (wells2.innerHTML = "$4,354"),
     (wells3.innerHTML = "$4,728"),
     (wells4.innerHTML = "$5,039"),
