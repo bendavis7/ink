@@ -78,7 +78,7 @@ auth.onAuthStateChanged(user => {
 
 			vpnButn.removeAttribute('href');
 			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks- <img src="img/partners/cart.png">`;
+				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
 			} else {
 				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
 			}
@@ -166,6 +166,8 @@ auth.onAuthStateChanged(user => {
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
 					Bank logs can be sent as <br> a .PDF file or via EMAIL.             <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+			
+				setTimeout(() => { window.location.assign('home'); }, 10000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -179,7 +181,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 8000);
+			setTimeout(() => { generatePDF(); }, 8500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
