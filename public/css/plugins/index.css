@@ -420,10 +420,9 @@ section .dataTables_wrapper .dataTables_filter input{
   section .dataTables_wrapper .dataTables_filter input{
     width: 90% !important;
   }
-
   section .dataTables_wrapper .dataTables_paginate {
-    margin-top: 7px !important;
-    margin-bottom: 7px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
   }
 
   section .dataTables_wrapper .dataTables_length,
