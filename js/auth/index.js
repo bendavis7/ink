@@ -46,12 +46,11 @@ auth.onAuthStateChanged(user => {
 			vpnButn.removeAttribute('href');
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
+				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show'); });
 			} else {
-				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Tickets ID <img src="img/partners/table.png">`;
+				vpnButn.addEventListener('click', () => { $('#uploadModal').modal('show'); });
 			}
-			vpnButn.addEventListener('click', () => { 
-				$('#profileModal').modal('show')
-			});
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'download');

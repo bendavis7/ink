@@ -77,11 +77,6 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'index');
 
 			vpnButn.removeAttribute('href');
-			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks <img src="img/partners/cart.png">`;
-			} else {
-				vpnButn.innerHTML = `Bank Log <img src="img/partners/table.png">`;
-			}
 			vpnButn.addEventListener('click', () => { signUpFunction(); });
 		} else {
 			if (window.innerWidth < 1082) { 
