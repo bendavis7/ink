@@ -441,15 +441,15 @@ section .dataTables_wrapper .dataTables_filter input{
 
   section .dataTables_wrapper .dataTables_length,
   section .dataTables_wrapper .dataTables_filter {
-    margin: 5px 5px -5px !important;
+    margin: 7px 5px 0px !important;
     letter-spacing: 1px !important;
     word-spacing: 1px !important;
-    font-size: 20.5px !important;
+    font-size: 21px !important;
     white-space: nowrap !important;
   }
   
   section .dataTables_wrapper .dataTables_filter {
-    margin: 0px !important;
+    margin-top: -3px !important;
     letter-spacing: 1px !important;
     word-spacing: 1px !important;
     font-size: 22px !important;

@@ -290,9 +290,9 @@ blink {
     max-width: 25%;
   }  
   .col-lg-70 {
-    -ms-flex:0 0 73%;
-    flex:0 0 73%;
-    max-width: 73%;
+    -ms-flex:0 0 74%;
+    flex:0 0 74%;
+    max-width: 74%;
   }
   #flex-one {
     margin-top: 35px !important;
@@ -326,7 +326,7 @@ blink {
 }
 
 #table-email {
-  margin-top: 25px !important;
+  margin-top: 0px !important;
   margin-bottom: -10px !important;
 
   padding: 3px !important;
@@ -347,15 +347,14 @@ section .dataTables_wrapper dataTables_length {
 
 section .dataTables_wrapper .dataTables_length,
 section .dataTables_wrapper .dataTables_filter {
-  margin: 10px 5px 5px !important;
+  margin: 5px 5px -5px !important;
   letter-spacing: 1px !important;
   word-spacing: 2px !important;
-  font-size: 24px !important;
+  font-size: 25px !important;
   white-space: nowrap !important;
 }
 section .dataTables_wrapper .dataTables_paginate {
   margin-top: 5px !important;
-  margin-bottom: 5px !important;
 }
 
 @media screen and (max-width: 1067px) {
@@ -380,6 +379,7 @@ section .dataTables_wrapper .dataTables_paginate {
 
   section .dataTables_wrapper .dataTables_length,
   section .dataTables_wrapper .dataTables_filter {
+    margin: 7px 5px 0px !important;
     letter-spacing: 1px !important;
     word-spacing: 1px !important;
     font-size: 21px !important;
@@ -387,22 +387,14 @@ section .dataTables_wrapper .dataTables_paginate {
   }
 
   section .dataTables_wrapper .dataTables_filter {
-    margin: 0px !important;
+    margin-top: -3px !important;
     letter-spacing: 1px !important;
     word-spacing: 1px !important;
-    font-size: 21px !important;
+    font-size: 22px !important;
     white-space: nowrap !important;
   }
 }
   
-
-@media screen and (max-width: 760px) {
-  section .dataTables_wrapper .dataTables_filter input{
-    width: 90% !important;
-  }
-}
-  
-
 
 
 td.burro {
