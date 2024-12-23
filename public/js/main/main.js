@@ -35,40 +35,33 @@
     });
 
     $(document).ready(function() {
-
-        $('#services-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            dots: true,
-            nav: true,
-            smartSpeed: 700,
-            autoplay: true,
-            autoplayTimeout: 700,
-            autoplayHoverPause: false,
-            stagePadding: 0,
-            slideTransition: 'linear',
-            autoplayTimeout: 7000,
-            autoplaySpeed: 7000,
-            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-            responsive: {
-                0: {
-                    items: 1.2,
-                    margin: 0
-                },
-                768: {
-                    items: 2.5,
-                    margin: 0
-                },
-                992: {
-                    items: 3,
-                    margin: -10
-                },
-                1200: {
-                    items: 3.7,
-                    margin: -20
+        if (window.innerWidth > 762) { 
+            $('#services-carousel').owlCarousel({
+                loop: true, responsiveClass: true, dots: true, nav: false, smartSpeed: 700, 
+                autoplay: true, autoplayTimeout: 700, autoplayHoverPause: false, stagePadding: 0,
+                slideTransition: 'linear', autoplayTimeout: 7000, autoplaySpeed: 7000,
+                navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                responsive: {
+                    0: { items: 1.2, margin: 0 },
+                    768: { items: 2.5, margin: 0 },
+                    992: { items: 3, margin: -10 },
+                    1200: { items: 3.7, margin: 0 },
                 }
-            }
-        });
+            });
+        } else {
+            $('#services-carousel').owlCarousel({
+                loop: true, responsiveClass: true, dots: true, nav: true, smartSpeed: 700, 
+                autoplay: true, autoplayTimeout: 700, autoplayHoverPause: false, stagePadding: 0,
+                slideTransition: 'linear', autoplayTimeout: 7000, autoplaySpeed: 7000,
+                navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                responsive: {
+                    0: { items: 1.2, margin: 0 },
+                    768: { items: 2.5, margin: 0 },
+                    992: { items: 3, margin: -10 },
+                    1200: { items: 3.7, margin: 0 },
+                }
+            });
+        }
         
         if ($("#rev_slider_2").length !== 0) {
 			var tpj = jQuery;
