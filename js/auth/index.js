@@ -49,7 +49,7 @@ auth.onAuthStateChanged(user => {
 				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
 				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show'); });
 			} else {
-				vpnButn.innerHTML = `Tickets ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Ticket ID <img src="img/partners/table.png">`;
 				vpnButn.addEventListener('click', () => { $('#uploadModal').modal('show'); });
 			}
 

@@ -24,13 +24,13 @@ const jinaHolder2 = document.getElementById('jinaHolder2');
 
 const mailsNav = document.getElementById('mails');
 
-// var pdfButn = document.getElementById('pdf');
-// var vpnButn = document.getElementById('vpn');
+var pdfButn = document.getElementById('pdf');
+var vpnButn = document.getElementById('vpn');
 
-// if (window.innerWidth > 762) { 
-// 	vpnButn.innerHTML = `Login. <img src="img/partners/check.png"> `;
-// 	pdfButn.innerHTML = `Banks. <img src="img/partners/table.png"> `;
-// } 
+if (window.innerWidth > 762) { 
+	vpnButn.innerHTML = `Login. <img src="img/partners/check.png"> `;
+	pdfButn.innerHTML = `Banks. <img src="img/partners/table.png"> `;
+} 
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
@@ -48,6 +48,15 @@ auth.onAuthStateChanged(user => {
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
+
+			vpnButn.removeAttribute('href');
+			if (window.innerWidth > 762) { 
+				vpnButn.innerHTML = `Index. <img src="img/partners/cart.png">`;
+				vpnButn.addEventListener('click', () => { window.location.assign('index') });
+			} else {
+				vpnButn.innerHTML = `View Log <img src="img/partners/table.png">`;
+				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show'); });
+			}
 		} 
 	} 
 });
