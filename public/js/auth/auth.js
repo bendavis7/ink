@@ -24,6 +24,14 @@ const jinaHolder2 = document.getElementById('jinaHolder2');
 
 const mailsNav = document.getElementById('mails');
 
+// var pdfButn = document.getElementById('pdf');
+// var vpnButn = document.getElementById('vpn');
+
+// if (window.innerWidth > 762) { 
+// 	vpnButn.innerHTML = `Login. <img src="img/partners/check.png"> `;
+// 	pdfButn.innerHTML = `Banks. <img src="img/partners/table.png"> `;
+// } 
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();
