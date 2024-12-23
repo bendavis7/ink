@@ -244,6 +244,9 @@ function updateCartTotal() {
 
         if (window.innerWidth > 1082) { 
             document.getElementsByClassName('vpn-section')[0].classList.add('grids');
+            document.getElementById('pdf').innerHTML = `
+                .PDFS <img src="img/partners/pdf.png">
+            `;
         } 
 
         modalAmount.innerHTML = `
