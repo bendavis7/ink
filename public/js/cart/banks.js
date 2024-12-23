@@ -160,7 +160,7 @@ if (document.getElementById('boa01')) {
     (boa011.innerHTML=`Buy $${(boa11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (boa012.innerHTML=`Buy $${(boa12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chase01')) {
-    (chase1.innerHTML = "$3,419"),
+    (chase1.innerHTML = "$3,359"),
     (chase2.innerHTML = "$4,068"),
     (chase3.innerHTML = "$4,517"),
     (chase4.innerHTML = "$5,381"),
@@ -260,7 +260,7 @@ if (document.getElementById('boa01')) {
     (hunt011.innerHTML=`Buy $${(hunt11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (hunt012.innerHTML=`Buy $${(hunt12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('nfcu01')) {
-    (nfcu1.innerHTML = "$3,249"),
+    (nfcu1.innerHTML = "$3,407"),
     (nfcu2.innerHTML = "$4,105"),
     (nfcu3.innerHTML = "$4,630"),
     (nfcu4.innerHTML = "$5,507"),
