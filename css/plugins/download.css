@@ -365,7 +365,8 @@ section .dataTables_wrapper .dataTables_paginate {
     text-align: center;
   }
   section .dataTables_wrapper .dataTables_paginate {
-    margin-top: 10px !important;
+    margin-top: 7px !important;
+    margin-bottom: 7px !important;
   }
   section .dataTables_wrapper .dataTables_filter {
     display: flex !important;
@@ -379,19 +380,15 @@ section .dataTables_wrapper .dataTables_paginate {
 
   section .dataTables_wrapper .dataTables_length,
   section .dataTables_wrapper .dataTables_filter {
-    margin: 7px 5px 0px !important;
+    margin: 10px 5px 5px !important;
     letter-spacing: 1px !important;
     word-spacing: 1px !important;
-    font-size: 21px !important;
+    font-size: 23px !important;
     white-space: nowrap !important;
   }
 
   section .dataTables_wrapper .dataTables_filter {
-    margin-top: -3px !important;
-    letter-spacing: 1px !important;
-    word-spacing: 1px !important;
-    font-size: 22px !important;
-    white-space: nowrap !important;
+    margin-top: 0px !important;
   }
 }
   
