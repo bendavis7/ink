@@ -162,7 +162,7 @@ auth.onAuthStateChanged(user => {
 					Bank logs can be sent as <br> a .PDF file or via EMAIL.             <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			
-				setTimeout(() => { window.location.assign('home'); }, 10000);
+				setTimeout(() => { window.location.assign('home'); }, 9000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -176,7 +176,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 8500);
+			setTimeout(() => { generatePDF(); }, 7500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
