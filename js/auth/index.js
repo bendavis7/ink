@@ -10,9 +10,8 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('ink-darkweb')) {
+if(!localStorage.getItem('banklogs')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('ink-darkweb', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
@@ -45,12 +44,12 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			
 			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				$('#profileModal').modal('show'); });
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
-				vpnButn.addEventListener('click', () => { $('#profileModal').modal('show'); });
 			} else {
-				vpnButn.innerHTML = `Ticket ID <img src="img/partners/table.png">`;
-				vpnButn.addEventListener('click', () => { $('#uploadModal').modal('show'); });
+				vpnButn.innerHTML = `Banks ID <img src="img/partners/table.png">`;
 			}
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);

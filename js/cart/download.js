@@ -237,16 +237,13 @@ function updateCartTotal() {
 
         if (window.innerWidth > 762) { 
             document.getElementById('flex-one').style.display = 'flex'; 
-            document.getElementById('vpn').innerHTML = `
-                Email <img src="img/partners/check.png">
+            document.getElementById('pdf').innerHTML = `
+                .PDFs <img src="img/partners/pdf.png">
             `;
         } 
 
         if (window.innerWidth > 1082) { 
             document.getElementsByClassName('vpn-section')[0].classList.add('grids');
-            document.getElementById('pdf').innerHTML = `
-                .PDFS <img src="img/partners/pdf.png">
-            `;
         } 
 
         modalAmount.innerHTML = `

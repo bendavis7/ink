@@ -49,12 +49,12 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
-					window.location.assign('download');
+					window.location.assign('index');
 				} else { 
-					window.location.assign('chime'); 
+					window.location.assign('index'); 
 				}
 			} else {
-				window.location.assign('huntington'); 
+				window.location.assign('index'); 
 			}
 		} 
 	} 
