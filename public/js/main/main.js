@@ -40,7 +40,7 @@
             loop: true,
             responsiveClass: true,
             dots: true,
-            nav: true,
+            nav: false,
             smartSpeed: 700,
             autoplay: true,
             autoplayTimeout: 700,
