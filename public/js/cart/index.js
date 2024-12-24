@@ -91,7 +91,9 @@ function showThis() {
             if(user) {
                 if(user.email) {
                     window.location.assign('download');
-                } else { window.location.assign('home'); }
+                } else { 
+                    window.location.assign('home'); 
+                }
             } else { window.location.assign('home'); }
         });
     } else { 
