@@ -115,12 +115,17 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
                
         $('#chartx').owlCarousel({
-            loop: false, nav: false, dots: true,
-            smartSpeed: 4000, autoplay: true,
-            autoplayTimeout: 12000, responsiveClass: true,
-            autoplayHoverPause: false, stagePadding: 0,
+            loop: false, 
+            nav: false, 
+            dots: true,
+            smartSpeed: 4000, 
+            autoplay: true,
+            responsiveClass: true,
+            autoplayHoverPause: false, 
+            stagePadding: 0,
             slideTransition: 'linear',
-            autoplayTimeout: 4000, autoplaySpeed: 4000,
+            autoplayTimeout: 3000, 
+            autoplaySpeed: 5000,
             responsive: {
                 0: {items: 1, margin: 10}
             }
