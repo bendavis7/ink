@@ -80,10 +80,10 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
 				return db.collection('users').doc(theGuy).set({ 
-					loginID: true, wishID: itemz, });
+					loginID: true, wishID: itemz });
 			} else { 
 				return db.collection('users').doc(theGuy).update({ 
-					loginID: true, wishID, itemz });
+					loginID: true, wishID: itemz });
 			}
 		});
 	} 
