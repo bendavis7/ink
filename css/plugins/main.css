@@ -3028,8 +3028,7 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   height: 70px !important;
 }
 
-#services-carousel button.owl-prev,
-#services-carousel button.owl-next {
+#services-carousel button.owl-prev {
   background: white !important;
 }
 
