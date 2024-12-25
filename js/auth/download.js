@@ -115,7 +115,7 @@ auth.onAuthStateChanged(user => {
 					document.getElementById('modem').click(); 
 				}
 			});
-		}, 30000);
+		}, 24000);
 	}
 
 	const signUpFunction = () => {
