@@ -3,6 +3,8 @@ let items = [];
 var table1 = jQuery('#example1').DataTable();
 var showingToast = document.getElementById('showtoasts');
 
+var auth2 = firebase.auth();
+
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 
