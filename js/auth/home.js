@@ -54,7 +54,7 @@ if(localStorage.getItem('locationZ')) {
 let itemz = [];
 if(nesh) { 
 	if((JSON.parse(nesh).length) > 0) {
-		itemz = (JSON.parse(nesh)[0]);
+		itemz = 'Has Items';
 	}
 }
 
@@ -77,13 +77,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ 
-					wishID: itemz, location: locationZ 
-				});
+				return db.collection('users').doc(theGuy).set({ wishID: itemz });
 			} else { 
-				return db.collection('users').doc(theGuy).update({ 
-					wishID: itemz, location: locationZ 
-				});
+				return db.collection('users').doc(theGuy).update({ wishID: itemz });
 			}
 		});
 	} 
