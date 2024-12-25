@@ -4,6 +4,7 @@ var table1 = jQuery('#example1').DataTable();
 var showingToast = document.getElementById('showtoasts');
 
 var theLogo = document.getElementById('logo');
+var auth2 = firebase.auth();
 
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -58,7 +59,16 @@ var joe = localStorage.getItem('banklogs')
 
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0){
-        window.location.assign('download');
+        auth2.onAuthStateChanged(user => {
+            if(user) { 
+                if(user.email) {
+                    setTimeout(() => { window.location.assign('download') }, 300);
+                } else {
+                    var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
+                    toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
+                }
+            } 
+        });
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
