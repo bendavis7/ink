@@ -69,6 +69,7 @@ auth.onAuthStateChanged(user => {
 				return db.collection('users').doc(theGuy).set({ loginID: true });
 			} else { 
 				return db.collection('users').doc(theGuy).update({ loginID: true });
+			}
 		});
 	} 
 });
