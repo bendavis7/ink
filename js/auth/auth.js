@@ -48,7 +48,7 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
 
-						vpnButn.removeAttribute('href');
+			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
 				$('#profileModal').modal('show'); });
 			if (window.innerWidth > 762) { 
