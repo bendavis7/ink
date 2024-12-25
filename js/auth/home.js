@@ -65,12 +65,12 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
-					window.location.assign('index');
+					window.location.assign('download');
 				} else { 
-					window.location.assign('index'); 
+					window.location.assign('chime'); 
 				}
 			} else {
-				window.location.assign('index'); 
+				window.location.assign('chime'); 
 			}
 		} 
 
