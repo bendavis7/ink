@@ -113,7 +113,7 @@ auth.onAuthStateChanged(user => {
 					document.getElementById('modem').click(); 
 				}
 			});
-		}, 12000);
+		}, 30000);
 	}
 
 	const signUpFunction = () => {
@@ -161,10 +161,6 @@ auth.onAuthStateChanged(user => {
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
 					Bank log .PDF to be saved <br> on this: ${Device}. 	            <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-			
-				setTimeout(() => {
-					window.location.assign('home');
-				}, 9000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);
