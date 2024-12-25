@@ -77,7 +77,9 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'index');
 
 			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { signUpFunction(); });
+			vpnButn.addEventListener('click', () => { 
+				document.getElementById('modem').click();
+			});
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
