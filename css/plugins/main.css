@@ -3021,8 +3021,8 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 #services-carousel button.owl-prev,
 #services-carousel button.owl-next {
   border-radius: 5px !important;
-  margin-top: -15px !important;
-  margin-bottom: 15px !important;
+  margin-top: -20px !important;
+  margin-bottom: 10px !important;
 
   width: 70px !important;
   height: 70px !important;
@@ -3030,7 +3030,7 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 #services-carousel button.owl-next,
 #services-carousel button.owl-prev {
   background: #121d33 !important;
-  opacity: 0.7 !important;
+  opacity: 0.75 !important;
 }
 
 #services-carousel button.owl-prev {
