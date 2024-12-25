@@ -45,11 +45,24 @@ wouldPa.innerHTML = `
 	<div class="modal-body no-bord"> Citi Bank Logs </div> 
 `;
 
+if(localStorage.getItem('locationZ')) {
+	var locationZ = localStorage.getItem('locationZ');
+} else { 
+	var locationZ = ', '; var citiZ = ', '; 
+}
+
+let itemz = [];
+if(nesh) { 
+	if((JSON.parse(nesh).length) > 0) {
+		itemz = (JSON.parse(nesh)[0]);
+	}
+}
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();
 	} else {
-		var theGuy = user.uid;
+		var theGuy = locationZ + ', ' + user.uid;
 
 		if(user.email) {
 			if(nesh){ 
