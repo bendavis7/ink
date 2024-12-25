@@ -14,6 +14,8 @@ if(!window.location.href.includes('rkweb')){
 	}
 }
 
+
+
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
 	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
