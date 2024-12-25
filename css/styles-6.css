@@ -10,6 +10,10 @@
     background-color: rgba(208, 173, 85, 0.2) !important;
   }
 }
+#services-carousel button.owl-next i,
+#services-carousel button.owl-prev i {
+  color: #d0ad55 !important;
+}
 #preloader:before {
   border: 3px solid #d0ad55;
 }
