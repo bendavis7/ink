@@ -10,6 +10,10 @@
     background-color: rgba(250, 183, 2, 0.2) !important;
   }
 }
+#services-carousel button.owl-next i,
+#services-carousel button.owl-prev i {
+  color: #fab702 !important;
+}
 .logo-50 {
   border: 1.4px solid rgba(250, 183, 2, 0.7);
 }
