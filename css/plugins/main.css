@@ -3049,7 +3049,7 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 
 #services-carousel button.owl-next i,
 #services-carousel button.owl-prev i {
-  color: white !important;
+  color: #86bc42 !important;
 }
 
 @media screen and (max-width: 570px) {
