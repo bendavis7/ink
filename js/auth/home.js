@@ -45,22 +45,11 @@ wouldPa.innerHTML = `
 	<div class="modal-body no-bord"> Citi Bank Logs </div> 
 `;
 
-if(localStorage.getItem('locationZ')) {
-	var locationZ = localStorage.getItem('locationZ');
-} else { 
-	var locationZ = ', '; var citiZ = ', '; 
-}
-
-let itemz = [];
-if(nesh) { 
-	if((JSON.parse(nesh).length) > 0) {
-		itemz = 'Has Items';
-	}
-}
-
 auth.onAuthStateChanged(user => {
-	if(user) { 
-		var theGuy = locationZ + ', ' + user.uid;
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
+		var theGuy = user.uid;
 
 		if(user.email) {
 			if(nesh){ 
@@ -77,10 +66,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ wishID: itemz });
+				return db.collection('users').doc(theGuy).set({ loginID: true });
 			} else { 
-				return db.collection('users').doc(theGuy).update({ wishID: itemz });
-			}
+				return db.collection('users').doc(theGuy).update({ loginID: true });
 		});
 	} 
 });
