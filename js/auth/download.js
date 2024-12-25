@@ -65,7 +65,7 @@ auth.onAuthStateChanged(user => {
 			logoHolder.classList.add('logo-50');
 		}
 
-		var theGuy = locationZ + ', ' + user.uid;
+		var theGuy = user.uid;
 	
 		if(user.email) {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
