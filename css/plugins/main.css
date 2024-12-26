@@ -2060,6 +2060,9 @@ ul.countdown li p {
   #vpn img, #vpn i {
     margin-left: 6px !important;
   }
+  .vpn-section .butn#pdf {
+     background: white !important;
+  }
 }
 
 @media screen and (max-width: 407px) {
