@@ -49,7 +49,7 @@ auth.onAuthStateChanged(user => {
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
 			} else {
-				vpnButn.innerHTML = `Banks ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			}
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
