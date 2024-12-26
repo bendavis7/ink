@@ -48,11 +48,11 @@ auth.onAuthStateChanged(user => {
 
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
-				$('#profileModal').modal('show'); });
+				window.location.assign('index') });
 			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
+				vpnButn.innerHTML = `Index. <img src="img/partners/tele.png">`;
 			} else {
-				vpnButn.innerHTML = `Banks ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Index <img src="img/partners/tele.png">`;
 			}
 		} 
 	} 
