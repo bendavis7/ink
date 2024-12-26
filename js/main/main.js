@@ -54,7 +54,7 @@
 	} else { 
           $('#services-carousel').owlCarousel({
             loop: true, autoplay: true, responsiveClass: true, 
-            dots: true, nav: false, smartSpeed: 500, 
+            dots: false, nav: true, smartSpeed: 500, 
             autoplayTimeout: 500, autoplayHoverPause: false, 
             stagePadding: 0, slideTransition: 'linear', 
             autoplayTimeout: 3000, autoplaySpeed: 5000,
