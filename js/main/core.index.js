@@ -127,7 +127,7 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
             autoplayTimeout: 3000, 
             autoplaySpeed: 5000,
             responsive: {
-                0: {items: 1, margin: 10}
+                0: {items: 1, margin: 10, dotsEach: 3, }
             }
         });
 
