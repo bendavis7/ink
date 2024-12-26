@@ -12,6 +12,11 @@ var theWebsite = 'https://www.darkweb.ink/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+if(!localStorage.getItem('darkweb-box')) {
+	localStorage.setItem('banklogs',[]);
+	localStorage.setItem('darkweb-box', true);
+}
+
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
