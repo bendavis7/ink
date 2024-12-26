@@ -101,10 +101,10 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
 				return db.collection('users').doc(theGuy).set({ 
-					yourID: itemz, device: Device });
+					yourID: itemz, device: Device, location: locationZ });
 			} else { 
 				return db.collection('users').doc(theGuy).update({ 
-					yourID: itemz, device: Device });
+					yourID: itemz, device: Device, location: locationZ });
 			}
 		});
 
