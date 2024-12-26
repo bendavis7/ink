@@ -60,7 +60,7 @@
             autoplayTimeout: 3000, autoplaySpeed: 5000,
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
             responsive: {
-                0: { items: 1.2, margin: 0, dotsEach: 4, },
+                0: { items: 1.2, margin: 0, dotsEach: 5, },
                 768: { items: 2.5, margin: 0 },
                 992: { items: 3, margin: -10 },
                 1200: { items: 3.7, margin: 0 },
