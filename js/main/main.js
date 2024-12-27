@@ -42,10 +42,10 @@
             dots: true, nav: true, smartSpeed: 500, 
             autoplayTimeout: 500, autoplayHoverPause: true, 
             stagePadding: 0, slideTransition: 'linear', 
-            autoplayTimeout: 3000, autoplaySpeed: 5000,
+            autoplayTimeout: 5000, autoplaySpeed: 5000,
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
             responsive: {
-                0: { items: 1.2, margin: 0, dotsEach: 5, },
+                0: { items: 1.5, margin: -15, dotsEach: 5, },
                 768: { items: 2.5, margin: 0 },
                 992: { items: 3, margin: -10 },
                 1200: { items: 3.7, margin: 0 },
