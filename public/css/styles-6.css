@@ -10,6 +10,10 @@
     background-color: rgba(208, 173, 85, 0.2) !important;
   }
 }
+#services-carousel button.owl-next i,
+#services-carousel button.owl-prev i {
+  color: #d0ad55 !important;
+}
 #preloader:before {
   border: 3px solid #d0ad55;
 }
@@ -304,7 +308,6 @@ span#uidy {
 #showtoasts {
   border: 2.2px solid rgba(208, 173, 85, 0.7);
 }
-#services-carousel button.owl-next,
 #vpn,
 #mails,
 #email-phone {

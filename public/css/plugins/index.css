@@ -175,11 +175,11 @@ opacity: 0 !important;
   margin-top: 0;
 }
 .masonry-4 {
-  margin: 2.5px 0;
+  margin: 2px 0;
   padding: 0;
-  -moz-column-gap: 2.5px;
-  -webkit-column-gap: 2.5px;
-  column-gap: 2.5px;
+  -moz-column-gap: 2px;
+  -webkit-column-gap: 2px;
+  column-gap: 2px;
 
   -moz-column-count: 11;
   -webkit-column-count: 11;
@@ -198,12 +198,6 @@ opacity: 0 !important;
       -moz-column-count: 15;
       -webkit-column-count: 15;
       column-count: 15;
-
-      margin: 2px 0;
-      padding: 0;
-      -moz-column-gap: 2px;
-      -webkit-column-gap: 2px;
-      column-gap: 2px;
   }
 }
 
@@ -470,4 +464,10 @@ opacity: 0 !important
   opacity: 0.5 !important;
 }
 
+
+@media screen and (max-width: 767px) {
+  .vpn-section .butn#pdf {
+     background: rgb(219 242 246) !important;
+  }
+}
 

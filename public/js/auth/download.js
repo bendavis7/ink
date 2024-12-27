@@ -14,6 +14,8 @@ if(!window.location.href.includes('rkweb')){
 	}
 }
 
+
+
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
 	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
@@ -77,7 +79,9 @@ auth.onAuthStateChanged(user => {
 			mailsNav.setAttribute('href', 'index');
 
 			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { signUpFunction(); });
+			vpnButn.addEventListener('click', () => { 
+				document.getElementById('modem').click();
+			});
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
@@ -97,12 +101,10 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
 				return db.collection('users').doc(theGuy).set({ 
-					yourID: itemz, device: Device, location: locationZ
-				});
+					yourID: itemz, device: Device, location: locationZ });
 			} else { 
 				return db.collection('users').doc(theGuy).update({ 
-					yourID: itemz, device: Device, location: locationZ
-				});
+					yourID: itemz, device: Device, location: locationZ });
 			}
 		});
 
@@ -144,7 +146,7 @@ auth.onAuthStateChanged(user => {
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; 
 						var msg = ` 
-							${toastbtci} BTC not detected <br> ${user.email}            <hr class="to-hr hr15-top"> 
+							 Bank logs will be sent to <br> ${user.email}.              <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
@@ -153,8 +155,7 @@ auth.onAuthStateChanged(user => {
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-					
-						setTimeout(() => { generatePDF(); }, 8000);
+					        setTimeout(() => { generatePDF(); }, 8000);
 					}
 				});
 			} else {
@@ -163,8 +164,7 @@ auth.onAuthStateChanged(user => {
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
 					Bank log .PDF to be saved <br> on this: ${Device}. 	            <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-			
-				setTimeout(() => { generatePDF(); }, 8000);
+			        setTimeout(() => { generatePDF(); }, 8000);
 			}
 
 			var docRef = db.collection("users").doc(theGuy);

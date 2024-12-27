@@ -2046,10 +2046,10 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 29px !important;
-    letter-spacing: 1.8px !important;
-    padding: 14.5px !important;
-    margin: 30px auto 45px !important;
+    font-size: 28px !important;
+    letter-spacing: 1.7px !important;
+    padding: 14px !important;
+    margin: 30px auto 40px !important;
   }
   .butn#modem {
     font-size: 21px !important;
@@ -2065,10 +2065,10 @@ ul.countdown li p {
 @media screen and (max-width: 407px) {
   .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
-    font-size: 28px !important;
+    font-size: 27px !important;
     letter-spacing: 1.6px !important;
-    padding: 14px !important;
-    margin: 30px auto 45px !important;
+    padding: 13.5px !important;
+    margin: 30px auto 40px !important;
   }
   .butn#modem {
     font-size: 20.5px !important;
@@ -3021,48 +3021,26 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 #services-carousel button.owl-prev,
 #services-carousel button.owl-next {
   border-radius: 5px !important;
-  margin-top: 0px !important;
-  margin-bottom: 30px !important;
+  margin-top: -15px !important;
+  margin-bottom: 15px !important;
 
-  width: 70px !important;
-  height: 70px !important;
+  width: 60px !important;
+  height: 60px !important;
 }
-
+#services-carousel button.owl-next,
 #services-carousel button.owl-prev {
-  background: white !important;
+  background: #121d33 !important;
+  opacity: 0.75 !important;
 }
-
-#services-carousel button.owl-prev {
-  margin-right: 50px !important;
-}
-#services-carousel button.owl-next {
-  margin-left: 50px !important;
-}
-
 #services-carousel {
   margin-bottom: 0px !important;
 }
-#services-carousel i {
-  font-size: 37px !important;
+#services-carousel button.owl-prev {
+  margin-right: 32px !important;
 }
-
-@media screen and (max-width: 570px) {
-  #services-carousel button.owl-prev,
-  #services-carousel button.owl-next {  
-    width: 65px !important;
-    height: 65px !important;
-  }
-
-  #services-carousel button.owl-prev {
-    margin-right: 35px !important;
-  }
-  
-  #services-carousel button.owl-next {
-    margin-left: 35px !important;
-  }
-  
-  #services-carousel i {
-    font-size: 33px !important;
-  }
-  
+#services-carousel button.owl-next {
+  margin-left: 32px !important;
+}
+#services-carousel i {
+  font-size: 32px !important;
 }

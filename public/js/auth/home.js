@@ -12,6 +12,11 @@ var theWebsite = 'https://www.darkweb.ink/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+if(!localStorage.getItem('darkweb-vxr')) {
+	localStorage.setItem('banklogs',[]);
+	localStorage.setItem('darkweb-vxr', true);
+}
+
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
@@ -48,42 +53,42 @@ wouldPa.innerHTML = `
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 } else { 
-	var locationZ = ', '; var citiZ = ', '; 
+	var locationZ = ', '; 
 }
 
 let itemz = [];
 if(nesh) { 
 	if((JSON.parse(nesh).length) > 0) {
-		itemz = (JSON.parse(nesh)[0]);
+		itemz = 'Has Items'
 	}
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
-					window.location.assign('index');
+					window.location.assign('download');
 				} else { 
-					window.location.assign('index'); 
+					window.location.assign('chime'); 
 				}
 			} else {
-				window.location.assign('index'); 
+				window.location.assign('chime'); 
 			}
 		} 
 
-		var docRef = db.collection("users").doc(theGuy);
+		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ 
-					wishID: itemz, location: locationZ 
-				});
+				return db.collection('home').doc(theGuy).set({ 
+					loginID: true, wishID: itemz });
 			} else { 
-				return db.collection('users').doc(theGuy).update({ 
-					wishID: itemz, location: locationZ 
-				});
+				return db.collection('home').doc(theGuy).update({ 
+					loginID: true, wishID: itemz });
 			}
 		});
 	} 

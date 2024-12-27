@@ -3,7 +3,7 @@
     padding: 0 10px !important;
   }
     
-  @media screen and (max-width: 570px) {
+  @media screen and (max-width: 500px) {
     #logs-invoice {
       height: 100% !important;
       padding: 0 10px !important;

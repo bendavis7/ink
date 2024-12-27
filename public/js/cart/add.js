@@ -56,22 +56,16 @@ showingToast.addEventListener('click', showThis);
 var joe = localStorage.getItem('banklogs')
 
 function showThis() {
-    if(joe && (JSON.parse(joe).length) > 0) {
-        auth2.onAuthStateChanged(user => {
-            if(user) {
-                if(user.email) {
-                    window.location.assign('download');
-                } else { 
-                    window.location.assign('home'); 
-                }
-            } else { window.location.assign('home'); }
-        });
+    if(joe && (JSON.parse(joe).length) > 0){
+         auth2.onAuthStateChanged(user => { if(user) { 
+            if(user.email) { window.location.assign('download'); } 
+            else { window.location.assign('home'); } }
+            else { window.location.assign('home'); } });
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
 }
-
 
 $('#exampleModal').on('show.bs.modal', function (event) {
     "use strict";
@@ -358,7 +352,11 @@ function updateCartTotal() {
                 singleLog[i].innerHTML = `Cart ${data.price.replace('Price: ', '')} <img src="co.png"> `;
                 var bunist = singleLog[i].parentElement.parentElement;
                 bunist.classList.add('display-nones');
-                singleLog[i].disabled = 'disabled';
+                
+                singleLog[i].removeAttribute('data-bs-target');
+                singleLog[i].addEventListener('click', () => {
+                    $('#profileModal').modal('show');
+                });
             } 
         });
     }

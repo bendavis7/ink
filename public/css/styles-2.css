@@ -10,6 +10,10 @@
     background-color: rgba(3, 169, 245, 0.2) !important;
   }
 }
+#services-carousel button.owl-next i,
+#services-carousel button.owl-prev i {
+  color: #03a9f5 !important;
+}
 .logo-50 {
   border: 1.4px solid rgba(3, 169, 245, 0.7);
 }
@@ -302,7 +306,6 @@ span#uidy {
 #showtoasts {
   border: 2.2px solid rgba(3, 169, 245, 0.7);
 }
-#services-carousel button.owl-next,
 #vpn,
 #mails,
 #email-phone {

@@ -10,8 +10,9 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('banklogs')) {
+if(!localStorage.getItem('darkweb-vxr')) {
 	localStorage.setItem('banklogs',[]);
+	localStorage.setItem('darkweb-vxr', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
@@ -49,7 +50,7 @@ auth.onAuthStateChanged(user => {
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks. <img src="img/partners/cart.png">`;
 			} else {
-				vpnButn.innerHTML = `Banks ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			}
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
