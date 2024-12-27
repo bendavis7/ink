@@ -2028,7 +2028,7 @@ ul.countdown li p {
   cursor: pointer;
   font-size: 36px !important;
   padding: 18px !important;
-  letter-spacing: 2.3px !important;
+  letter-spacing: 2.5px !important;
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
 }
@@ -3015,6 +3015,13 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
     padding: 10px 12px !important;
     letter-spacing: 1.8px !important;
     color: #121d33;
+  }
+}
+
+@media screen and (min-width: 1067px) {
+  #services-carousel button.owl-prev,
+  #services-carousel button.owl-next {
+    display: none !important;
   }
 }
 
