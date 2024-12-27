@@ -352,7 +352,7 @@ function updateCartTotal() {
                 singleLog[i].innerHTML = `Cart ${data.price.replace('Price: ', '')} <img src="co.png"> `;
                 var bunist = singleLog[i].parentElement.parentElement;
                 bunist.classList.add('display-nones');
-                // singleLog[i].disabled = 'disabled';
+                
                 singleLog[i].removeAttribute('data-bs-target');
                 singleLog[i].addEventListener('click', () => {
                     $('#profileModal').modal('show');
