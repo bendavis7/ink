@@ -81,13 +81,13 @@ auth.onAuthStateChanged(user => {
 			}
 		} 
 
-		var docRef = db.collection("users").doc(theGuy);
+		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ 
+				return db.collection('home').doc(theGuy).set({ 
 					loginID: true, wishID: itemz });
 			} else { 
-				return db.collection('users').doc(theGuy).update({ 
+				return db.collection('home').doc(theGuy).update({ 
 					loginID: true, wishID: itemz });
 			}
 		});
