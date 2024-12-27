@@ -40,7 +40,7 @@
 	$('#services-carousel').owlCarousel({
             loop: true, autoplay: true, responsiveClass: true, 
             dots: true, nav: true, smartSpeed: 500, 
-            autoplayTimeout: 500, autoplayHoverPause: false, 
+            autoplayTimeout: 500, autoplayHoverPause: true, 
             stagePadding: 0, slideTransition: 'linear', 
             autoplayTimeout: 3000, autoplaySpeed: 5000,
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
@@ -64,11 +64,11 @@
                         delay: 12e3,
                         responsiveLevels: [4096, 1024, 778, 530],
                         gridwidth: [1370, 1024, 578, 400],
-                        gridheight: [140, 160, 180, 160],
+                        gridheight: [150, 170, 190, 170],
                         hideThumbs: 10,
                         sliderLayout: 'fullwidth',
                         autoHeight: 'on',
-                        dots: false,
+                        dots: true,
                         navigation: {
                             onHoverStop: "on",
                             touch: {
@@ -103,7 +103,7 @@
                                 style: "",
                                 style: "hesperiden",
                                 enable: 1,
-                                enable: 0,
+                                // enable: 0,
                                 hide_onmobile: false,
                                 hide_onleave: false,
                                 direction: "horizontal",

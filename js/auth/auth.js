@@ -27,8 +27,8 @@ var vpnButn = document.getElementById('vpn');
 const mailsNav = document.getElementById('mails');
 
 if (window.innerWidth > 762) { 
-	vpnButn.innerHTML = `Login. <img src="img/partners/check.png"> `;
-	pdfButn.innerHTML = `Ticket <img src="img/partners/table.png"> `;
+	vpnButn.innerHTML = `
+		Login <img src="img/partners/check.png"> `;
 } 
 
 auth.onAuthStateChanged(user => {
