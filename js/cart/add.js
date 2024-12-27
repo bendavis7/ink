@@ -353,6 +353,9 @@ function updateCartTotal() {
                 var bunist = singleLog[i].parentElement.parentElement;
                 bunist.classList.add('display-nones');
                 singleLog[i].disabled = 'disabled';
+                singleLog[i].addEventListener('click', () => {
+                    $('#profileModal').modal('show');
+                });
             } 
         });
     }
