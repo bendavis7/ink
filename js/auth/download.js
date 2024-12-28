@@ -146,11 +146,7 @@ auth.onAuthStateChanged(user => {
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; 
 						var msg = ` 
-<<<<<<< HEAD
-							 Bank logs will be sent to <br> ${user.email}.              <hr class="to-hr hr15-top"> 
-=======
-							Bank logs will be sent to <br> ${user.email}.           <hr class="to-hr hr15-top"> 
->>>>>>> e50d93e4d4afd5767ec9f21d4ee888c2adf86c68
+							Bank logs will be sent to <br> ${user.email}.              <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
@@ -179,6 +175,7 @@ auth.onAuthStateChanged(user => {
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
+
 			setTimeout(() => { generatePDF(); }, 8500);
 		});
 	}
