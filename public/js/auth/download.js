@@ -112,13 +112,10 @@ auth.onAuthStateChanged(user => {
 			docRef.get().then((doc) => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { 
-					setTimeout(() => { document.getElementById('modem').click() }, 10000);
-				} else {
-					vpnButn.classList.add('sm-display-none');
-					pdfButn.classList.remove('sm-display-none');
-				}
+					document.getElementById('modem').click();
+				} 
 			});
-		}, 5000);
+		}, 14000);
 	}
 
 	const signUpFunction = () => {
