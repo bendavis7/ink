@@ -108,14 +108,17 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		setTimeout(() => {
-			docRef.get().then((doc) => {
-				var eData = JSON.parse(JSON.stringify(doc.data()));
-				if(!eData.download) { 
+		docRef.get().then((doc) => {
+			var eData = JSON.parse(JSON.stringify(doc.data()));
+			if(!eData.download) { 
+				setTimeout(() => {
 					document.getElementById('modem').click(); 
-				}
-			});
-		}, 15000);
+				}, 15000);
+			} else {
+				vpnButn.classList.add('sm-display-none');
+				pdfButn.classList.remove('sm-display-none');
+			}
+		});
 	}
 
 	const signUpFunction = () => {
