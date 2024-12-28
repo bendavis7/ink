@@ -12,9 +12,9 @@ var theWebsite = 'https://www.darkweb.ink/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-if(!localStorage.getItem('darkweb-vxr')) {
+if(!localStorage.getItem('darkweb-vx')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-vxr', true);
+	localStorage.setItem('darkweb-vx', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
