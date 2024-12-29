@@ -115,7 +115,7 @@ auth.onAuthStateChanged(user => {
 					document.getElementById('modem').click();
 				} 
 			});
-		}, 14000);
+		}, 15000);
 	}
 
 	const signUpFunction = () => {
@@ -176,7 +176,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 10000);
+			setTimeout(() => { generatePDF(); }, 8500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
