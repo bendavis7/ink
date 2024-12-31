@@ -10,7 +10,6 @@ var firebaseConfig = {
 var theWebsite = 'https://www.darkweb.ink/home';
 
 const auth = firebase.auth();
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 const logoHolder = document.getElementById("logo");
@@ -45,25 +44,8 @@ wouldPa.innerHTML = `
 	<div class="modal-body no-bord"> Citi Bank Logs </div> 
 `;
 
-if(localStorage.getItem('locationZ')) {
-	var locationZ = localStorage.getItem('locationZ');
-} else { 
-	var locationZ = ', '; 
-}
-
-let itemz = [];
-if(nesh) { 
-	if((JSON.parse(nesh).length) > 0) {
-		itemz = 'Has Items'
-	}
-}
-
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
-		var theGuy = locationZ + ', ' + user.uid;
-
+	if(user) { 
 		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
@@ -75,17 +57,6 @@ auth.onAuthStateChanged(user => {
 				window.location.assign('chime'); 
 			}
 		} 
-
-		var docRef = db.collection("home").doc(theGuy);
-		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				return db.collection('home').doc(theGuy).set({ 
-					loginID: true, wishID: itemz });
-			} else { 
-				return db.collection('home').doc(theGuy).update({ 
-					loginID: true, wishID: itemz });
-			}
-		});
 	} 
 });
 
