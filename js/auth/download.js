@@ -14,8 +14,6 @@ if(!window.location.href.includes('rkweb')){
 	}
 }
 
-
-
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
 	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
@@ -100,19 +98,17 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ 
-					yourID: itemz, device: Device, location: locationZ });
+				return db.collection('users').doc(theGuy).set({yourID:itemz,device:Device,location:locationZ});
 			} else { 
-				return db.collection('users').doc(theGuy).update({ 
-					yourID: itemz, device: Device, location: locationZ });
+				return db.collection('users').doc(theGuy).update({yourID:itemz,device:Device,location:locationZ});
 			}
 		});
 
 		setTimeout(() => {
-			if(user.email) { docRef.get().then((doc) => {
+			docRef.get().then((doc) => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { document.getElementById('modem').click(); } 
-			}); }
+			}); 
 		}, 15000);
 	}
 
@@ -142,22 +138,19 @@ auth.onAuthStateChanged(user => {
 				docRef.get().then((doc) => {
 					if (!(doc.exists)) { 
 						auth.currentUser.sendEmailVerification(); 
-						var shortCutFunction = 'success'; 
-						var msg = ` 
+						var shortCutFunction = 'success'; var msg = ` 
 							Bank logs will be sent to <br> ${user.email}.              <hr class="to-hr hr15-top"> 
 							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
-						var shortCutFunction = 'success';  
-						var msg = ` 
+						var shortCutFunction = 'success';  var msg = ` 
 							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					}
 				});
 			} else {
-				var shortCutFunction = 'success';  
-				var msg = ` 
+				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
 					Bank log .PDF to be saved <br> on this: ${Device}. 	            <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
