@@ -106,12 +106,12 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		setTimeout(() => { if(user.email) {
+		setTimeout(() => { 
 			docRef.get().then((doc) => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { document.getElementById('modem').click(); } 
 			});
-		}}, 15000);
+		}, 15000);
 	}
 
 	const signUpFunction = () => {

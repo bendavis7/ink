@@ -62,20 +62,27 @@ auth.onAuthStateChanged(user => {
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 
-		if(user.email) { 
+		if(user.email) {
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					window.location.assign('download');
-				} else { window.location.assign('chime'); }
-			} else { window.location.assign('chime'); }
+				} else { 
+					window.location.assign('chime'); 
+				}
+			} else {
+				window.location.assign('chime'); 
+			}
 		} 
+
 
 		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('home').doc(theGuy).set({ yourID: itemz, location: locationZ });
+				return db.collection('home').doc(theGuy).set({ 
+					yourID: itemz, location: locationZ });
 			} else { 
-				return db.collection('home').doc(theGuy).update({ yourID: itemz, location: locationZ });
+				return db.collection('home').doc(theGuy).update({ 
+					yourID: itemz, location: locationZ });
 			}
 		});
 	} 
@@ -94,9 +101,6 @@ function emailShow() {
 			signUp.addEventListener('click', homeFx); 
 			theForm.removeEventListener('submit', signUpFunction);
 			signUp.innerHTML = `Checkout <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
-		} else {
-			mailField.value = '@gmail.com';
-			mailField.style.textAlign = 'right';
 		}
 	});
 }
@@ -112,6 +116,7 @@ function runOnce() {
 	else if(mailField.value.includes('@i')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'cloud.com'; }
 	else if(mailField.value.includes('@a')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ol.com'; }
 	else if(mailField.value.includes('@m')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ail.com'; }
+	else if(mailField.value.includes('@g')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'mail.com'; }
   }
 
   if(mailField.value == '') { mailField.style.textAlign = 'center'; }
@@ -123,18 +128,14 @@ const signUpFunction = () => {
 
 	if(email.includes('@')) {
 		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			if(mailField.length > 10) {
-				signInWithGoogle();
-			} else {
-				mailField.focus();
-			}
+			signInWithGoogle();
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
 			signInWithYahoo();
 		} else {
 			auth.sendSignInLinkToEmail(email, actionCodeSettings).then(() => {
 				var shortCutFunction = 'success'; var msg = `Verification email sent to: <br> ${email}   <hr class="to-hr hr15-bot"> Check the spam / junk folder.  <hr class="hr3-nil">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			}).catch(error => {
-				var shortCutFunction = 'success'; var msg = `Use a gmail email address <br> to login here... <hr class="to-hr hr15-bot"> `;  toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+				var shortCutFunction = 'success'; var msg = `Use a gmail email address <br> to login here... <hr class="to-hr hr15-bot">`;  toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 			});
 		}
 	} else {
