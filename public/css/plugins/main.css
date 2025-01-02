@@ -3028,8 +3028,8 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 #services-carousel button.owl-prev,
 #services-carousel button.owl-next {
   border-radius: 5px !important;
-  margin-top: -10px !important;
-  margin-bottom: 15px !important;
+  margin-top: -12px !important;
+  margin-bottom: 12px !important;
 
   width: 56px !important;
   height: 56px !important;
