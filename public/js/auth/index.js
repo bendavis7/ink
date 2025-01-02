@@ -10,9 +10,9 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('darkweb-25')) {
+if(!localStorage.getItem('darkweb-x')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('darkweb-25', true);
+	localStorage.setItem('darkweb-x', true);
 }
 
 var nesh = localStorage.getItem('banklogs');
