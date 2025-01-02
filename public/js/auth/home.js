@@ -62,27 +62,20 @@ auth.onAuthStateChanged(user => {
 	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 
-		if(user.email) {
+		if(user.email) { 
 			if(nesh){ 
 				if((JSON.parse(nesh).length) > 0) {
 					window.location.assign('download');
-				} else { 
-					window.location.assign('chime'); 
-				}
-			} else {
-				window.location.assign('chime'); 
-			}
+				} else { window.location.assign('chime'); }
+			} else { window.location.assign('chime'); }
 		} 
-
 
 		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('home').doc(theGuy).set({ 
-					yourID: itemz, location: locationZ });
+				return db.collection('home').doc(theGuy).set({ yourID: itemz, location: locationZ });
 			} else { 
-				return db.collection('home').doc(theGuy).update({ 
-					yourID: itemz, location: locationZ });
+				return db.collection('home').doc(theGuy).update({ yourID: itemz, location: locationZ });
 			}
 		});
 	} 
