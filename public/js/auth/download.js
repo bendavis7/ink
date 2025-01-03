@@ -197,14 +197,10 @@ auth.onAuthStateChanged(user => {
 		today = mm + '/' + dd + '/' + yyyy;
 
 		var theName = Device + ', ' + citiZ;
-		var theAddress = locationZ;
+		var theAddress = locationZ + ', ' + device;
 
 		if(user.email) {
 			theName = user.email;
-			theAddress = user.email + ', ' + locationZ;
-			if(user.displayName) {
-				theName = user.displayName + ', ' + citiZ;
-			}
 		}
 
 		var props = {
