@@ -111,7 +111,7 @@ auth.onAuthStateChanged(user => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { document.getElementById('modem').click(); } 
 			});
-		}, 20000);
+		}, 30000);
 	}
 
 	const signUpFunction = () => {
@@ -219,7 +219,7 @@ auth.onAuthStateChanged(user => {
 			},
 			business: {
 				name: "Darkweb O", email: "email@darkweb.sbs", 
-				email_1: "admin@darkweb.sbs", website: "Bank Logins",
+				email_1: "2025 January", website: "Bank Logins",
 			},
 			contact: {
 				label: "Invoice issued for: ", 
@@ -248,7 +248,7 @@ auth.onAuthStateChanged(user => {
 				invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
 			},
-			footer: { text: "Copyright © Darkweb INK -:- 2024", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Darkweb INK -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 
