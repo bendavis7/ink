@@ -7,7 +7,7 @@ var firebaseConfig = {
 	appId: "1:64386431090:web:be47f10e339a9a45e5eaeb",
 	measurementId: "G-HGFDWH8XND"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.darkweb.sbs/home';
+var theWebsite = 'https://darkwebo.web.app/home';
 
 const auth = firebase.auth();
 const db = firebase.firestore();
