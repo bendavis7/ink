@@ -83,6 +83,10 @@ auth.onAuthStateChanged(user => {
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+				vpnButn.removeAttribute('href');
+				vpnButn.addEventListener('click', () => { 
+					document.getElementById('modem').click();
+				});
 			} else { 
 				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
@@ -135,6 +139,7 @@ auth.onAuthStateChanged(user => {
 
 			if(user.email) {
 				var docRef = db.collection("sent").doc(user.email); docRef.get().then((doc) => {
+				setTimeout(() => { generatePDF(); }, 10000);
 				if (!(doc.exists)) { 
 					auth.currentUser.sendEmailVerification(); 
 					var shortCutFunction = 'success'; var msg = ` 
@@ -142,17 +147,16 @@ auth.onAuthStateChanged(user => {
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 9000);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				} });
 			} else {
-				setTimeout(() => { window.location.assign('home') }, 9000);
+				setTimeout(() => { window.location.assign('home') }, 10000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-					Bank logs & Cashout guide,  <br> are sent via Email ..                    <hr class="hr15-top"> `;
+					Bank logs & cashout method <br> are sent via EMAIL ..                    <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
