@@ -74,7 +74,6 @@ auth.onAuthStateChanged(user => {
 			}
 		} 
 
-
 		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
