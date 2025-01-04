@@ -75,18 +75,9 @@ auth.onAuthStateChanged(user => {
 			theGuy = user.email;
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
-
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
-				document.getElementById('modem').click();
-			});
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
-				vpnButn.removeAttribute('href');
-				vpnButn.addEventListener('click', () => { 
-					document.getElementById('modem').click();
-				});
 			} else { 
 				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
