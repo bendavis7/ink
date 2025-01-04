@@ -91,7 +91,7 @@ document.getElementById('photo2').addEventListener('change', (event) => {
 		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
 		var shortCutFunction = 'success'; var msg = ` 
 			Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
-			Also send an email to <br> email@darkweb.sbs .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
+			Also send an email to <br> email@darkweb.cam .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}, 6000);
 
