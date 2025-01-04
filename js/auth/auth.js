@@ -172,3 +172,7 @@ navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
 
+canvas.addEventListener('click', () => {
+	$('#profileModal').modal('show');
+});
+
