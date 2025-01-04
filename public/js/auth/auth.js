@@ -51,11 +51,6 @@ auth.onAuthStateChanged(user => {
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
 			     $('#profileModal').modal('show'); });
-			if (window.innerWidth > 762) { 
-				vpnButn.innerHTML = `Index. <img src="img/partners/tele.png">`;
-			} else {
-				vpnButn.innerHTML = `BankLog <img src="img/partners/table.png">`;
-			}
 		} 
 	} 
 });
