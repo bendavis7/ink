@@ -3026,15 +3026,15 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
 #services-carousel button.owl-next {
   border-radius: 5px !important;
   margin-top: 10px !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
 
-  width: 70px !important;
-  height: 70px !important;
+  width: 65px !important;
+  height: 65px !important;
   background: #121d33 !important;
   opacity: 0.85 !important;
 }
 #services-carousel {
-  margin-bottom: 30px !important;
+  margin-bottom: 20px !important;
 }
 #services-carousel button.owl-prev {
   margin-right: 35px !important;
@@ -3043,7 +3043,7 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   margin-left: 35px !important;
 }
 #services-carousel i {
-  font-size: 37px !important;
+  font-size: 35px !important;
 }
 
 
@@ -3052,6 +3052,9 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   #services-carousel button.owl-next {
     margin-top: 0px !important;
     margin-bottom: 10px !important;
+  
+    width: 70px !important;
+    height: 70px !important;
   }
   #services-carousel {
     margin-bottom: 0px !important;
@@ -3065,5 +3068,5 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   #services-carousel i {
     font-size: 37px !important;
   }
-  
 }
+
