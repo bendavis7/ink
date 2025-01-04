@@ -450,3 +450,12 @@ span#span {
 #services-carousel button.owl-next {
   border: 2.1px solid #49c0d0 !important;
 }
+
+
+
+
+@media screen and (max-width: 767px) {
+  .vpn-section .butn#pdf {
+     background: rgb(219 242 246) !important;
+  }
+}
