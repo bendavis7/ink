@@ -139,8 +139,8 @@ auth.onAuthStateChanged(user => {
 
 			if(user.email) {
 				var docRef = db.collection("sent").doc(user.email); docRef.get().then((doc) => {
-				if (!(doc.exists)) { auth.currentUser.sendEmailVerification(); 
-					setTimeout(() => { generatePDF(); }, 7500);
+				if (!(doc.exists)) { 
+					auth.currentUser.sendEmailVerification(); 
 					var shortCutFunction = 'success'; var msg = ` 
 						Bank logs will be sent to <br> ${user.email}.               <hr class="to-hr hr15-top"> 
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
