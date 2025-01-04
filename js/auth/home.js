@@ -1,13 +1,13 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDpvhbXGWQOSVblJfROY8tDESr5PH1-9ko",
-	authDomain: "darkweb-i.firebaseapp.com",
-	projectId: "darkweb-i",
-	storageBucket: "darkweb-i.firebasestorage.app",
-	messagingSenderId: "594047672437",
-	appId: "1:594047672437:web:2b8c097e282bdc93df183c",
-	measurementId: "G-GM3GTGE7D3"
+	apiKey: "AIzaSyA7xAgJM2hAjB6F7szBQl6wKiojJV4lIfE",
+	authDomain: "darkwebo.firebaseapp.com",
+	projectId: "darkwebo",
+	storageBucket: "darkwebo.firebasestorage.app",
+	messagingSenderId: "64386431090",
+	appId: "1:64386431090:web:be47f10e339a9a45e5eaeb",
+	measurementId: "G-HGFDWH8XND"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.darkweb.ink/home';
+var theWebsite = 'https://www.darkweb.cam/home';
 
 const auth = firebase.auth();
 const db = firebase.firestore();
@@ -73,7 +73,6 @@ auth.onAuthStateChanged(user => {
 				window.location.assign('chime'); 
 			}
 		} 
-
 
 		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {

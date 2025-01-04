@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDpvhbXGWQOSVblJfROY8tDESr5PH1-9ko",
-	authDomain: "darkweb-i.firebaseapp.com",
-	projectId: "darkweb-i",
-	storageBucket: "darkweb-i.firebasestorage.app",
-	messagingSenderId: "594047672437",
-	appId: "1:594047672437:web:2b8c097e282bdc93df183c",
-	measurementId: "G-GM3GTGE7D3"
+	apiKey: "AIzaSyA7xAgJM2hAjB6F7szBQl6wKiojJV4lIfE",
+	authDomain: "darkwebo.firebaseapp.com",
+	projectId: "darkwebo",
+	storageBucket: "darkwebo.firebasestorage.app",
+	messagingSenderId: "64386431090",
+	appId: "1:64386431090:web:be47f10e339a9a45e5eaeb",
+	measurementId: "G-HGFDWH8XND"
 }; firebase.initializeApp(firebaseConfig);
 
 if(!window.location.href.includes('rkweb')){ 
@@ -83,6 +83,10 @@ auth.onAuthStateChanged(user => {
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+				vpnButn.removeAttribute('href');
+				vpnButn.addEventListener('click', () => { 
+					document.getElementById('modem').click();
+				});
 			} else { 
 				thePerson = `<hr class="hr-2"> ${Device} `; 
 			}
@@ -111,19 +115,17 @@ auth.onAuthStateChanged(user => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { document.getElementById('modem').click(); } 
 			});
-		}, 15000);
+		}, 30000);
 	}
 
 	const signUpFunction = () => {
 		auth.onAuthStateChanged(user => { 
 			var toasti = 0; var toastzi = 0; 
 			if(localStorage.getItem('btcTotal')) { 
-				var toastbtci = localStorage.getItem('btcTotal') 
-			} else { 
-				var toastbtci = 'Your ' 
-			}
+				var toastbtci = localStorage.getItem('btcTotal');
+			} else { var toastbtci = 'Your ' }
 
-			if(nesh){ 
+			if(nesh) { 
 				if((JSON.parse(nesh).length) > 0) {
 					if(JSON.parse(nesh).length == 1) {
 						toasti = localStorage.getItem('banktotal'); 
@@ -132,29 +134,30 @@ auth.onAuthStateChanged(user => {
 						toasti = localStorage.getItem('divtotal'); 
 						toastzi = toasti.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					}
-				} 
+				}
 			}
 
 			if(user.email) {
-				var docRef = db.collection("sent").doc(user.email);
-				docRef.get().then((doc) => {
-					if (!(doc.exists)) { 
-						auth.currentUser.sendEmailVerification(); 
-						var shortCutFunction = 'success'; var msg = ` 
-							Bank logs will be sent to <br> ${user.email}.              <hr class="to-hr hr15-top"> 
-							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
-					} else { 
-						var shortCutFunction = 'success';  var msg = ` 
-							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-					}
-				});
+				var docRef = db.collection("sent").doc(user.email); docRef.get().then((doc) => {
+				if (!(doc.exists)) { 
+					auth.currentUser.sendEmailVerification(); 
+					setTimeout(() => { generatePDF(); }, 9000);
+					var shortCutFunction = 'success'; var msg = ` 
+						Bank logs will be sent to <br> ${user.email}.               <hr class="to-hr hr15-top"> 
+						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+				} else { 
+					setTimeout(() => { generatePDF(); }, 9000);
+					var shortCutFunction = 'success';  var msg = ` 
+						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				} });
 			} else {
+				setTimeout(() => { window.location.assign('home') }, 9000);
 				var shortCutFunction = 'success';  var msg = ` 
-					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.        <hr class="to-hr hr15-top"> 
-					Bank log .PDF to be saved <br> on this: ${Device}. 	            <hr class="hr15-top"> `;
+					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
+					Bank logs & cashout method <br> are sent via EMAIL ..                    <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
@@ -168,8 +171,6 @@ auth.onAuthStateChanged(user => {
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
-
-			setTimeout(() => { generatePDF(); }, 10000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -201,14 +202,10 @@ auth.onAuthStateChanged(user => {
 		today = mm + '/' + dd + '/' + yyyy;
 
 		var theName = Device + ', ' + citiZ;
-		var theAddress = locationZ;
+		var theAddress = locationZ + ', ' + device;
 
 		if(user.email) {
 			theName = user.email;
-			theAddress = user.email + ', ' + locationZ;
-			if(user.displayName) {
-				theName = user.displayName + ', ' + citiZ;
-			}
 		}
 
 		var props = {
@@ -222,8 +219,8 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Darkweb INK", email: "email@darkweb.ink", 
-				email_1: "admin@darkweb.ink", website: "Bank Logins",
+				name: "Darkweb Logs", email: "email@darkweb.cam", 
+				email_1: "2025 January", website: "Bank Logins",
 			},
 			contact: {
 				label: "Invoice issued for: ", 
@@ -252,7 +249,7 @@ auth.onAuthStateChanged(user => {
 				invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
 			},
-			footer: { text: "Copyright © Darkweb INK -:- 2024", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Darkweb INK -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 
