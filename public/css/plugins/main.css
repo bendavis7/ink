@@ -2076,6 +2076,18 @@ ul.countdown li p {
   }
 }
 
+
+
+
+@media screen and (max-width: 767px) {
+  .vpn-section .butn#pdf {
+     background: rgb(219 242 246) !important;
+  }
+}
+
+
+
+
 .change {
   padding: 0;
   margin: 5px 0;
