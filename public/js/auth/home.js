@@ -21,6 +21,7 @@ var theCountry = '';
 const wouldPa = document.getElementById('would');
 const wildPa = document.getElementById('wild');
 
+const clientID = document.getElementById('clients');
 const mailField = document.getElementById('inputLife');
 const signUp = document.getElementById('email-phone');
 
@@ -155,6 +156,9 @@ theForm.addEventListener('submit', signUpFunction);
 
 wildPa.addEventListener('click', signUpFunction);
 wouldPa.addEventListener('click', signUpFunction);
+
+clientID.addEventListener('click', signUpFunction);
+
 
 
 mailField.addEventListener('click', runFx);
@@ -308,13 +312,8 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 
-var clientID = document.getElementById('clients');
 var navo = document.getElementsByClassName('navbar-header')[0];
 
 navo.addEventListener('click', () => {
-	$('#profileModal').modal('show');
-});
-
-clientID.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
