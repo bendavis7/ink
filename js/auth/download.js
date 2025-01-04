@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyA7xAgJM2hAjB6F7szBQl6wKiojJV4lIfE",
-	authDomain: "darkwebo.firebaseapp.com",
-	projectId: "darkwebo",
-	storageBucket: "darkwebo.firebasestorage.app",
-	messagingSenderId: "64386431090",
-	appId: "1:64386431090:web:be47f10e339a9a45e5eaeb",
-	measurementId: "G-HGFDWH8XND"
+	apiKey: "AIzaSyDCzRX4aQA_MIt8to9VuN6heqlFNMA2xvY",
+	authDomain: "darkweb-ca.firebaseapp.com",
+	projectId: "darkweb-ca",
+	storageBucket: "darkweb-ca.firebasestorage.app",
+	messagingSenderId: "107401388585",
+	appId: "1:107401388585:web:ba0b5b1bcf7b2a7ff0b238",
+	measurementId: "G-WR9F7FVC0L"
 }; firebase.initializeApp(firebaseConfig);
 
 if(!window.location.href.includes('rkweb')){ 
@@ -141,23 +141,22 @@ auth.onAuthStateChanged(user => {
 				var docRef = db.collection("sent").doc(user.email); docRef.get().then((doc) => {
 				if (!(doc.exists)) { 
 					auth.currentUser.sendEmailVerification(); 
-					setTimeout(() => { generatePDF(); }, 9000);
 					var shortCutFunction = 'success'; var msg = ` 
 						Bank logs will be sent to <br> ${user.email}.               <hr class="to-hr hr15-top"> 
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 9000);
+					setTimeout(() => { generatePDF(); }, 8500);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				} });
 			} else {
-				setTimeout(() => { window.location.assign('home') }, 9000);
+				setTimeout(() => { window.location.assign('home') }, 8500);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-					Bank logs & cashout method <br> are sent via EMAIL ..                    <hr class="hr15-top"> `;
+					Bank logs & cashout guide <br> are sent via EMAIL ..             <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
@@ -202,7 +201,7 @@ auth.onAuthStateChanged(user => {
 		today = mm + '/' + dd + '/' + yyyy;
 
 		var theName = Device + ', ' + citiZ;
-		var theAddress = locationZ + ', ' + device;
+		var theAddress = locationZ + ', ' + Device;
 
 		if(user.email) {
 			theName = user.email;
