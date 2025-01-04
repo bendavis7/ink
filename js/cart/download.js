@@ -3,6 +3,7 @@ const auth2 = firebase.auth();
 
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
+var vpnBux = document.getElementById('vpn');
 var thetotS = document.getElementById('thetot');
 
 if(localStorage.getItem('banklogs')){
@@ -111,7 +112,8 @@ if(localStorage.getItem('banklogs')){
         }
 
         thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
-
+        vpnBux.addEventListener('click', ()=> { document.getElementById('modem').click(); });
+        
         document.getElementById('the-logs').addEventListener('click', ()=> { document.getElementById('modem').click(); });
         document.getElementById('modem').addEventListener('click', () => { setTimeout(() => { monezB.click(); }, 2000); });
     } else {
