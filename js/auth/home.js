@@ -95,7 +95,7 @@ auth.onAuthStateChanged(user => {
 
 
 function emailShow() {
-	mailField.setAttribute('type', 'email'); 
+	// mailField.setAttribute('type', 'email'); 
 	auth.onAuthStateChanged(user => { 
 		if(user && user.email) { 
 			wildPa.innerHTML = `You have signed in <br> <span id="in-span">successfully</span>.  `; 
@@ -164,6 +164,8 @@ function runFx() {
 	if(mailField.value == '') {
 		mailField.value = '@gmail.com';
 		mailField.style.textAlign = 'right';
+		mailField.setSelectionRange(0, 0);
+		mailField.focus();
 	}
 }
 
