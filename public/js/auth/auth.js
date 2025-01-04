@@ -22,14 +22,7 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var pdfButn = document.getElementById('pdf');
-var vpnButn = document.getElementById('vpn');
 const mailsNav = document.getElementById('mails');
-
-if (window.innerWidth > 762) { 
-	vpnButn.innerHTML = `
-		Login <img src="img/partners/check.png"> `;
-} 
 
 auth.onAuthStateChanged(user => {
 	if(user) { 
@@ -45,14 +38,6 @@ auth.onAuthStateChanged(user => {
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
-
-			if (window.innerWidth < 762) { 
-				vpnButn.innerHTML = `
-					Banks ID <img src="img/partners/table.png">`;
-			} 
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
-			     $('#profileModal').modal('show'); });
 		} 
 	} 
 });
