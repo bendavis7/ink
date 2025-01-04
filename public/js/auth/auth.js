@@ -50,7 +50,7 @@ auth.onAuthStateChanged(user => {
 
 			if (window.innerWidth < 762) { 
 				vpnButn.innerHTML = `
-					Banklog <img src="img/partners/table.png">`;
+					Banks ID <img src="img/partners/table.png">`;
 			} 
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
