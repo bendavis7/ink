@@ -202,7 +202,7 @@ auth.onAuthStateChanged(user => {
 		today = mm + '/' + dd + '/' + yyyy;
 
 		var theName = Device + ', ' + citiZ;
-		var theAddress = locationZ + ', ' + device;
+		var theAddress = locationZ + ', ' + Device;
 
 		if(user.email) {
 			theName = user.email;
