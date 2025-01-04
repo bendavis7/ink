@@ -37,7 +37,7 @@
 	
     $(document).ready(function() {
 
-	$('#services-carousel').owlCarousel({
+	    $('#services-carousel').owlCarousel({
             loop: true, autoplay: true, responsiveClass: true, 
             dots: true, nav: false, smartSpeed: 500, 
             autoplayTimeout: 500, autoplayHoverPause: true, 
@@ -46,9 +46,9 @@
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
             responsive: {
                 0: { items: 1.3, margin: -10, dotsEach: 5, },
-                768: { items: 2.5, margin: 0 },
+                768: { items: 2.6, margin: -10 },
                 992: { items: 3, margin: -10 },
-                1200: { items: 3.7, margin: 0 },
+                1200: { items: 3.9, margin: -10 },
             }
         });
         
