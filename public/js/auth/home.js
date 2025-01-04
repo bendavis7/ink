@@ -56,6 +56,12 @@ if(nesh) {
 	}
 }
 
+if(platform.manufacturer !== null) { 
+	var Device = `${platform.manufacturer} ${platform.product}`
+} else { 
+	var Device =`${platform.os}`;
+}
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();
@@ -77,11 +83,11 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("home").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('home').doc(theGuy).set({ 
-					yourID: itemz, location: locationZ });
+				return db.collection("home").doc(theGuy).set({ 
+					wishID: itemz, device: Device, location: locationZ });
 			} else { 
-				return db.collection('home').doc(theGuy).update({ 
-					yourID: itemz, location: locationZ });
+				return db.collection("home").doc(theGuy).update({ 
+					wishID: itemz, device: Device, location: locationZ });
 			}
 		});
 	} 
@@ -289,16 +295,11 @@ function drawHand2(ctx2, pos, length, width) {
 
 var clientID = document.getElementById('clients');
 var navo = document.getElementsByClassName('navbar-header')[0];
-var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
 
 clientID.addEventListener('click', () => {
-	if (window.innerWidth > 1082) { 
-		$('#profileModal').modal('show');
-	} else { 
-		navbarTo.click(); 
-	}
+	$('#profileModal').modal('show');
 });
