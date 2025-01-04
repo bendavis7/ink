@@ -48,8 +48,10 @@ auth.onAuthStateChanged(user => {
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'index');
 
-			vpnButn.innerHTML = `
-				Login ID <img src="img/partners/table.png">`;
+			if (window.innerWidth < 762) { 
+				vpnButn.innerHTML = `
+					Banklog <img src="img/partners/table.png">`;
+			} 
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
 			     $('#profileModal').modal('show'); });
