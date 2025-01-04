@@ -211,7 +211,3 @@ var navo = document.getElementsByClassName('navbar-header')[0];
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
-
-canvas.addEventListener('click', () => {
-	$('#profileModal').modal('show');
-});

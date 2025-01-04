@@ -295,10 +295,6 @@ navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
 
-canvas.addEventListener('click', () => {
-	$('#profileModal').modal('show');
-});
-
 clientID.addEventListener('click', () => {
 	if (window.innerWidth > 1082) { 
 		$('#profileModal').modal('show');
