@@ -58,7 +58,7 @@ if(platform.manufacturer !== null) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		window.location.assign('home');
+		window.location.assign('index');
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
@@ -74,7 +74,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
-			mailsNav.setAttribute('href', 'index');
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
