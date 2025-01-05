@@ -56,16 +56,8 @@ if(nesh) {
 	}
 }
 
-if(platform.manufacturer !== null) { 
-	var Device = `${platform.manufacturer} ${platform.product}`
-} else { 
-	var Device =`${platform.os}`;
-}
-
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 
 		if(user.email) {
@@ -84,10 +76,10 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
 				return db.collection("home").doc(theGuy).set({ 
-					wishID: itemz, device: Device, location: locationZ });
+					wishID: itemz, location: locationZ });
 			} else { 
 				return db.collection("home").doc(theGuy).update({ 
-					wishID: itemz, device: Device, location: locationZ });
+					wishID: itemz, location: locationZ });
 			}
 		});
 	} 
