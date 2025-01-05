@@ -29,6 +29,11 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 
 emailShow();
 
+if(!localStorage.getItem('con-darkweb')) {
+	localStorage.setItem('banklogs',[]);
+	localStorage.setItem('con-darkweb', true);
+}
+
 wouldPa.innerHTML = `
 	<div class="modal-body no-bord"> Chime Bank Logs </div> 
 	<div class="modal-body no-bord"> Chase Bank Logs </div> 
