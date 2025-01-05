@@ -187,7 +187,7 @@ if (document.getElementById('boa01')) {
     (chase012.innerHTML=`Buy $${(chase12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chime01')) {
     (chime1.innerHTML = "$3,207"),
-    (chime2.innerHTML = "$4,098"),
+    (chime2.innerHTML = "$4,095"),
     (chime3.innerHTML = "$4,709"),
     (chime4.innerHTML = "$5,430"),
     (chime5.innerHTML = "$6,854"),
