@@ -312,7 +312,7 @@ span#uidy {
 #vpn,
 #mails,
 #email-phone {
-  background: rgb(162, 218, 207) !important;
+  background:linear-gradient(to bottom, #fff 0%, #16a086 100%) !important;
   color: rgb(19, 45, 61) !important;
   border: 2.2px solid rgba(21, 127, 113, 0.7)
 }
