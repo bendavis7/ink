@@ -49,7 +49,11 @@ auth.onAuthStateChanged(user => {
 			vpnButn.removeAttribute('href');
 			vpnButn.addEventListener('click', () => { 
 				$('#profileModal').modal('show'); });
-			vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
+			if (window.innerWidth > 762) { 
+				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
+			} else {
+				vpnButn.innerHTML = `Banks ID <img src="img/partners/table.png">`;
+			} 
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
 			mailsNav.setAttribute('href', 'download');
