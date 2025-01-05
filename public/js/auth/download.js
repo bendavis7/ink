@@ -218,7 +218,7 @@ auth.onAuthStateChanged(user => {
 				label: "Invoice issued for: ", 
 				name: theName,
 				address: theAddress, 
-				email: "Darkweb INK",
+				email: "Darkweb Logs",
 			},
 			invoice: {
 				label: bankLog, num: 1,
@@ -241,7 +241,7 @@ auth.onAuthStateChanged(user => {
 				invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
 			},
-			footer: { text: "Copyright © Darkweb INK -:- 2025", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Darkweb Logs -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 
