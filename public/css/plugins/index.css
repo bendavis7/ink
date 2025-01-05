@@ -175,11 +175,11 @@ opacity: 0 !important;
   margin-top: 0;
 }
 .masonry-4 {
-  margin: 3px 0;
+  margin: 2.5px 0;
   padding: 0;
-  -moz-column-gap: 3px;
-  -webkit-column-gap: 3px;
-  column-gap: 3px;
+  -moz-column-gap: 2.5px;
+  -webkit-column-gap: 2.5px;
+  column-gap: 2.5px;
 
   -moz-column-count: 11;
   -webkit-column-count: 11;
