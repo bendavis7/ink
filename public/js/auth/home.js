@@ -47,7 +47,9 @@ wouldPa.innerHTML = `
 
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
-} else { var locationZ = ', '; }
+} else { 
+	var locationZ = ', '; 
+}
 
 let itemz = [];
 if(nesh) { 
@@ -57,7 +59,9 @@ if(nesh) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		var theGuy = locationZ + ', ' + user.uid;
 
 		if(user.email) {
@@ -67,9 +71,7 @@ auth.onAuthStateChanged(user => {
 				} else { 
 					window.location.assign('chime'); 
 				}
-			} else {
-				window.location.assign('chime'); 
-			}
+			} else { window.location.assign('chime'); }
 		} 
 
 		var docRef = db.collection("home").doc(theGuy);
@@ -112,6 +114,7 @@ function runOnce() {
 	else if(mailField.value.includes('@i')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'cloud.com'; }
 	else if(mailField.value.includes('@a')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ol.com'; }
 	else if(mailField.value.includes('@m')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ail.com'; }
+	else if(mailField.value.includes('@g')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'mail.com'; }
   }
 
   if(mailField.value == '') { mailField.style.textAlign = 'center'; }
@@ -123,11 +126,7 @@ const signUpFunction = () => {
 
 	if(email.includes('@')) {
 		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			if(email.length > 10) {
-				signInWithGoogle();
-			} else {
-				mailField.focus();
-			}
+			signInWithGoogle();
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
 			signInWithYahoo();
 		} else {
@@ -139,7 +138,6 @@ const signUpFunction = () => {
 		}
 	} else {
 		mailField.focus();
-		runFx();
 	}
 }
 signUp.addEventListener('click', signUpFunction); 
@@ -147,19 +145,6 @@ theForm.addEventListener('submit', signUpFunction);
 
 wildPa.addEventListener('click', signUpFunction);
 wouldPa.addEventListener('click', signUpFunction);
-
-
-mailField.addEventListener('click', runFx);
-
-function runFx() {
-	if(mailField.value == '') {
-		mailField.value = '@gmail.com';
-		mailField.style.textAlign = 'right';
-		mailField.setSelectionRange(0, 0);
-		mailField.focus();
-	}
-}
-
 
 const homeFx = () => {
 	event.preventDefault(); 
