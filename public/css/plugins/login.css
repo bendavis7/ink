@@ -46,7 +46,7 @@
   }
   @media screen and (max-width: 574px) {
     #invoice-div p {
-        margin: 7px auto !important;
+        margin: 10px auto !important;
         font-size: 22.5px !important;
         line-height: 59px !important;
     }
@@ -251,7 +251,7 @@
     }
   
     #section-in {
-        margin: 20px auto 10px !important;
+        margin: 30px auto 10px !important;
     }
   
     p#would {
