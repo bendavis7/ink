@@ -310,22 +310,22 @@ opacity: 0 !important;
 
 
 #uploadModal .modal-dialog {
-  top: 6vh !important;
+  top: 7vh !important;
 }
 @media screen and (min-width: 1370px) {
   #uploadModal .modal-dialog {
-      top: 7vh !important;
+      top: 10vh !important;
   }
 }
 @media screen and (max-width: 830px) {
   #uploadModal .modal-dialog {
-      top: 15vh !important;
+      top: 16vh !important;
   }
 }
 
 @media screen and (max-width: 500px) {
   #uploadModal .modal-dialog {
-      top: 13.5vh !important;
+      top: 14vh !important;
   }
 }
 

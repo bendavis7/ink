@@ -948,6 +948,7 @@ td {
   font-size: 30px;
   font-weight: 600;
   color: white;
+  letter-spacing: 1px !important;
 }
 @media (max-width: 1276px) {
   #titlelogs2 {
