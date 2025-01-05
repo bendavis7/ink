@@ -63,9 +63,7 @@ if(platform.manufacturer !== null) {
 }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		var theGuy = locationZ + ', ' + user.uid;
 
 		if(user.email) {

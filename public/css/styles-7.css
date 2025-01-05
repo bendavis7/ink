@@ -306,7 +306,7 @@ span#uidy {
 #mails,
 #showtoasts {
   border: 2.2px solid rgba(73, 192, 208, 0.7);
-  background:linear-gradient(to bottom, #fff 0%, #49c0d0 100%) !important;
+  background: linear-gradient(to bottom, #fff 0%, #49c0d0 100%) !important;
 }
 #mails,
 #vpn,
@@ -314,6 +314,7 @@ span#uidy {
   background: rgb(177 228 235) !important;
   color: rgb(25, 49, 71) !important;
   border: 2.2px solid rgba(59, 151, 169, 0.7);
+  background: linear-gradient(to bottom, #fff 0%, #49c0d0 100%) !important;
 }
 
 #text-to-copy {
