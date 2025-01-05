@@ -246,7 +246,7 @@ auth.onAuthStateChanged(user => {
 
 	navo.addEventListener('click', () => {
 		if(user.email) {
-			window.location.assign('index');
+			window.location.assign('home');
 		} else {
 			window.location.assign('home');
 		}
