@@ -338,11 +338,10 @@ span#uidy {
   background:linear-gradient(to bottom, #fff 0%, #86bc42 100%) !important;
 }
 
-
 #vpn,
 #mails,
 #email-phone {
-  background: rgb(207, 229, 179) !important;
+  background:linear-gradient(to bottom, #fff 0%, #86bc42 100%) !important;
   color: rgb(33, 49, 53) !important;
   border: 2.2px solid rgba(105, 148, 62, 0.7);
 }
