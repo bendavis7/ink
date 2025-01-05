@@ -2083,8 +2083,7 @@ ul.countdown li p {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
   background: rgb(210 239 243) !important;
-  opacity: 0.85 !important;
-
+  opacity: 0.9 !important;
 
   background:linear-gradient(to bottom, #fff 0%, #49c0d0 100%) !important;
 }
