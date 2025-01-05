@@ -149,7 +149,7 @@ auth.onAuthStateChanged(user => {
 				setTimeout(() => { window.location.assign('home'); }, 8500);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-					Bank logs can be sent as a <br> .PDF file or via EMAIL..          <hr class="hr15-top"> `;
+					Bank logs can be sent as a <br> .PDF file or via EMAIL ..         <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
