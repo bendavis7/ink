@@ -26,7 +26,7 @@ const mailsNav = document.getElementById('mails');
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		auth.signInAnonymously();
+		window.location.assign('index');
 	} else {
  		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL);
@@ -39,7 +39,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 
 			mailsNav.innerHTML = (theaddress).substring(0, 10);
-			mailsNav.setAttribute('href', 'index');
 		} 
 	} 
 });
