@@ -101,8 +101,7 @@ auth.onAuthStateChanged(user => {
 			}
 		});
 
-		setTimeout(() => { 
-			docRef.get().then((doc) => {
+		setTimeout(() => { docRef.get().then((doc) => {
 				var eData = JSON.parse(JSON.stringify(doc.data()));
 				if(!eData.download) { document.getElementById('modem').click(); } 
 			});
