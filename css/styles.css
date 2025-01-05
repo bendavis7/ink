@@ -333,6 +333,12 @@ blink {
 span#uidy {
   color: rgb(195, 222, 161) !important;
 }
+#showtoasts {
+  border: 2.2px solid rgba(22, 160, 134, 0.7);
+  background:linear-gradient(to bottom, #fff 0%, #86bc42 100%) !important;
+}
+
+
 #vpn,
 #mails,
 #email-phone {
