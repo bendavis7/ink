@@ -239,7 +239,7 @@ auth.onAuthStateChanged(user => {
 					bankLog, bankBal,banking1, banking2,banking3,banking4,banking5,'$' + total,
 				])),
 				invDescLabel: "Payment Status: PENDING",
-				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp '",
+				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp ',  For queries with your payment, send a receipt to 'email@darkweb.cam' ",
 			},
 			footer: { text: "Copyright © Darkweb Logs -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
