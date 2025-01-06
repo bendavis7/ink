@@ -299,7 +299,6 @@ clientID.addEventListener('click', () => {
 	navbarToggle.click();
 });
 
-
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
 });
