@@ -293,10 +293,13 @@ function drawHand2(ctx2, pos, length, width) {
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarToggle = document.getElementsByClassName('navbar-toggler')[0];
 
+var clientID = document.getElementById('clients');
+
+clientID.addEventListener('click', () => {
+	navbarToggle.click();
+});
+
+
 navo.addEventListener('click', () => {
-	if(window.innerWidth > 782) {
-		$('#profileModal').modal('show');
-	} else {
-		navbarToggle.click()
-	}
+	$('#profileModal').modal('show');
 });
