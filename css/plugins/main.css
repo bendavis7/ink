@@ -2078,6 +2078,7 @@ ul.countdown li p {
   margin: 0px !important;
   cursor: pointer;
   font-size: 21px !important;
+  font-weight: 600 !important;
   padding: 10px 12px !important;
   letter-spacing: 1.8px !important;
   border: 2px solid rgb(18, 29, 51) !important;
