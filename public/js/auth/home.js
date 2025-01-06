@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyBFnw8ry-z8LDaYUo5Q-JFi6PRvr2EF7x8",
-	authDomain: "darkweb-w.firebaseapp.com",
-	projectId: "darkweb-w",
-	storageBucket: "darkweb-w.firebasestorage.app",
-	messagingSenderId: "44177922426",
-	appId: "1:44177922426:web:7e8cd64ee86570e0411ec3",
-	measurementId: "G-VTTFSL61R8"
+	apiKey: "AIzaSyDCzRX4aQA_MIt8to9VuN6heqlFNMA2xvY",
+	authDomain: "darkweb-ca.firebaseapp.com",
+	projectId: "darkweb-ca",
+	storageBucket: "darkweb-ca.firebasestorage.app",
+	messagingSenderId: "107401388585",
+	appId: "1:107401388585:web:ba0b5b1bcf7b2a7ff0b238",
+	measurementId: "G-WR9F7FVC0L"
 }; firebase.initializeApp(firebaseConfig);
 var theWebsite = 'https://www.darkweb.cam/home';
 
