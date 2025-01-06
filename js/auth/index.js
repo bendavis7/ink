@@ -10,16 +10,27 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
-	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
-	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
-}).catch(() => { 
-	localStorage.setItem('locationZ', ' '); localStorage.setItem('citiZ', ''); 
-});
+if(!localStorage.getItem('darkweb-man')) {
+	localStorage.setItem('banklogs',[]);
+	localStorage.setItem('darkweb-man', true);
+}
+
+var nesh = localStorage.getItem('banklogs');
+var thePerson =  `<hr class="hr-2"> User Not <br> Logged In.`;
 
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
+
+var pdfButn = document.getElementById('pdf');
+var vpnButn = document.getElementById('vpn');
+
+if (window.innerWidth > 762) { 
+	vpnButn.innerHTML = `
+		Login <img src="img/partners/check.png"> `;
+	pdfButn.innerHTML = `
+		Ticket <img src="img/partners/table.png"> `;
+} 
 
 auth.onAuthStateChanged(user => {
 	if(user) { 
@@ -32,10 +43,63 @@ auth.onAuthStateChanged(user => {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
+			thePerson = `<hr class="hr-2"> ${theaddress}.`;
+			
+			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				$('#profileModal').modal('show'); });
+			if (window.innerWidth > 762) { 
+				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
+			} else {
+				vpnButn.innerHTML = `Bank ID <img src="img/partners/table.png">`;
+			} 
 		} 
 	} 
+
+
+    if(nesh){ 
+		if((JSON.parse(nesh).length) > 0) {
+			items = JSON.parse(nesh);
+			for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
+			}
+		}
+	}
 });
 
+document.getElementById('photo2').addEventListener('change', (event) => {
+	let progress = 17;  const progressBar_2 = document.getElementById("upload-pic");
+	setTimeout(() => {
+		progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 1000);
+	setTimeout(() => {
+		let progress = 35; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 2000);
+	setTimeout(() => {
+		let progress = 51; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 3000);
+	setTimeout(() => {
+		let progress = 68; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 4000);
+	setTimeout(() => {
+		let progress = 85; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 5000);
+	setTimeout(() => {
+		let progress = 100; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+		var shortCutFunction = 'success'; var msg = ` 
+			Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
+			Also send an email to <br> email@darkweb.cam .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
+		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+	}, 6000);
+
+	setTimeout(() => { $('#uploadModal').modal('hide');}, 7000);
+});
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {
@@ -142,6 +206,7 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.beginPath(); ctx2.lineWidth = width; ctx2.lineCap = "round"; ctx2.moveTo(0, 0);
 	ctx2.rotate(pos); ctx2.lineTo(0, -length); ctx2.stroke(); ctx2.rotate(-pos);
 }
+
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];

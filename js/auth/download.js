@@ -27,8 +27,6 @@ var nesh = localStorage.getItem('banklogs');
 var vpnButn = document.getElementById('vpn');
 var pdfButn = document.getElementById('pdf');
 
-const mailsNav = document.getElementById('mails');
-
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
 
@@ -58,7 +56,7 @@ if(platform.manufacturer !== null) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		window.location.assign('index');
+		window.location.assign('home');
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
@@ -73,7 +71,6 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			mailsNav.innerHTML = (theaddress).substring(0, 10);
 		} else {
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
@@ -246,7 +243,7 @@ auth.onAuthStateChanged(user => {
 
 	navo.addEventListener('click', () => {
 		if(user.email) {
-			window.location.assign('home');
+			window.location.assign('index');
 		} else {
 			window.location.assign('home');
 		}
