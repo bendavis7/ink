@@ -129,8 +129,8 @@ function updateCartTotal() {
         const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
 
         theLogo.src = `${bankImg}`;
-        document.getElementById('jinaHolder').value = `${bankLog.split('[')[0]}`;
-        document.getElementById('jinaHolder2').innerHTML = `${bankBal} Account`;
+
+        document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
