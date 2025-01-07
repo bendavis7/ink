@@ -3,7 +3,7 @@ const auth2 = firebase.auth();
 
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
-var vpnBux = document.getElementById('vpn');
+var flexOne = document.getElementById('flex-one');
 var thetotS = document.getElementById('thetot');
 
 if(localStorage.getItem('banklogs')){
@@ -111,10 +111,21 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
-        thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
+        thetotS.addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
+
+        flexOne.addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
         
-        document.getElementById('the-logs').addEventListener('click', ()=> { document.getElementById('modem').click(); });
-        document.getElementById('modem').addEventListener('click', () => { setTimeout(() => { monezB.click(); }, 2000); });
+        document.getElementById('the-logs').addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
+        
+        document.getElementById('modem').addEventListener('click', () => { 
+            setTimeout(() => { monezB.click(); }, 2000); 
+        });
     } else {
         document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('home'); }, 5000);
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
