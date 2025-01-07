@@ -23,9 +23,7 @@ const jinaHolder2 = document.getElementById('jinaHolder2');
 
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
  		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL);
 			logoHolder.classList.add('logo-50');
