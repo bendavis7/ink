@@ -15,7 +15,7 @@ if(!localStorage.getItem('banklogs')) {
 }
 
 var nesh = localStorage.getItem('banklogs');
-var thePerson =  `<hr class="hr-2"> No Email <br> Provided`;
+var thePerson =  `<hr class="hr-2"> User Not <br> Logged In`;
 
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
