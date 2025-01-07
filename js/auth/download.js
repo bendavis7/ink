@@ -72,8 +72,12 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			vpnButn.addEventListener('click', ()=> { 
-				document.getElementById('modem').click(); });
+				document.getElementById('modem').click(); 
+			});
 		} else {
+			vpnButn.addEventListener('click', ()=> { 
+				window.location.assign('home');
+			});
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
 			} else { 
