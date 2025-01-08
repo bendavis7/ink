@@ -197,6 +197,9 @@ auth.onAuthStateChanged(user => {
 
 		if(user.email) {
 			theName = user.email;
+			if (user.photoURL) {
+				bankImg =  user.photoURL;
+			}
 		}
 
 		var props = {
