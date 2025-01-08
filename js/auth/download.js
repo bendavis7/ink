@@ -213,8 +213,10 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Darkweb Logs", email: "email@darkweb.cam", 
-				email_1: "2025 January", website: "Bank Logins",
+				name: "Darkweb Logs", 
+				email: "email@darkweb.cam", 
+				email_1: "Date: " + today, 
+				website: "Bank Logins",
 			},
 			contact: {
 				label: "Invoice issued for: ", 
