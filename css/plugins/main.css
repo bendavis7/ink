@@ -3085,10 +3085,4 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   }
 }
 
-@media screen and (max-width: 1067px) {
-  #services-carousel button.owl-prev,
-  #services-carousel button.owl-next {
-    display: none !important;
-  }
-}
 
