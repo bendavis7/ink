@@ -3,7 +3,7 @@ const auth2 = firebase.auth();
 
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
-var flexOne = document.getElementById('flex-one');
+var flexOne = document.getElementById('vpn');
 var thetotS = document.getElementById('thetot');
 
 if(localStorage.getItem('banklogs')){
