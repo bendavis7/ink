@@ -3043,8 +3043,8 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   margin-top: 0px !important;
   margin-bottom: 10px !important;
 
-  width: 50px !important;
-  height: 50px !important;
+  width: 56px !important;
+  height: 56px !important;
   background: #121d33 !important;
   opacity: 0.85 !important;
 }
@@ -3055,10 +3055,10 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   margin-right: 30px !important;
 }
 #services-carousel button.owl-next {
-  margin-left: 27px !important;
+  margin-left: 30px !important;
 }
 #services-carousel i {
-  font-size: 27px !important;
+  font-size: 30px !important;
 }
 
 
@@ -3085,11 +3085,4 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   }
 }
 
-
-@media screen and (max-width: 1067px) {
-  #services-carousel button.owl-prev,
-  #services-carousel button.owl-next {
-    display: none !important;
-  }
-}
 
