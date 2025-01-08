@@ -51,7 +51,7 @@ auth.onAuthStateChanged(user => {
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			} else {
-				vpnButn.innerHTML = `Bank ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Email ID <img src="img/partners/table.png">`;
 			} 
 		} 
 	} 
