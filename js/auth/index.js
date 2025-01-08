@@ -10,10 +10,10 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('cam+darkweb')) {
+if(!localStorage.getItem('cam_darkweb')) {
 	localStorage.setItem('banklogs',[]);
-	localStorage.setItem('cam+darkweb', true);
-}
+	localStorage.setItem('cam_darkweb', true);
+} 
 
 var nesh = localStorage.getItem('banklogs');
 var thePerson =  `<hr class="hr-2"> User Not <br> Logged In`;
