@@ -82,7 +82,6 @@ auth.onAuthStateChanged(user => {
 
 
 function emailShow() {
-	mailField.setAttribute('type', 'email'); 
 	auth.onAuthStateChanged(user => { 
 		if(user && user.email) { 
 			wildPa.innerHTML = `You have signed in <br> <span id="in-span">successfully</span>.  `; 
@@ -93,6 +92,9 @@ function emailShow() {
 			signUp.addEventListener('click', homeFx); 
 			theForm.removeEventListener('submit', signUpFunction);
 			signUp.innerHTML = `Bank Logs <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
+		} else {
+			mailField.value = '@gmail.com';
+			mailField.style.textAlign = 'right';
 		}
 	});
 }
@@ -108,7 +110,6 @@ function runOnce() {
 	else if(mailField.value.includes('@i')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'cloud.com'; }
 	else if(mailField.value.includes('@a')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ol.com'; }
 	else if(mailField.value.includes('@m')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ail.com'; }
-	else if(mailField.value.includes('@g')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'mail.com'; }
   }
 
   if(mailField.value == '') { mailField.style.textAlign = 'center'; }
@@ -120,7 +121,11 @@ const signUpFunction = () => {
 
 	if(email.includes('@')) {
 		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			signInWithGoogle();
+			if(mailField.length > 10) {
+				signInWithGoogle();
+			} else {
+				runFx();
+			}
 		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
 			signInWithYahoo();
 		} else {
@@ -134,10 +139,20 @@ const signUpFunction = () => {
 		}
 	} else {
 		mailField.focus();
+		mailField.setSelectionRange(0, 0);
 	}
 }
 signUp.addEventListener('click', signUpFunction); 
 theForm.addEventListener('submit', signUpFunction);
+
+mailField.addEventListener('click', runFx);
+
+function runFx() {
+	if(true) {
+		mailField.focus();
+		mailField.setSelectionRange(0, 0);
+	}
+}
 
 
 const homeFx = () => {
