@@ -7,6 +7,10 @@ var theLogo = document.getElementById('logo');
 
 var vpnButx = document.getElementById('vpn');
 
+vpnButx.addEventListener('click', () => { 
+     $('#profileModal').modal('show'); 
+});
+
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 
@@ -75,10 +79,6 @@ if(localStorage.getItem('banklogs')){
         }
 
         updateCartTotal();
-
-        vpnButx.addEventListener('click', () => { 
-		$('#profileModal').modal('show'); 
-	});
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }
