@@ -5,6 +5,8 @@ var showingToast = document.getElementById('showtoasts');
 
 var theLogo = document.getElementById('logo');
 
+var vpnButx = document.getElementById('vpn');
+
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 
