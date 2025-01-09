@@ -75,6 +75,9 @@ if(localStorage.getItem('banklogs')){
         }
 
         updateCartTotal();
+
+        vpnButx.addEventListener('click', () => { 
+				$('#profileModal').modal('show'); });
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }
