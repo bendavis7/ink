@@ -3049,7 +3049,7 @@ box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
   opacity: 0.85 !important;
 }
 #services-carousel {
-  margin-bottom: 0px !important;
+  margin-bottom: 20px !important;
 }
 #services-carousel button.owl-prev {
   margin-right: 35px !important;
