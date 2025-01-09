@@ -43,12 +43,17 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-			
+
+			vpnButx.removeAttribute('href');
+                        vpnButx.addEventListener('click', () => { 
+                            $('#profileModal').modal('show'); });   
+    
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			} else {
 				vpnButn.innerHTML = `Email ID <img src="img/partners/table.png">`;
 			} 
+			
 		} 
 	} 
 
