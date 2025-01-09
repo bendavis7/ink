@@ -4,6 +4,8 @@ const auth2 = firebase.auth();
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
+var vpnButx = document.getElementById('vpn');
+
 
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -111,6 +113,10 @@ if(localStorage.getItem('banklogs')){
         }
 
         thetotS.addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
+
+        vpnButx.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); 
         });
         
