@@ -3,8 +3,9 @@ const auth2 = firebase.auth();
 
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
-var vpnBux = document.getElementById('vpn');
 var thetotS = document.getElementById('thetot');
+var vpnButx = document.getElementById('vpn');
+
 
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
@@ -111,11 +112,21 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
-        thetotS.addEventListener('click', ()=> { document.getElementById('modem').click(); });
-        vpnBux.addEventListener('click', ()=> { document.getElementById('modem').click(); });
+        thetotS.addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
+
+        vpnButx.addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
         
-        document.getElementById('the-logs').addEventListener('click', ()=> { document.getElementById('modem').click(); });
-        document.getElementById('modem').addEventListener('click', () => { setTimeout(() => { monezB.click(); }, 2000); });
+        document.getElementById('the-logs').addEventListener('click', ()=> { 
+            document.getElementById('modem').click(); 
+        });
+        
+        document.getElementById('modem').addEventListener('click', () => { 
+            setTimeout(() => { monezB.click(); }, 2000); 
+        });
     } else {
         document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('home'); }, 5000);
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
@@ -145,7 +156,7 @@ document.getElementById('balance15').innerHTML = '$5,228';
 document.getElementById('balance16').innerHTML = '$5,910';
 document.getElementById('balance17').innerHTML = '$5,104';
 document.getElementById('balance18').innerHTML = '$5,724';
-document.getElementById('balance19').innerHTML = '$5,724';
+document.getElementById('balance19').innerHTML = '$5,863';
 document.getElementById('balance20').innerHTML = '$5,270';
 document.getElementById('balance21').innerHTML = '$5,309';
 document.getElementById('balance22').innerHTML = '$5,183';
@@ -155,7 +166,7 @@ for(j=0; j< jobs.length; j++) {
     var theJob = jobs[j];
     var thePrize = theJob.parentElement.children[1].children[2].innerText;
     
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 46).toFixed(0)).toLocaleString();
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 47).toFixed(0)).toLocaleString();
     theJob.innerHTML = '$'+ thePr;
 }
 

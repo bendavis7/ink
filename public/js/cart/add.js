@@ -55,7 +55,7 @@ var joe = localStorage.getItem('banklogs')
 
 function showThis() {
     if(joe && (JSON.parse(joe).length) > 0) {
-        window.location.assign('download'); 
+        window.location.assign('home'); 
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
@@ -89,7 +89,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  42)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -116,7 +116,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Balance: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  46)).toFixed(0)} <img src=${image}>`;
+            Buy : $${parseFloat((balance.replace("$", "").replace(",", "") /  42)).toFixed(0)} <img src=${image}>`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -167,7 +167,9 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
 
-    setTimeout(() => { window.location.assign('home'); }, 2000);            
+    setTimeout(() => { 
+        window.location.assign('home');
+    }, 2000);            
 }
 
 

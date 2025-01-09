@@ -21,7 +21,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();

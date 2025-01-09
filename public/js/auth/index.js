@@ -12,10 +12,10 @@ const auth = firebase.auth();
 
 if(!localStorage.getItem('banklogs')) {
 	localStorage.setItem('banklogs',[]);
-}
+} 
 
 var nesh = localStorage.getItem('banklogs');
-var thePerson =  `<hr class="hr-2"> User Not <br> Logged In.`;
+var thePerson =  `<hr class="hr-2"> User Not <br> Logged In`;
 
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
@@ -43,15 +43,17 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-			
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
-				$('#profileModal').modal('show'); });
+
+			vpnButx.removeAttribute('href');
+                        vpnButx.addEventListener('click', () => { 
+                            $('#profileModal').modal('show'); });   
+    
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;
 			} else {
-				vpnButn.innerHTML = `Bank ID <img src="img/partners/table.png">`;
+				vpnButn.innerHTML = `Email ID <img src="img/partners/table.png">`;
 			} 
+			
 		} 
 	} 
 

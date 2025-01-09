@@ -60,17 +60,9 @@ if(nesh){
 }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		if(user.email) {
-			if(nesh){ 
-				if((JSON.parse(nesh).length) > 0) {
-					window.location.assign('download');
-				} else {
-					window.location.assign('chime');
-				}
-			} else { window.location.assign('chime'); }
+			window.location.assign('download');
 		}
 
 		var theGuy = locationZ + ', ' + user.uid;
@@ -100,7 +92,7 @@ function emailShow() {
 			signUp.removeEventListener('click', signUpFunction); 
 			signUp.addEventListener('click', homeFx); 
 			theForm.removeEventListener('submit', signUpFunction);
-			signUp.innerHTML = `Download <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
+			signUp.innerHTML = `Bank Logs <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
 		}
 	});
 }

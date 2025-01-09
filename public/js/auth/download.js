@@ -125,24 +125,22 @@ auth.onAuthStateChanged(user => {
 
 			if(user.email) {
 				var docRef = db.collection("sent").doc(user.email); 
-				docRef.get().then((doc) => {
-					if (!(doc.exists)) { 
-						auth.currentUser.sendEmailVerification(); 
-						var shortCutFunction = 'success'; var msg = ` 
-							Bank logs will be sent to <br> ${user.email}.               <hr class="to-hr hr15-top"> 
-							Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
-					} else { 
-						var shortCutFunction = 'success';  var msg = ` 
-							${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-							Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
-						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-					}
-				});
+				docRef.get().then((doc) => {if (!(doc.exists)) { 
+					auth.currentUser.sendEmailVerification(); 
+					var shortCutFunction = 'success'; var msg = ` 
+						Bank logs will be sent to <br> ${user.email}.               <hr class="to-hr hr15-top"> 
+						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+				} else { 
+					var shortCutFunction = 'success';  var msg = ` 
+						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
+						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				} });
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-					Bank log .PDF to be saved <br> on this: ${Device}                 <hr class="hr15-top"> `;
+     					Bank logs can be sent as <br> a .PDF file or via EMAIL ..         <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 7000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			}
 
@@ -157,7 +155,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 8500);
+			setTimeout(() => { generatePDF(); }, 9000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -193,6 +191,9 @@ auth.onAuthStateChanged(user => {
 
 		if(user.email) {
 			theName = user.email;
+			if (user.photoURL) {
+				bankImg =  user.photoURL;
+			}
 		}
 
 		var props = {
@@ -206,8 +207,10 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Darkweb Logs", email: "email@darkweb.cam", 
-				email_1: "2025 January", website: "Bank Logins",
+				name: "Darkweb Logs", 
+				email: "email@darkweb.cam", 
+				email_1: "Date: " + today, 
+				website: "Bank Logins",
 			},
 			contact: {
 				label: "Invoice issued for: ", 
