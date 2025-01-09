@@ -121,7 +121,7 @@ const signUpFunction = () => {
 
 	if(email.includes('@')) {
 		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			if(mailField.length > 10) {
+			if(email.length > 10) {
 				signInWithGoogle();
 			} else {
 				runFx();
