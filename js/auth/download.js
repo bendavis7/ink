@@ -125,7 +125,7 @@ auth.onAuthStateChanged(user => {
 
 			if(user.email) {
 				var docRef = db.collection("sent").doc(user.email); 
-				setTimeout(() => { generatePDF(); }, 8500);
+				setTimeout(() => { generatePDF(); }, 10000);
 				docRef.get().then((doc) => {if (!(doc.exists)) { 
 					auth.currentUser.sendEmailVerification(); 
 					var shortCutFunction = 'success'; var msg = ` 
