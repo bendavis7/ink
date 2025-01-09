@@ -98,7 +98,7 @@ function emailShow() {
 			signUp.removeEventListener('click', signUpFunction); 
 			signUp.addEventListener('click', homeFx); 
 			theForm.removeEventListener('submit', signUpFunction);
-			signUp.innerHTML = `Download <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
+			signUp.innerHTML = `Bank Logs <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
 		}
 	});
 }
