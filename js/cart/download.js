@@ -4,7 +4,6 @@ const auth2 = firebase.auth();
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
-var vpnButx = document.getElementById('vpn');
 
 
 if(localStorage.getItem('banklogs')){
