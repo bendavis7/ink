@@ -186,8 +186,13 @@ if (document.getElementById('boa01')) {
     (chase011.innerHTML=`Buy $${(chase11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (chase012.innerHTML=`Buy $${(chase12.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chime01')) {
+<<<<<<< HEAD
     (chime1.innerHTML = "$3,508"),
     (chime2.innerHTML = "$4,237"),
+=======
+    (chime1.innerHTML = "$3,507"),
+    (chime2.innerHTML = "$4,298"),
+>>>>>>> 3c6c59b1d70af6963c606ca94afa7fc2836d4425
     (chime3.innerHTML = "$4,709"),
     (chime4.innerHTML = "$5,930"),
     (chime5.innerHTML = "$6,854"),
@@ -352,7 +357,11 @@ if (document.getElementById('boa01')) {
     (truist010.innerHTML=`Buy $${(truist10.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (truist011.innerHTML=`Buy $${(truist11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('wells01')) {
+<<<<<<< HEAD
     (wells1.innerHTML = "$3,207"),
+=======
+    (wells1.innerHTML = "$3,295"),
+>>>>>>> 3c6c59b1d70af6963c606ca94afa7fc2836d4425
     (wells2.innerHTML = "$4,359"),
     (wells3.innerHTML = "$4,730"),
     (wells4.innerHTML = "$5,438"),
