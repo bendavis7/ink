@@ -44,9 +44,9 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 
-			vpnButx.removeAttribute('href');
-                        vpnButx.addEventListener('click', () => { 
-                            $('#profileModal').modal('show'); });   
+			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				$('#profileModal').modal('show'); });   
     
 			if (window.innerWidth > 762) { 
 				vpnButn.innerHTML = `Banks <img src="img/partners/table.png">`;

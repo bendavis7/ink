@@ -21,6 +21,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
+var vpnButn = document.getElementById('vpn');
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();
@@ -34,6 +36,12 @@ auth.onAuthStateChanged(user => {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
+
+			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				$('#profileModal').modal('show'); });   
+			vpnButn.innerHTML = `
+				Email ID <img src="img/partners/table.png">`; 
 		} 
 	} 
 });
